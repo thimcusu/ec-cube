@@ -1,0 +1,25 @@
+<div class="header headerNav">
+	<div class="headerNav__left">
+		<div class="headerNav__title">
+			<h1>
+				<a href="{{ url('homepage') }}">
+					{{ BaseInfo.shop_name }}
+				</a>
+			</h1>
+		</div>
+	</div>
+	<div class="headerNav__right">
+		<div class="headerNav__nav">
+			{{ include('Block/login.twig') }}
+		</div>
+		<div class="ec-headerRole__cart">
+			{{ include('Block/cart.twig') }}
+		</div>
+		<div class="headerNav__navSP">
+			{{ include('Block/nav_sp.twig') }}
+		</div>
+	</div>
+	<div class="header__center">
+		{{ render(path('block_search_product')) }}
+	</div>
+</div>

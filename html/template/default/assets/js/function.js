@@ -70,16 +70,15 @@ $(function() {
     });
 
     // TODO: カート展開時のアイコン変更処理
-    $('.ec-headerRole__cart').on('click', '.ec-cartNavi', function() {
-        // $('.ec-cartNavi').toggleClass('is-active');
-        $('.ec-cartNaviIsset').toggleClass('is-active');
-        $('.ec-cartNaviNull').toggleClass('is-active')
+    document.querySelector('.ec-headerRole__cart').addEventListener('click', function() {
+        document.querySelector('.ec-cartNaviIsset').classList.toggle('is-active');
+        document.querySelector('.ec-cartNaviNull').classList.toggle('is-active');
     });
-
-    $('.ec-headerRole__cart').on('click', '.ec-cartNavi--cancel', function() {
-        // $('.ec-cartNavi').toggleClass('is-active');
-        $('.ec-cartNaviIsset').toggleClass('is-active');
-        $('.ec-cartNaviNull').toggleClass('is-active')
+    [document.querySelector('.ec-headerRole__cart'),document.querySelector('.ec-cartNavi--cancel')].forEach(function(element){
+        element.addEventListener('click', function() {
+            document.querySelector('.ec-cartNaviIsset').classList.toggle('is-active');
+            document.querySelector('.ec-cartNaviNull').classList.toggle('is-active');
+        });
     });
 
     $('.ec-orderMail__link').on('click', function() {

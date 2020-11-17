@@ -38,6 +38,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Psr\Log\LoggerInterface;
 
 class ProductController extends AbstractController
 {
@@ -365,10 +366,11 @@ class ProductController extends AbstractController
      *
      * @Route("/products/add_cart/{id}", name="product_add_cart", methods={"POST"}, requirements={"id" = "\d+"})
      */
-    public function addCart(Request $request, Product $Product)
+    public function addCart(Request $request, Product $Product, LoggerInterface $logger)
     {
         // エラーメッセージの配列
         $errorMessages = [];
+        $logger->info('We are logging!');
         if (!$this->checkVisibility($Product)) {
             throw new NotFoundHttpException();
         }

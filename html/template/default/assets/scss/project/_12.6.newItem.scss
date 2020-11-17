@@ -31,14 +31,13 @@ Styleguide 12.6.1
     @include media_desktop {
       flex-wrap: nowrap;
     }
-
   }
   & &__listItem {
     margin-bottom: 4%;
     width: 48%;
     height: auto;
 
-    &:not(:first-child){
+    &:not(:first-child) {
       a {
         color: black;
       }
@@ -48,12 +47,12 @@ Styleguide 12.6.1
       margin-bottom: 15px;
       width: calc(100% / 4);
 
-      &:not(:last-of-type){
+      &:not(:last-of-type) {
         margin-right: 30px;
       }
     }
 
-    &:nth-child(odd){
+    &:nth-child(odd) {
       margin-right: 4%;
 
       @include media_desktop {
@@ -77,5 +76,4 @@ Styleguide 12.6.1
   & &__listItemPrice {
     font-size: 12px;
   }
-
 }

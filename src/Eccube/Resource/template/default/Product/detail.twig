@@ -141,45 +141,80 @@ file that was distributed with this source code.
     </script>
     <script>
         $(function() {
-            $('.add-cart').on('click', function(event) {
+            document.querySelector('.add-cart').addEventListener('click', function(event) {
                 {% if form.classcategory_id1 is defined %}
                 // 規格1フォームの必須チェック
-                if ($('#classcategory_id1').val() == '__unselected' || $('#classcategory_id1').val() == '') {
-                    $('#classcategory_id1')[0].setCustomValidity('{{ 'front.product.product_class_unselected'|trans }}');
+                const category1 = document.querySelector('#classcategory_id1');
+                if ( category1.value == '__unselected' || category1.value == '') {
+                    category1.setCustomValidity('{{ 'front.product.product_class_unselected'|trans }}');
                     return true;
                 } else {
-                    $('#classcategory_id1')[0].setCustomValidity('');
+                    category1.setCustomValidity('');
                 }
                 {% endif %}
 
                 {% if form.classcategory_id2 is defined %}
+                const category2 = document.querySelector('#classcategory_id1');
                 // 規格2フォームの必須チェック
-                if ($('#classcategory_id2').val() == '__unselected' || $('#classcategory_id2').val() == '') {
-                    $('#classcategory_id2')[0].setCustomValidity('{{ 'front.product.product_class_unselected'|trans }}');
+                if ( category2.value == '__unselected' || category2.value == '') {
+                    category2.setCustomValidity('{{ 'front.product.product_class_unselected'|trans }}');
                     return true;
                 } else {
-                    $('#classcategory_id2')[0].setCustomValidity('');
+                    category2.setCustomValidity('');
                 }
                 {% endif %}
 
                 // 個数フォームのチェック
-                if ($('#quantity').val() < 1) {
-                    $('#quantity')[0].setCustomValidity('{{ 'front.product.invalid_quantity'|trans }}');
+                const quantity = document.querySelector('#quantity');
+                if (quantity.value < 1) {
+                    quantity.setCustomValidity('{{ 'front.product.invalid_quantity'|trans }}');
                     return true;
                 } else {
-                    $('#quantity')[0].setCustomValidity('');
+                    quantity.setCustomValidity('');
                 }
 
                 event.preventDefault();
                 $form = $('#form1');
-                $.ajax({
-                    url: $form.attr('action'),
-                    type: $form.attr('method'),
-                    data: $form.serialize(),
+                const formElement = document.querySelector('#form1');
+                const data = Object.fromEntries(new FormData(formElement).entries());
+                let fetchData = {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    }
+                }
+                document.querySelector('.add-cart').setAttribute('disabled', true);
+                console.log(formElement.action);
+                fetch(formElement.action, fetchData)
+                .then(function(data){
+                    Object.keys(data).forEach(function(key){
+                        document.querySelector('#ec-modal-header').innerHTML(this);
+                    });
+                    document.querySelector('#ec-modal-header');
+                    $('.ec-modal').show();
+                    let fetchData = {
+                        method: 'GET',
+                    };
+                    fetch("{{ url('block_cart') }}", fetchData)
+                    .then(function(html){
+                        document.querySelector('.ec-headerRole__cart').innerHTML(html);
+                    })
+                })
+                .catch(function(data){
+                    alert('{{ 'front.product.add_cart_error'|trans }}');
+                })
+                .finally(function(data){
+                    document.querySelector('.add-cart').setAttribute('disabled', true);
+                });
+                {# $.ajax({
+                    url: formElement.action,
+                    type: formElement.method,
+                    data: data,
                     dataType: 'json',
                     beforeSend: function(xhr, settings) {
                         // Buttonを無効にする
-                        $('.add-cart').prop('disabled', true);
+                        document.querySelector('.add-cart').prop('disabled', true);
                     }
                 }).done(function(data) {
                     // レスポンス内のメッセージをalertで表示
@@ -202,7 +237,7 @@ file that was distributed with this source code.
                 }).always(function(data) {
                     // Buttonを有効にする
                     $('.add-cart').prop('disabled', false);
-                });
+                }); #}
             });
         });
 

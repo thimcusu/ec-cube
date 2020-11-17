@@ -37,7 +37,6 @@ Styleguide 11.2
     max-width: 1150px;
     display: flex;
     flex-wrap: nowrap;
-
   }
   & &__main {
     width: 100%;
@@ -63,7 +62,6 @@ Styleguide 11.2
     }
   }
 }
-
 
 .ec-headerRole {
   @include container;
@@ -122,7 +120,6 @@ Styleguide 11.2
 
   & &__left {
     width: calc(100% / 3);
-
   }
 
   & &__search {
@@ -156,6 +153,9 @@ Styleguide 11.2
     display: inline-block;
     @include reset_link;
   }
+}
+
+.custom-headerNaviRole {
 }
 
 .ec-headerNavSP {
@@ -220,7 +220,7 @@ Styleguide 11.2.1
       color: black;
 
       &:hover {
-        opacity: .8;
+        opacity: 0.8;
       }
     }
   }
@@ -233,7 +233,7 @@ Styleguide 11.2.1
     }
     a {
       display: inline-block;
-      color: #0092C4;
+      color: #0092c4;
       text-decoration: none;
       cursor: pointer;
     }
@@ -310,7 +310,7 @@ sg-wrapper:
 
 Styleguide 11.2.4
 */
-.ec-headerSearch{
+.ec-headerSearch {
   @include clearfix;
   & &__category {
     float: none;
@@ -373,7 +373,7 @@ Styleguide 11.2.4
           width: 0;
           height: 0;
           padding: 0;
-          content: '';
+          content: "";
           border-left: 6px solid transparent;
           border-right: 6px solid transparent;
           border-top: 6px solid #fff;
@@ -382,7 +382,7 @@ Styleguide 11.2.4
       }
     }
   }
-  & &__keyword{
+  & &__keyword {
     position: relative;
     color: $clrDarkGray;
     border: 1px solid #ccc;
@@ -397,7 +397,7 @@ Styleguide 11.2.4
       border-top-right-radius: 50px;
       border-bottom-right-radius: 50px;
     }
-    input[type="search"]{
+    input[type="search"] {
       width: 100%;
       height: 34px;
       font-size: 16px;
@@ -416,7 +416,7 @@ Styleguide 11.2.4
       height: 22px;
     }
   }
-  & &__keywordBtn{
+  & &__keywordBtn {
     border: 0;
     background: none;
     position: absolute;
@@ -493,18 +493,18 @@ Styleguide 11.2.5
 
 .ec-itemNav__nav li a {
   display: block;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
   margin: 0;
   padding: 16px;
   height: auto;
-  color: #2e3233;;
+  color: #2e3233;
   font-size: 16px;
   font-weight: bold;
   line-height: 20px;
   text-decoration: none;
   text-align: left;
   background: #fff;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
   @include media_desktop {
     text-align: center;
     border-bottom: none;
@@ -532,7 +532,7 @@ Styleguide 11.2.5
   overflow: hidden;
   width: 100%;
   height: auto;
-  transition: .3s;
+  transition: 0.3s;
   @include media_desktop {
     overflow: hidden;
     height: 0;
@@ -540,7 +540,7 @@ Styleguide 11.2.5
 }
 
 .ec-itemNav__nav li ul li a {
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
   padding: 16px 22px 16px 16px;
   font-size: 16px;
   font-weight: bold;
@@ -561,7 +561,6 @@ Styleguide 11.2.5
   @include media_desktop {
     overflow: visible;
     height: auto;
-
   }
 }
 
@@ -594,7 +593,7 @@ Styleguide 11.2.5
 }
 
 .ec-itemNav__nav li ul li ul li a {
-  background: #7D7D7D
+  background: #7d7d7d;
 }
 
 .ec-itemNav__nav li:hover ul li ul li a:hover {
@@ -629,31 +628,30 @@ Styleguide 11.2.6
     display: none;
   }
 
-
   .ec-headerSearchArea {
     padding: 20px 10px;
     width: 100%;
-    background: #F8F8F8;
+    background: #f8f8f8;
   }
 
-  .ec-headerSearch{
+  .ec-headerSearch {
     padding: 16px 8px 26px;
-    background: #EBEBEB;
+    background: #ebebeb;
     color: #636378;
-    select{
+    select {
       width: 100% !important;
     }
   }
 
-  .ec-headerCategoryArea{
+  .ec-headerCategoryArea {
     .ec-headerCategoryArea__heading {
-      border-top: 1px solid #CCCCCC;
-      border-bottom: 1px solid #CCCCCC;
+      border-top: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
       padding: 1em 10px;
       font-size: 16px;
       font-weight: bold;
       color: black;
-      background: #F8F8F8;
+      background: #f8f8f8;
     }
 
     p {
@@ -694,7 +692,7 @@ Styleguide 11.2.6
       background: white;
     }
 
-    .ec-itemNav__nav li ul li ul li ul li a{
+    .ec-itemNav__nav li ul li ul li ul li a {
       padding-left: 60px;
       font-weight: normal;
     }
@@ -704,7 +702,6 @@ Styleguide 11.2.6
 
     .ec-headerLink__list {
       border-top: 1px solid #ccc;
-
     }
 
     .ec-headerLink__item {
@@ -720,11 +717,7 @@ Styleguide 11.2.6
       width: 28px;
       font-size: 17px;
     }
-
-
-
   }
-
 }
 
 .ec-drawerRoleClose {
@@ -753,22 +746,21 @@ Styleguide 11.2.6
   @include media_desktop {
     display: none;
   }
-
 }
 
 .ec-drawerRole.is_active {
   display: block;
   transform: translateX(0);
-  transition: all .3s;
+  transition: all 0.3s;
   z-index: 100000;
 
   @include media_desktop() {
     display: none;
   }
 }
-.ec-drawerRoleClose.is_active  {
+.ec-drawerRoleClose.is_active {
   display: inline-block;
-  transition: all .3s;
+  transition: all 0.3s;
 
   @include media_desktop {
     display: none;
@@ -784,7 +776,7 @@ Styleguide 11.2.6
   opacity: 0;
   background: transparent;
   transform: translateX(0);
-  transition: all .3s;
+  transition: all 0.3s;
   visibility: hidden;
 
   @include media_desktop {

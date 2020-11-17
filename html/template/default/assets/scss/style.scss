@@ -1,8 +1,10 @@
-@import url('../../../../../node_modules/normalize.css/normalize.css');
+@import url("../../../../../node_modules/normalize.css/normalize.css");
 
 body {
-  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
-  color:#525263;
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic",
+    "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ",
+    Meiryo, sans-serif;
+  color: #525263;
   transition: z-index 0ms 5.28455ms;
   background: #f6f6f6;
   margin: 0;
@@ -40,14 +42,19 @@ p {
 @import "component/8.2.banner";
 @import "component/9.1.mypage";
 @import "project/11.1.role";
-@import "project/11.2.header";
+// @import "project/11.2.header";
+// Customize
+@import "project/customize/header";
+
 @import "project/11.3.footer";
 @import "project/12.1.slider";
 @import "project/12.2.eyecatch";
 @import "project/12.3.button";
 @import "project/12.4.heading";
 @import "project/12.5.topics";
-@import "project/12.6.newItem";
+// @import "project/12.6.newItem";
+@import "project/customize/newItem";
+
 @import "project/12.7.category";
 @import "project/12.8.news";
 @import "project/13.1.searchnav";

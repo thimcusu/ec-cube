@@ -1,0 +1,37 @@
+{#
+This file is part of CUBE
+
+Copyright(c) CUBE CO.,LTD. All Rights Reserved.
+
+http://www.cube.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+<div class="categoryRole">
+	<div class="role">
+		<div class="secHeading">
+			<span class="secHeading__en">{{ 'front.block.category.category__en'|trans }}</span>
+			<span class="secHeading__line"></span>
+			<span class="secHeading__ja">{{ 'front.block.category.category__ja'|trans }}</span>
+		</div>
+		<div class="categoryRole__list">
+			<div class="categoryRole__listItem">
+				<a href="{{ url('product_list') }}?category_id=2">
+					<img src="{{ asset('assets/img/top/fpo_355x150.png') }}">
+				</a>
+			</div>
+			<div class="categoryRole__listItem">
+				<a href="{{ url('product_list') }}?category_id=1">
+					<img src="{{ asset('assets/img/top/fpo_355x150.png') }}">
+				</a>
+			</div>
+			<div class="categoryRole__listItem">
+				<a href="{{ url('product_list') }}?category_id=5">
+					<img src="{{ asset('assets/img/top/fpo_355x150.png') }}">
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

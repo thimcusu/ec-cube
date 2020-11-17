@@ -4213,43 +4213,43 @@ Twitter Bootstrap デフォルト準拠
 
 ヘッダー用のプロジェクトコンポーネントを提供します。
 
-ex [トップページ　ヘッダー](http://demo3.ec-cube.net/)
+ex [トップページ　ヘッダー](http://demo3.cube.net/)
 
 Markup:
 include /assets/tmpl/elements/11.2.header.pug
 include /assets/tmpl/elements/11.3.headerNavi.pug
 include /assets/tmpl/elements/11.4.categoryNavi.pug
-+b.ec-layoutRole
++b.layoutRole
   +e.header
-    +ec-headerRole
-    +ec-headerNaviRole
-    +ec-categoryNaviRole
+    +headerRole
+    +headerNaviRole
+    +categoryNaviRole
 
 Styleguide 11.2
 */
-.ec-layoutRole {
+.layoutRole {
   width: 100%;
   transition: transform 0.3s;
   background: #fff; }
-.ec-layoutRole .ec-layoutRole__contentTop {
+.layoutRole .layoutRole__contentTop {
     padding: 0; }
-.ec-layoutRole .ec-layoutRole__contents {
+.layoutRole .layoutRole__contents {
     margin-right: auto;
     margin-left: auto;
     width: 100%;
     max-width: 1150px;
     display: flex;
     flex-wrap: nowrap; }
-.ec-layoutRole .ec-layoutRole__main {
+.layoutRole .layoutRole__main {
     width: 100%; }
-.ec-layoutRole .ec-layoutRole__mainWithColumn {
+.layoutRole .layoutRole__mainWithColumn {
     width: 100%; }
-.ec-layoutRole .ec-layoutRole__mainBetweenColumn {
+.layoutRole .layoutRole__mainBetweenColumn {
     width: 100%; }
-.ec-layoutRole .ec-layoutRole__left,
-  .ec-layoutRole .ec-layoutRole__right {
+.layoutRole .layoutRole__left,
+  .layoutRole .layoutRole__right {
     display: none; }
-.ec-headerRole {
+.header {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -4266,38 +4266,31 @@ Styleguide 11.2
   flex-wrap: wrap;
   justify-content: space-between;
   width: auto; }
-.ec-headerRole:after {
+.header:after {
     content: " ";
     display: table; }
-.ec-headerRole:after {
+.header:after {
     clear: both; }
-.ec-headerRole textarea {
+.header textarea {
     /* for chrome fontsize bug */
     font-family: sans-serif; }
-.ec-headerRole img {
+.header img {
     max-width: 100%; }
-.ec-headerRole html {
+.header html {
     box-sizing: border-box; }
-.ec-headerRole *,
-  .ec-headerRole *::before,
-  .ec-headerRole *::after {
+.header *,
+  .header *::before,
+  .header *::after {
     box-sizing: inherit; }
-.ec-headerRole img {
+.header img {
     width: 100%; }
-.ec-headerRole:after {
+.header::before {
     display: none; }
-.ec-headerRole::before {
+.header:after {
     display: none; }
-.ec-headerRole .ec-headerRole__title {
-    width: 100%; }
-.ec-headerRole .ec-headerRole__navSP {
-    display: block;
-    position: absolute;
-    top: 15px;
-    width: 27%;
-    right: 0;
-    text-align: right; }
-.ec-headerNaviRole {
+.header::before {
+    display: none; }
+.headerNav {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -4311,264 +4304,215 @@ Styleguide 11.2
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 15px; }
-.ec-headerNaviRole:after {
+  padding-top: 0px;
+  text-align: right; }
+.headerNav:after {
     content: " ";
     display: table; }
-.ec-headerNaviRole:after {
+.headerNav:after {
     clear: both; }
-.ec-headerNaviRole textarea {
+.headerNav textarea {
     /* for chrome fontsize bug */
     font-family: sans-serif; }
-.ec-headerNaviRole img {
+.headerNav img {
     max-width: 100%; }
-.ec-headerNaviRole html {
+.headerNav html {
     box-sizing: border-box; }
-.ec-headerNaviRole *,
-  .ec-headerNaviRole *::before,
-  .ec-headerNaviRole *::after {
+.headerNav *,
+  .headerNav *::before,
+  .headerNav *::after {
     box-sizing: inherit; }
-.ec-headerNaviRole img {
+.headerNav img {
     width: 100%; }
-.ec-headerNaviRole .fa-bars {
+.headerNav .fa-bars {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-.ec-headerNaviRole .ec-headerNaviRole__left {
+.headerNav__left {
     width: calc(100% / 3); }
-.ec-headerNaviRole .ec-headerNaviRole__search {
+.headerNav__search {
     display: none; }
-.ec-headerNaviRole .ec-headerNaviRole__navSP {
-    display: block; }
-.ec-headerNaviRole .ec-headerNaviRole__right {
+.headerNav__right {
     width: calc(100% * 2 / 3);
     display: flex;
     justify-content: flex-end;
     align-items: center; }
-.ec-headerNaviRole .ec-headerNaviRole__nav {
+.headerNav__nav {
     display: inline-block; }
-.ec-headerNaviRole .ec-headerNaviRole__nav a {
+.headerNav__nav a {
       color: inherit;
       text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__nav a:hover {
+.headerNav__nav a:hover {
       text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__cart {
+.headerNav__cart {
     display: inline-block; }
-.ec-headerNaviRole .ec-headerNaviRole__cart a {
+.headerNav__cart a {
       color: inherit;
       text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__cart a:hover {
+.headerNav__cart a:hover {
       text-decoration: none; }
-.ec-headerNavSP {
-  display: block;
-  cursor: pointer;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  text-align: center;
-  color: black;
-  background: white;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000; }
-.ec-headerNavSP .fas {
-    vertical-align: top; }
-.ec-headerNavSP.is-active {
-  display: none; }
-/*
-ヘッダー：タイトル
-
-ヘッダー内で使用されるタイトルコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.2.header.pug
-+ec-headerTitle
-
-Styleguide 11.2.1
-*/
-.ec-headerTitle {
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%; }
-.ec-headerTitle textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerTitle img {
-    max-width: 100%; }
-.ec-headerTitle html {
-    box-sizing: border-box; }
-.ec-headerTitle *,
-  .ec-headerTitle *::before,
-  .ec-headerTitle *::after {
-    box-sizing: inherit; }
-.ec-headerTitle img {
-    width: 100%; }
-.ec-headerTitle .ec-headerTitle__title {
-    text-align: center; }
-.ec-headerTitle .ec-headerTitle__title h1 {
-      margin: 0;
-      padding: 0; }
-.ec-headerTitle .ec-headerTitle__title a {
-      display: inline-block;
-      margin-bottom: 30px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      color: black; }
-.ec-headerTitle .ec-headerTitle__title a:hover {
-        opacity: .8; }
-.ec-headerTitle .ec-headerTitle__subtitle {
-    font-size: 10px;
-    text-align: center; }
-.ec-headerTitle .ec-headerTitle__subtitle a {
-      display: inline-block;
-      color: #0092C4;
-      text-decoration: none;
-      cursor: pointer; }
-/*
-ヘッダー：ユーザナビゲーション
-
-ヘッダー内でユーザに関与するナビゲーションコンポーネントです。
-<br><br>
-`.ec-headerNaviRole`>`.ec-headerNaviRole__nav`内に記述すると２カラム上の右側に配置することができます。
-
-Markup:
-include /assets/tmpl/elements/11.3.headerNavi.pug
-+ec-headerNav
-
-sg-wrapper:
-<div class="ec-headerNaviRole">
-  <div class="ec-headerNaviRole__nav">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.2.3
-*/
-.ec-headerNav {
-  text-align: right; }
-.ec-headerNav .ec-headerNav__item {
+.headerNav__item {
     margin-left: 0;
     display: inline-block;
     font-size: 28px; }
-.ec-headerNav .ec-headerNav__itemIcon {
+.headerNav__itemIcon {
     display: inline-block;
     margin-right: 10px;
     margin-left: 10px;
     font-size: 18px;
     color: black; }
-.ec-headerNav .ec-headerNav__itemLink {
+.headerNav__itemLink {
     display: none;
     margin-right: 5px;
     font-size: 14px;
     vertical-align: middle;
     color: black; }
-/*
-ヘッダー：検索ボックス
-
-ヘッダー内で使用される商品検索コンポーネントです。
-<br><br>
-`.ec-headerNaviRole`>`.ec-headerNaviRole__search`内に記述すると２カラム上の右側に配置することができます。
-
-Markup:
-include /assets/tmpl/elements/11.3.headerNavi.pug
-+ec-headerSearch
-
-sg-wrapper:
-<div class="ec-headerNaviRole">
-  <div class="ec-headerNaviRole__search">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.2.4
-*/
-.ec-headerSearch:after {
-  content: " ";
-  display: table; }
-.ec-headerSearch:after {
-  clear: both; }
-.ec-headerSearch .ec-headerSearch__category {
-  float: none; }
-.ec-headerSearch .ec-headerSearch__category .ec-select {
-    overflow: hidden;
+.headerNav__title {
     width: 100%;
-    margin: 0;
-    text-align: center; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select {
-      width: 100%;
-      cursor: pointer;
-      padding: 8px 24px 8px 8px;
-      text-indent: 0.01px;
-      text-overflow: ellipsis;
-      border: none;
-      outline: none;
-      background: transparent;
-      background-image: none;
-      box-shadow: none;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      color: #fff; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select option {
-        color: #000; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select::-ms-expand {
-        display: none; }
-.ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search {
-      position: relative;
-      border: 0;
-      background: #000;
-      color: #fff;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px; }
-.ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search::before {
-        position: absolute;
-        top: 0.8em;
-        right: 0.4em;
-        width: 0;
-        height: 0;
-        padding: 0;
-        content: '';
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid #fff;
-        pointer-events: none; }
-.ec-headerSearch .ec-headerSearch__keyword {
-  position: relative;
-  color: #525263;
-  border: 1px solid #ccc;
-  background-color: #f6f6f6;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; }
-.ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
-    width: 100%;
-    height: 34px;
     font-size: 16px;
-    border: 0 none;
-    padding: 0.5em 50px 0.5em 1em;
-    box-shadow: none;
+    line-height: 1.4;
+    color: #525263; }
+.headerNav__title a {
+      width: 100%;
+      font-size: 18px;
+      line-height: 1.4;
+      color: #525263;
+      text-decoration: none;
+      font-weight: bold; }
+.headerNav__navSP {
+    display: block;
+    position: absolute;
+    top: 15px;
+    width: 27%;
+    right: 0;
+    text-align: right; }
+.header__center {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  margin: auto !important;
+  width: 70%; }
+.header__center textarea {
+    /* for chrome fontsize bug */
+    font-family: sans-serif; }
+.header__center img {
+    max-width: 100%; }
+.header__center html {
+    box-sizing: border-box; }
+.header__center *,
+  .header__center *::before,
+  .header__center *::after {
+    box-sizing: inherit; }
+.header__center img {
+    width: 100%; }
+.header__center__title {
+    text-align: center; }
+.header__center__title h1 {
+      margin: 0;
+      padding: 0; }
+.header__center__title a {
+      display: inline-block;
+      margin-bottom: 30px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      font-weight: bold;
+      color: black; }
+.header__center__title a:hover {
+        opacity: 0.8; }
+.header__center__subtitle {
+    font-size: 10px;
+    text-align: center; }
+.header__center__subtitle a {
+      display: inline-block;
+      color: #0092c4;
+      text-decoration: none;
+      cursor: pointer; }
+.headerNav__search {
+  width: 100%; }
+.headerNav__search:after {
+    content: " ";
+    display: table; }
+.headerNav__search:after {
+    clear: both; }
+.headerNav__search__category {
+    float: none; }
+.headerNav__search__category .select {
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      text-align: center; }
+.headerNav__search__category .select select {
+        width: 100%;
+        cursor: pointer;
+        padding: 8px 24px 8px 8px;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        border: none;
+        outline: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        color: #fff; }
+.headerNav__search__category .select select option {
+          color: #000; }
+.headerNav__search__category .select select::-ms-expand {
+          display: none; }
+.headerNav__search__category .select.select_search {
+        position: relative;
+        border: 0;
+        background: #000;
+        color: #fff;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px; }
+.headerNav__search__category .select.select_search::before {
+          position: absolute;
+          top: 0.8em;
+          right: 0.4em;
+          width: 0;
+          height: 0;
+          padding: 0;
+          content: "";
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid #fff;
+          pointer-events: none; }
+.headerNav__search__keyword {
+    position: relative;
+    color: #525263;
+    border: 1px solid #ccc;
+    background-color: #f6f6f6;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; }
+.headerNav__search__keyword input[type="search"] {
+      width: 100%;
+      height: 34px;
+      font-size: 16px;
+      border: 0 none;
+      padding: 0.5em 50px 0.5em 1em;
+      box-shadow: none;
+      background: none;
+      box-sizing: border-box;
+      margin-bottom: 0; }
+.headerNav__search__keyword .icon {
+      width: 22px;
+      height: 22px; }
+.headerNav__search__keywordBtn {
+    border: 0;
     background: none;
-    box-sizing: border-box;
-    margin-bottom: 0; }
-.ec-headerSearch .ec-headerSearch__keyword .ec-icon {
-    width: 22px;
-    height: 22px; }
-.ec-headerSearch .ec-headerSearch__keywordBtn {
-  border: 0;
-  background: none;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-55%);
-  display: block;
-  white-space: nowrap;
-  z-index: 1; }
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-55%);
+    display: block;
+    white-space: nowrap;
+    z-index: 1; }
 /*
 ヘッダー：カテゴリナビ
 
@@ -4577,16 +4521,16 @@ Styleguide 11.2.4
 
 Markup:
 include /assets/tmpl/elements/11.4.categoryNavi.pug
-+ec-itemNav
++itemNav
 
 sg-wrapper:
-<div class="ec-categoryNaviRole" style="padding-bottom:150px;">
+<div class="categoryNaviRole" style="padding-bottom:150px;">
   <sg-wrapper-content/>
 </div>
 
 Styleguide 11.2.5
 */
-.ec-categoryNaviRole {
+.categoryNaviRole {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -4598,31 +4542,31 @@ Styleguide 11.2.5
   width: 100%;
   max-width: 1130px;
   display: none; }
-.ec-categoryNaviRole:after {
+.categoryNaviRole:after {
     content: " ";
     display: table; }
-.ec-categoryNaviRole:after {
+.categoryNaviRole:after {
     clear: both; }
-.ec-categoryNaviRole textarea {
+.categoryNaviRole textarea {
     /* for chrome fontsize bug */
     font-family: sans-serif; }
-.ec-categoryNaviRole img {
+.categoryNaviRole img {
     max-width: 100%; }
-.ec-categoryNaviRole html {
+.categoryNaviRole html {
     box-sizing: border-box; }
-.ec-categoryNaviRole *,
-  .ec-categoryNaviRole *::before,
-  .ec-categoryNaviRole *::after {
+.categoryNaviRole *,
+  .categoryNaviRole *::before,
+  .categoryNaviRole *::after {
     box-sizing: inherit; }
-.ec-categoryNaviRole img {
+.categoryNaviRole img {
     width: 100%; }
-.ec-itemNav {
+.itemNav {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   text-align: center; }
-.ec-itemNav__nav {
+.itemNav__nav {
   display: block;
   margin: 0 auto;
   padding: 0;
@@ -4631,16 +4575,16 @@ Styleguide 11.2.5
   list-style-type: none;
   text-align: center;
   vertical-align: bottom; }
-.ec-itemNav__nav li {
+.itemNav__nav li {
   float: none;
   margin: 0;
   padding: 0;
   width: 100%;
   text-align: center;
   position: relative; }
-.ec-itemNav__nav li a {
+.itemNav__nav li a {
   display: block;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
   margin: 0;
   padding: 16px;
   height: auto;
@@ -4651,8 +4595,8 @@ Styleguide 11.2.5
   text-decoration: none;
   text-align: left;
   background: #fff;
-  border-bottom: 1px solid #E8E8E8; }
-.ec-itemNav__nav li ul {
+  border-bottom: 1px solid #e8e8e8; }
+.itemNav__nav li ul {
   display: none;
   z-index: 0;
   margin: 0;
@@ -4662,44 +4606,44 @@ Styleguide 11.2.5
   position: static;
   top: 100%;
   left: 0; }
-.ec-itemNav__nav li ul li {
+.itemNav__nav li ul li {
   overflow: hidden;
   width: 100%;
   height: auto;
-  transition: .3s; }
-.ec-itemNav__nav li ul li a {
-  border-bottom: 1px solid #E8E8E8;
+  transition: 0.3s; }
+.itemNav__nav li ul li a {
+  border-bottom: 1px solid #e8e8e8;
   padding: 16px 22px 16px 16px;
   font-size: 16px;
   font-weight: bold;
   color: white;
   text-align: left;
   background: black; }
-.ec-itemNav__nav > li:hover > a {
+.itemNav__nav > li:hover > a {
   background: #fafafa; }
-.ec-itemNav__nav > li:hover li:hover > a {
+.itemNav__nav > li:hover li:hover > a {
   background: #333; }
-.ec-itemNav__nav li ul li ul {
+.itemNav__nav li ul li ul {
   top: 0;
   left: 100%;
   width: auto; }
-.ec-itemNav__nav li ul li ul li a {
-  background: #7D7D7D; }
-.ec-itemNav__nav li:hover ul li ul li a:hover {
+.itemNav__nav li ul li ul li a {
+  background: #7d7d7d; }
+.itemNav__nav li:hover ul li ul li a:hover {
   background: #333; }
 /*
 ヘッダー：SPヘッダー
 
 SP時のみ出現するヘッダーに関係するコンポーネントです。<br>
-ex [トップページ](http://demo3.ec-cube.net/)画面サイズが768px以下に該当。<br>
+ex [トップページ](http://demo3.cube.net/)画面サイズが768px以下に該当。<br>
 <br>
-`.ec-drawerRole`：SPのドロワー内の要素をwrapするコンポーネントです。<br>
-`.ec-headerSearch`、`.ec-headerNav`、`.ec-itemNav`は`.ec-drawerRole`の子要素にある場合、ドロワーに適したスタイルに変化します。<br><br>
-`.ec-overlayRole`：SPのドロワー出現時にz-indexがドロワー以下の要素に半透明の黒背景をかぶせるコンポーネントです。<br>
+`.drawerRole`：SPのドロワー内の要素をwrapするコンポーネントです。<br>
+`.headerSearch`、`.headerNav`、`.itemNav`は`.drawerRole`の子要素にある場合、ドロワーに適したスタイルに変化します。<br><br>
+`.overlayRole`：SPのドロワー出現時にz-indexがドロワー以下の要素に半透明の黒背景をかぶせるコンポーネントです。<br>
 
 Styleguide 11.2.6
 */
-.ec-drawerRole {
+.drawerRole {
   overflow-y: scroll;
   background: black;
   width: 260px;
@@ -4710,67 +4654,67 @@ Styleguide 11.2.6
   left: 0;
   z-index: 1;
   transition: z-index 0ms 1ms; }
-.ec-drawerRole .ec-headerSearchArea {
+.drawerRole .headerSearchArea {
     padding: 20px 10px;
     width: 100%;
-    background: #F8F8F8; }
-.ec-drawerRole .ec-headerSearch {
+    background: #f8f8f8; }
+.drawerRole .headerSearch {
     padding: 16px 8px 26px;
-    background: #EBEBEB;
+    background: #ebebeb;
     color: #636378; }
-.ec-drawerRole .ec-headerSearch select {
+.drawerRole .headerSearch select {
       width: 100% !important; }
-.ec-drawerRole .ec-headerCategoryArea .ec-headerCategoryArea__heading {
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
+.drawerRole .headerCategoryArea .headerCategoryArea__heading {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
     padding: 1em 10px;
     font-size: 16px;
     font-weight: bold;
     color: black;
-    background: #F8F8F8; }
-.ec-drawerRole .ec-headerCategoryArea p {
+    background: #f8f8f8; }
+.drawerRole .headerCategoryArea p {
     margin-top: 0;
     margin-bottom: 0; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li a {
+.drawerRole .headerCategoryArea .itemNav__nav li a {
     border-bottom: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     color: black;
     font-weight: normal;
     background: #f8f8f8; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li a {
+.drawerRole .headerCategoryArea .itemNav__nav li ul li a {
     border-bottom: 1px solid #ccc;
     padding-left: 20px;
     font-weight: normal;
     background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav > li:hover > a {
+.drawerRole .headerCategoryArea .itemNav__nav > li:hover > a {
     background: #f8f8f8; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav > li:hover li:hover > a {
+.drawerRole .headerCategoryArea .itemNav__nav > li:hover li:hover > a {
     background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li ul li a {
+.drawerRole .headerCategoryArea .itemNav__nav li ul li ul li a {
     padding-left: 40px;
     color: black;
     background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li:hover ul li ul li a:hover {
+.drawerRole .headerCategoryArea .itemNav__nav li:hover ul li ul li a:hover {
     background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li ul li ul li a {
+.drawerRole .headerCategoryArea .itemNav__nav li ul li ul li ul li a {
     padding-left: 60px;
     font-weight: normal; }
-.ec-drawerRole .ec-headerLinkArea {
+.drawerRole .headerLinkArea {
     background: black; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__list {
+.drawerRole .headerLinkArea .headerLink__list {
       border-top: 1px solid #ccc; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__item {
+.drawerRole .headerLinkArea .headerLink__item {
       display: block;
       border-bottom: 1px solid #ccc;
       padding: 15px 20px;
       font-size: 16px;
       font-weight: bold;
       color: white; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__icon {
+.drawerRole .headerLinkArea .headerLink__icon {
       display: inline-block;
       width: 28px;
       font-size: 17px; }
-.ec-drawerRoleClose {
+.drawerRoleClose {
   display: none;
   cursor: pointer;
   border-radius: 50%;
@@ -4786,20 +4730,20 @@ Styleguide 11.2.6
   top: 10px;
   left: 270px;
   z-index: 1000; }
-.ec-drawerRoleClose .fas {
+.drawerRoleClose .fas {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-.ec-drawerRole.is_active {
+.drawerRole.is_active {
   display: block;
   transform: translateX(0);
-  transition: all .3s;
+  transition: all 0.3s;
   z-index: 100000; }
-.ec-drawerRoleClose.is_active {
+.drawerRoleClose.is_active {
   display: inline-block;
-  transition: all .3s; }
-.ec-overlayRole {
+  transition: all 0.3s; }
+.overlayRole {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -4808,33 +4752,53 @@ Styleguide 11.2.6
   opacity: 0;
   background: transparent;
   transform: translateX(0);
-  transition: all .3s;
+  transition: all 0.3s;
   visibility: hidden; }
-.have_curtain .ec-overlayRole {
+.have_curtain .overlayRole {
   display: block;
   opacity: 1;
   background: rgba(0, 0, 0, 0.5);
   visibility: visible; }
+.headerNav__navSP {
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  background: white;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; }
+.headerNav__navSP .fas {
+    vertical-align: top; }
+.headerNavSP.is-active {
+  display: none; }
 /*
 ヘッダー：test
 
 test
 
 Markup:
-span.ec-itemAccordionParent test1
-ul.ec-itemNavAccordion
-  li.ec-itemNavAccordion__item
+span.itemAccordionParent test1
+ul.itemNavAccordion
+  li.itemNavAccordion__item
     a(href='') test2
-    ul.ec-itemNavAccordion
-      li.ec-itemNavAccordion__item
+    ul.itemNavAccordion
+      li.itemNavAccordion__item
         a(href='') test3
-        ul.ec-itemNavAccordion
-          li.ec-itemNavAccordion__item
+        ul.itemNavAccordion
+          li.itemNavAccordion__item
             a(href='') test4
 
 Styleguide 11.2.7
 */
-.ec-itemNavAccordion {
+.itemNavAccordion {
   display: none; }
 /**
 メディアクエリ
@@ -5409,11 +5373,30 @@ Styleguide 12.6.1
 .ec-newItemRole .ec-newItemRole__list {
     display: flex;
     flex-wrap: wrap; }
+.ec-newItemRole__extra {
+    position: absolute;
+    top: 0;
+    left: 54px;
+    width: 66px;
+    height: 36px;
+    text-align: center;
+    transform-origin: top left;
+    transform: rotate(90deg); }
+.ec-newItemRole__extra a {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff !important;
+      line-height: 30px;
+      text-decoration: none; }
 .ec-newItemRole .ec-newItemRole__listItem {
     margin-bottom: 4%;
     width: 48%;
-    height: auto; }
-.ec-newItemRole .ec-newItemRole__listItem:not(:first-child) a {
+    height: auto;
+    position: relative; }
+.ec-newItemRole .ec-newItemRole__listItem .newLabel {
+      background: #6c6a74; }
+.ec-newItemRole .ec-newItemRole__listItem a {
       color: black; }
 .ec-newItemRole .ec-newItemRole__listItem:nth-child(odd) {
       margin-right: 4%; }
@@ -5425,6 +5408,17 @@ Styleguide 12.6.1
     font-weight: bold; }
 .ec-newItemRole .ec-newItemRole__listItemPrice {
     font-size: 12px; }
+.ec-newItemRole .ec-newItemRole__more {
+    text-align: right; }
+.ec-newItemRole .ec-newItemRole__more a {
+      display: inline-block;
+      margin-left: auto;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      padding-right: 20px; }
+.ec-newItemRole .ec-newItemRole__more a:first-letter {
+      text-transform: uppercase; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -7591,102 +7585,91 @@ Styleguide 22.1
     .ec-mypageRole .ec-pageHeader h1 {
       margin: 10px 0 48px;
       padding: 8px 0 18px; }
-      .ec-layoutRole .ec-layoutRole__mainWithColumn {
+      .layoutRole .layoutRole__mainWithColumn {
         width: 75%; }
-      .ec-layoutRole .ec-layoutRole__mainBetweenColumn {
+      .layoutRole .layoutRole__mainBetweenColumn {
         width: 50%; }
-      .ec-layoutRole .ec-layoutRole__left,
-      .ec-layoutRole .ec-layoutRole__right {
+      .layoutRole .layoutRole__left,
+      .layoutRole .layoutRole__right {
         display: block;
         width: 25%; }
-    .ec-headerRole:after {
+    .header:after {
       content: " ";
       display: table; }
-    .ec-headerRole:after {
+    .header:after {
       clear: both; }
-    .ec-headerRole {
+    .header {
       width: 100%; }
-      .ec-headerRole:after {
+      .header:after {
         content: " ";
         display: table; }
-      .ec-headerRole:after {
+      .header:after {
         clear: both; }
-      .ec-headerRole .ec-headerRole__navSP {
-        display: none; }
-    .ec-headerNaviRole {
-      padding-bottom: 40px; }
-      .ec-headerNaviRole .ec-headerNaviRole__search {
+      .headerNav__search {
         display: inline-block;
         margin-top: 10px; }
-        .ec-headerNaviRole .ec-headerNaviRole__search a {
+        .headerNav__search a {
           color: inherit;
           text-decoration: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__search a:hover {
+        .headerNav__search a:hover {
           text-decoration: none; }
-      .ec-headerNaviRole .ec-headerNaviRole__navSP {
-        display: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__navSP a {
-          color: inherit;
-          text-decoration: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__navSP a:hover {
-          text-decoration: none; }
-    .ec-headerNavSP {
-      display: none; }
-        .ec-headerTitle .ec-headerTitle__title a {
-          font-size: 40px; }
-      .ec-headerTitle .ec-headerTitle__subtitle {
-        font-size: 16px;
-        margin-bottom: 10px; }
-      .ec-headerNav .ec-headerNav__itemIcon {
+      .headerNav__itemIcon {
         margin-right: 0;
         font-size: 20px; }
-      .ec-headerNav .ec-headerNav__itemLink {
+      .headerNav__itemLink {
         display: inline-block; }
-    .ec-headerSearch .ec-headerSearch__category {
-      float: left;
-      width: 43%; }
-        .ec-headerSearch .ec-headerSearch__category .ec-select select {
-          max-width: 165px;
-          height: 36px; }
-        .ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search {
-          border-top-right-radius: inherit;
-          border-top-left-radius: 50px;
-          border-bottom-left-radius: 50px; }
-    .ec-headerSearch .ec-headerSearch__keyword {
-      float: right;
-      width: 57%;
-      border-bottom-left-radius: inherit;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px; }
-      .ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
-        font-size: 12px; }
-    .ec-categoryNaviRole {
+      .headerNav__navSP {
+        display: none; }
+        .header__center__title a {
+          font-size: 40px; }
+      .header__center__subtitle {
+        font-size: 16px;
+        margin-bottom: 10px; }
+      .headerNav__search__category {
+        float: left;
+        width: 43%; }
+          .headerNav__search__category .select select {
+            max-width: 165px;
+            height: 36px; }
+          .headerNav__search__category .select.select_search {
+            border-top-right-radius: inherit;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px; }
+      .headerNav__search__keyword {
+        float: right;
+        width: 100%;
+        border-bottom-left-radius: inherit;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px; }
+        .headerNav__search__keyword input[type="search"] {
+          font-size: 12px; }
+    .categoryNaviRole {
       display: block;
       width: 100%; }
-      .ec-categoryNaviRole a {
+      .categoryNaviRole a {
         color: inherit;
         text-decoration: none; }
-      .ec-categoryNaviRole a:hover {
+      .categoryNaviRole a:hover {
         text-decoration: none; }
-    .ec-itemNav__nav {
+    .itemNav__nav {
       display: inline-block; }
-    .ec-itemNav__nav li {
+    .itemNav__nav li {
       float: left;
       width: auto; }
-    .ec-itemNav__nav li a {
+    .itemNav__nav li a {
       text-align: center;
       border-bottom: none; }
-    .ec-itemNav__nav li ul {
+    .itemNav__nav li ul {
       display: block;
       z-index: 100;
       position: absolute; }
-    .ec-itemNav__nav li ul li {
+    .itemNav__nav li ul li {
       overflow: hidden;
       height: 0; }
-  .ec-itemNav__nav > li:hover > ul > li {
+  .itemNav__nav > li:hover > ul > li {
     overflow: visible;
     height: auto; }
-  .ec-itemNav__nav li ul li ul:before {
+  .itemNav__nav li ul li ul:before {
     content: "\f054";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -7696,21 +7679,23 @@ Styleguide 22.1
     top: 19px;
     right: auto;
     left: -20px; }
-  .ec-itemNav__nav li ul li:hover > ul > li {
+  .itemNav__nav li ul li:hover > ul > li {
     overflow: visible;
     height: auto;
     width: auto; }
-    .ec-drawerRole {
+    .drawerRole {
       display: none; }
-    .ec-drawerRoleClose {
+    .drawerRoleClose {
       display: none; }
-    .ec-drawerRole.is_active {
+    .drawerRole.is_active {
       display: none; }
-    .ec-drawerRoleClose.is_active {
+    .drawerRoleClose.is_active {
       display: none; }
-    .ec-overlayRole {
+    .overlayRole {
       display: none; }
-    .have_curtain .ec-overlayRole {
+    .have_curtain .overlayRole {
+      display: none; }
+    .headerNav__navSP {
       display: none; }
     .ec-footerRole {
       padding-top: 40px;
