@@ -7,25 +7,22 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
-*/
+ */
 
 $(function() {
+    $(".pagetop").hide();
 
-    $('.pagetop').hide();
-
-    $(window).on('scroll', function() {
+    $(window).on("scroll", function() {
         // ページトップフェードイン
         if ($(this).scrollTop() > 300) {
-            $('.pagetop').fadeIn();
+            $(".pagetop").fadeIn();
         } else {
-            $('.pagetop').fadeOut();
+            $(".pagetop").fadeOut();
         }
 
         // PC表示の時のみに適用
         if (window.innerWidth > 767) {
-
-            if ($('.ec-orderRole').length) {
-
+            if ($(".ec-orderRole").length) {
                 var side = $(".ec-orderRole__summary"),
                     wrap = $(".ec-orderRole").first(),
                     min_move = wrap.offset().top,
@@ -35,75 +32,83 @@ $(function() {
                 var scrollTop = $(window).scrollTop();
                 if (scrollTop > min_move && scrollTop < max_move) {
                     var margin_top = scrollTop - min_move;
-                    side.css({"margin-top": margin_top});
+                    side.css({ "margin-top": margin_top });
                 } else if (scrollTop < min_move) {
-                    side.css({"margin-top": 0});
+                    side.css({ "margin-top": 0 });
                 } else if (scrollTop > max_move) {
-                    side.css({"margin-top": margin_bottom});
+                    side.css({ "margin-top": margin_bottom });
                 }
-
             }
         }
         return false;
     });
 
-
-    $('.ec-headerNavSP').on('click', function() {
-        $('.ec-layoutRole').toggleClass('is_active');
-        $('.ec-drawerRole').toggleClass('is_active');
-        $('.ec-drawerRoleClose').toggleClass('is_active');
-        $('body').toggleClass('have_curtain');
+    $(".ec-headerNavSP").on("click", function() {
+        $(".ec-layoutRole").toggleClass("is_active");
+        $(".ec-drawerRole").toggleClass("is_active");
+        $(".ec-drawerRoleClose").toggleClass("is_active");
+        $("body").toggleClass("have_curtain");
     });
 
-    $('.ec-overlayRole').on('click', function() {
-        $('body').removeClass('have_curtain');
-        $('.ec-layoutRole').removeClass('is_active');
-        $('.ec-drawerRole').removeClass('is_active');
-        $('.ec-drawerRoleClose').removeClass('is_active');
+    $(".ec-overlayRole").on("click", function() {
+        $("body").removeClass("have_curtain");
+        $(".ec-layoutRole").removeClass("is_active");
+        $(".ec-drawerRole").removeClass("is_active");
+        $(".ec-drawerRoleClose").removeClass("is_active");
     });
 
-    $('.ec-drawerRoleClose').on('click', function() {
-        $('body').removeClass('have_curtain');
-        $('.ec-layoutRole').removeClass('is_active');
-        $('.ec-drawerRole').removeClass('is_active');
-        $('.ec-drawerRoleClose').removeClass('is_active');
+    $(".ec-drawerRoleClose").on("click", function() {
+        $("body").removeClass("have_curtain");
+        $(".ec-layoutRole").removeClass("is_active");
+        $(".ec-drawerRole").removeClass("is_active");
+        $(".ec-drawerRoleClose").removeClass("is_active");
     });
 
     // TODO: カート展開時のアイコン変更処理
-    document.querySelector('.ec-headerRole__cart').addEventListener('click', function() {
-        document.querySelector('.ec-cartNaviIsset').classList.toggle('is-active');
-        document.querySelector('.ec-cartNaviNull').classList.toggle('is-active');
-    });
-    [document.querySelector('.ec-headerRole__cart'),document.querySelector('.ec-cartNavi--cancel')].forEach(function(element){
-        element.addEventListener('click', function() {
-            document.querySelector('.ec-cartNaviIsset').classList.toggle('is-active');
-            document.querySelector('.ec-cartNaviNull').classList.toggle('is-active');
-        });
-    });
-
-    $('.ec-orderMail__link').on('click', function() {
-        $(this).siblings('.ec-orderMail__body').slideToggle();
-    });
-
-    $('.ec-orderMail__close').on('click', function() {
-        $(this).parent().slideToggle();
+    [
+        document.querySelector(".ec-headerRole__cart"),
+        document.querySelector(".ec-cartNavi--cancel")
+    ].forEach(function(element) {
+        element &&
+            element.addEventListener("click", function() {
+                document.querySelector(".ec-cartNaviIsset") &&
+                    document
+                        .querySelector(".ec-cartNaviIsset")
+                        .classList.toggle("is-active");
+                document.querySelector(".ec-cartNaviNull") &&
+                    document
+                        .querySelector(".ec-cartNaviNull")
+                        .classList.toggle("is-active");
+            });
     });
 
-    $('.is_inDrawer').each(function() {
+    $(".ec-orderMail__link").on("click", function() {
+        $(this)
+            .siblings(".ec-orderMail__body")
+            .slideToggle();
+    });
+
+    $(".ec-orderMail__close").on("click", function() {
+        $(this)
+            .parent()
+            .slideToggle();
+    });
+
+    $(".is_inDrawer").each(function() {
         var html = $(this).html();
-        $(html).appendTo('.ec-drawerRole');
+        $(html).appendTo(".ec-drawerRole");
     });
 
-    $('.ec-blockTopBtn').on('click', function() {
-        $('html,body').animate({'scrollTop': 0}, 500);
+    $(".ec-blockTopBtn").on("click", function() {
+        $("html,body").animate({ scrollTop: 0 }, 500);
     });
 
     // スマホのドロワーメニュー内の下層カテゴリ表示
     // TODO FIXME スマホのカテゴリ表示方法
-    $('.ec-itemNav ul a').click(function() {
+    $(".ec-itemNav ul a").click(function() {
         var child = $(this).siblings();
         if (child.length > 0) {
-            if (child.is(':visible')) {
+            if (child.is(":visible")) {
                 return true;
             } else {
                 child.slideToggle();
@@ -112,64 +117,62 @@ $(function() {
         }
     });
 
-    // イベント実行時のオーバーレイ処理
-    // classに「load-overlay」が記述されていると画面がオーバーレイされる
-    $('.load-overlay').on({
-        click: function() {
-            loadingOverlay();
-        },
-        change: function() {
-            loadingOverlay();
-        }
-    });
+    // Handle overlay background when trigger action in load-overlay class
+    const loadOverlay = document.querySelector('.load-overlay');
+    loadOverlay && loadOverlay.addEventListener('click', loadingOverlay);
+    loadOverlay && loadOverlay.addEventListener('change', loadingOverlay);
 
     // submit処理についてはオーバーレイ処理を行う
-    $(document).on('click', 'input[type="submit"], button[type="submit"]', function() {
+    $(document).on(
+        "click",
+        'input[type="submit"], button[type="submit"]',
+        function() {
+            // html5 validate対応
+            var valid = true;
+            var form = getAncestorOfTagType(this, "FORM");
 
-        // html5 validate対応
-        var valid = true;
-        var form = getAncestorOfTagType(this, 'FORM');
+            if (
+                typeof form !== "undefined" &&
+                !form.hasAttribute("novalidate")
+            ) {
+                // form validation
+                if (typeof form.checkValidity === "function") {
+                    valid = form.checkValidity();
+                }
+            }
 
-        if (typeof form !== 'undefined' && !form.hasAttribute('novalidate')) {
-            // form validation
-            if (typeof form.checkValidity === 'function') {
-                valid = form.checkValidity();
+            if (valid) {
+                loadingOverlay();
             }
         }
-
-        if (valid) {
-            loadingOverlay();
-        }
-    });
+    );
 });
 
-$(window).on('pageshow', function() {
-    loadingOverlay('hide');
-});
-
-/**
- * オーバーレイ処理を行う関数
- */
+// Create a overlay to cover page  
 function loadingOverlay(action) {
-
-    if (action == 'hide') {
-        $('.bg-load-overlay').remove();
-    } else {
-        $overlay = $('<div class="bg-load-overlay">');
-        $('body').append($overlay);
-    }
+  if (action == "hide") {
+    const overLayNode =  document.querySelector('.bg-load-overlay');
+    overLayNode && overLayNode.parentNode.removeChild(overLayNode);
+  } else {
+      let overLayNode = document.createElement("div"); 
+      overLayNode.classList.add('bg-load-overlay');
+      document.body.appendChild(overLayNode);
+  }
 }
+
+$(window).on("pageshow", function() {
+    loadingOverlay("hide");
+});
 
 /**
  *  要素FORMチェック
  */
 function getAncestorOfTagType(elem, type) {
-
     while (elem.parentNode && elem.tagName !== type) {
         elem = elem.parentNode;
     }
 
-    return (type === elem.tagName) ? elem : undefined;
+    return type === elem.tagName ? elem : undefined;
 }
 
 // anchorをクリックした時にformを裏で作って指定のメソッドでリクエストを飛ばす
@@ -181,35 +184,37 @@ function getAncestorOfTagType(elem, type) {
 // data-message : 確認ダイアログを出す際のメッセージをデフォルトから変更する
 //
 $(function() {
-    var createForm = function(action, data) {
-        var $form = $('<form action="' + action + '" method="post"></form>');
-        for (input in data) {
-            if (data.hasOwnProperty(input)) {
-                $form.append('<input name="' + input + '" value="' + data[input] + '">');
-            }
+    const createForm = function(action, data) {
+        let form = document.createElement('form');
+        form.setAttribute('action', action);
+        form.setAttribute('method', 'post');
+        for (const input in data) {
+          form.innerHTML += '<input name="' + input + '" value="' + data[input] + '">'
         }
-        return $form;
+        return form;
     };
-
-    $('a[token-for-anchor]').click(function(e) {
+    document.querySelectorAll('a[token-for-anchor]').forEach(function(element){
+      element.addEventListener('click', function(e) {
         e.preventDefault();
-        var $this = $(this);
-        var data = $this.data();
-        if (data.confirm != false) {
-            if (!confirm(data.message ? data.message : eccube_lang['common.delete_confirm'] )) {
-                return false;
-            }
+        const {method, message, confirm} = element.dataset;
+        /*
+         *Confirm deleting cart?
+         * - If no, return
+         * - If yes, continue
+         */
+        if (!confirm || confirm!='false') {
+            const isDelete = window.confirm(message?message:eccube_lang["common.delete_confirm"]);
+            if(!isDelete) return;
         }
-
-        // 削除時はオーバーレイ処理を入れる
+        // Make a overlay background when trigger action
         loadingOverlay();
-
-        var $form = createForm($this.attr('href'), {
-            _token: $this.attr('token-for-anchor'),
-            _method: data.method
-        }).hide();
-
-        $('body').append($form); // Firefox requires form to be on the page to allow submission
-        $form.submit();
+        const form = createForm(element.href, {
+            _token: element.getAttribute("token-for-anchor"),
+            _method: method
+        });
+        form.style.display = 'none';
+        document.body.appendChild(form); // Firefox requires form to be on the page to allow submission
+        form.submit();
     });
+  });
 });

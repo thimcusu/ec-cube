@@ -4,7 +4,9 @@
 {% for error in app.session.flashbag.get('eccube.front.error') %}
     <div class="ec-cartRole__error">
         <div class="ec-alert-warning">
-            <div class="ec-alert-warning__icon"><img src="{{ asset('assets/icon/exclamation-white.svg') }}"></div>
+            <div class="ec-alert-warning__icon">
+                <img src="{{ asset('assets/icon/exclamation-white.svg') }}" />
+            </div>
             <div class="ec-alert-warning__text">
                 {{ error|trans|nl2br }}
             </div>
@@ -12,15 +14,20 @@
     </div>
 {% endfor %}
 {% if error_only == false %}
-{% for error in app.session.flashbag.get('eccube.front.warning') %}
-    <div class="ec-cartRole__error">
-        <div class="ec-alert-warning">
-            <div class="ec-alert-warning__icon"><img src="{{ asset('assets/icon/exclamation-white.svg') }}">
-            </div>
-            <div class="ec-alert-warning__text">
-                {{ error|trans|nl2br }}
+    {% for error in app.session.flashbag.get('eccube.front.warning') %}
+        <div class="ec-cartRole__error">
+            <div class="ec-alert-warning">
+                <div class="ec-alert-warning__icon">
+                    <img src="{{
+                        asset(
+                            'assets/icon/exclamation-white.svg'
+                        )
+                        }}" />
+                </div>
+                <div class="ec-alert-warning__text">
+                    {{ error|trans|nl2br }}
+                </div>
             </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
 {% endif %}
