@@ -17,7 +17,7 @@ sg-wrapper:
 Styleguide 12.6.1
 */
 
-.ec-newItemRole {
+.news-item{
   padding: 40px 0;
   @include media_desktop {
     padding: 60px 0;
@@ -48,7 +48,7 @@ Styleguide 12.6.1
       text-decoration: none;
     }
   }
-  & &__listItem {
+  & &__item{
     margin-bottom: 4%;
     width: 48%;
     height: auto;
@@ -76,10 +76,7 @@ Styleguide 12.6.1
       }
     }
   }
-  & &__listItemHeading {
-    margin-top: calc(45% - 20px);
-  }
-  & &__listItemTitle {
+  & &__item__title {
     margin: 8px 0;
     font-size: 14px;
     font-weight: bold;
@@ -89,7 +86,7 @@ Styleguide 12.6.1
     }
   }
 
-  & &__listItemPrice {
+  & &__item__price {
     font-size: 12px;
   }
   & &__more {

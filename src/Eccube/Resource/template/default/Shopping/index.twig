@@ -358,91 +358,87 @@ file that was distributed with this source code.
 
 {% block javascript %}
     <script>
-        $(function() {
-            function redirectCallback(){
-                loadingOverlay();
-                //const redirectInput = document.querySelector('#shopping_order_redirect_to');
-                //redirectInput.setAttribute('data-path',this.getAttribute('data-path'));
-                //const formShopping = document.querySelector('#shopping-form');
-                //console.log(formShopping.outerHTML);
-                //formShopping.setAttribute('action', '{{ url("shopping_redirect_to") }}');
-                //console.log(typeof formShopping);
-                //console.log(redirectInput.outerHTML);
-                //formShopping.submit();
-                setTimeout(function () {
-                    loadingOverlay("hide");
-                }, 2000);
-            };
-            document.querySelectorAll('[data-trigger]').forEach(function(e){
-              const typeEventTriggered = e.getAttribute('data-trigger');
-              e.addEventListener(typeEventTriggered, redirectCallback);
-            });
-
-            {% if is_granted('ROLE_USER') == false %}
-            var edit = $('.customer-edit');
-            var hidden = $('.customer-in');
-            var form = $('.customer-form');
-
-            $('#customer').click(function() {
-                $(edit).each(function(index) {
-                    var name = $(this).text();
-                    var input = $('<input id="edit' + index + '" type="text" />').val(name);
-                    $(form[index]).empty().append(input);
-                });
-
-                $('.non-customer-display').hide();
-                $('.non-customer-edit').show();
-                $('.mod-button').show();
-            });
-
-            $('#customer-ok').click(function() {
-                $(form).each(function(index) {
-                    $(hidden[index]).val($(form[index]).children('input').val());
-                });
-
-                var postData = {};
-                $(hidden).each(function() {
-                    postData[$(this).attr('name')] = $(this).val();
-                });
-
-                loadingOverlay();
-
-                $.ajax({
-                    url: "{{ url('shopping_customer') }}",
-                    type: 'POST',
-                    data: postData,
-                    dataType: 'json'
-                }).done(function(data) {
-                    if (data.status == 'OK') {
-                        $(form).each(function(index) {
-                            $(edit[index]).empty().text($(form[index]).children('input').val());
-                            $(form[index]).empty();
-                        });
-
-                        // kana field
-                        $(edit[2]).empty().text(data.kana01);
-                        $(edit[3]).empty().text(data.kana02);
-                        $('#customer-kana01').val(data.kana01);
-                        $('#customer-kana02').val(data.kana02);
-                    }
-                }).fail(function() {
-                    alert('更新に失敗しました。入力内容を確認してください。');
-                }).always(function(data) {
-                    // overlayを無効
-                    loadingOverlay('hide');
-                });
-
-                $('.non-customer-display').show();
-                $('.non-customer-edit').hide();
-                $('.mod-button').hide();
-            });
-
-            $('#customer-cancel').click(function() {
-                $('.non-customer-display').show();
-                $('.non-customer-edit').hide();
-                $('.mod-button').hide();
-            });
-            {% endif %}
+        function redirectCallback(){
+          if(this.tagName!=='BUTTON') return;
+          loadingOverlay();
+          const redirectInput = document.querySelector('#shopping_order_redirect_to');
+          redirectInput.value = this.getAttribute('data-path');
+          const formShopping = document.querySelector('#shopping-form');
+          formShopping.setAttribute('action', '{{ url("shopping_redirect_to") }}');
+          formShopping.submit();
+          setTimeout(function () {
+            loadingOverlay("hide");
+          }, 2000);
+        };
+        document.querySelectorAll('[data-trigger]').forEach(function(element){
+          const typeEventTriggered = element.getAttribute('data-trigger');
+          element.addEventListener(typeEventTriggered, redirectCallback);
         });
+
+        {% if is_granted('ROLE_USER') == false %}
+          var edit = $('.customer-edit');
+          var hidden = $('.customer-in');
+          var form = $('.customer-form');
+
+          $('#customer').click(function() {
+              $(edit).each(function(index) {
+                  var name = $(this).text();
+                  var input = $('<input id="edit' + index + '" type="text" />').val(name);
+                  $(form[index]).empty().append(input);
+              });
+
+              $('.non-customer-display').hide();
+              $('.non-customer-edit').show();
+              $('.mod-button').show();
+          });
+
+          $('#customer-ok').click(function() {
+              $(form).each(function(index) {
+                  $(hidden[index]).val($(form[index]).children('input').val());
+              });
+
+              var postData = {};
+              $(hidden).each(function() {
+                  postData[$(this).attr('name')] = $(this).val();
+              });
+
+              loadingOverlay();
+
+              $.ajax({
+                  url: "{{ url('shopping_customer') }}",
+                  type: 'POST',
+                  data: postData,
+                  dataType: 'json'
+              }).done(function(data) {
+                  if (data.status == 'OK') {
+                      $(form).each(function(index) {
+                          $(edit[index]).empty().text($(form[index]).children('input').val());
+                          $(form[index]).empty();
+                      });
+
+                      // kana field
+                      $(edit[2]).empty().text(data.kana01);
+                      $(edit[3]).empty().text(data.kana02);
+                      $('#customer-kana01').val(data.kana01);
+                      $('#customer-kana02').val(data.kana02);
+                  }
+              }).fail(function() {
+                  alert('更新に失敗しました。入力内容を確認してください。');
+              }).always(function(data) {
+                  // overlayを無効
+                  loadingOverlay('hide');
+              });
+
+              $('.non-customer-display').show();
+              $('.non-customer-edit').hide();
+              $('.mod-button').hide();
+          });
+
+          $('#customer-cancel').click(function() {
+              $('.non-customer-display').show();
+              $('.non-customer-edit').hide();
+              $('.mod-button').hide();
+          });
+        {% endif %}
     </script>
 {% endblock javascript %}

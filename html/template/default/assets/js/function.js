@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-$(function() {
+window.addEventListener('DOMContentLoaded', function(){
     $(".pagetop").hide();
 
     $(window).on("scroll", function() {
@@ -64,24 +64,6 @@ $(function() {
         $(".ec-drawerRoleClose").removeClass("is_active");
     });
 
-    // TODO: カート展開時のアイコン変更処理
-    [
-        document.querySelector(".ec-headerRole__cart"),
-        document.querySelector(".ec-cartNavi--cancel")
-    ].forEach(function(element) {
-        element &&
-            element.addEventListener("click", function() {
-                document.querySelector(".ec-cartNaviIsset") &&
-                    document
-                        .querySelector(".ec-cartNaviIsset")
-                        .classList.toggle("is-active");
-                document.querySelector(".ec-cartNaviNull") &&
-                    document
-                        .querySelector(".ec-cartNaviNull")
-                        .classList.toggle("is-active");
-            });
-    });
-
     $(".ec-orderMail__link").on("click", function() {
         $(this)
             .siblings(".ec-orderMail__body")
@@ -121,31 +103,57 @@ $(function() {
     const loadOverlay = document.querySelector('.load-overlay');
     loadOverlay && loadOverlay.addEventListener('click', loadingOverlay);
     loadOverlay && loadOverlay.addEventListener('change', loadingOverlay);
-
-    // submit処理についてはオーバーレイ処理を行う
-    $(document).on(
-        "click",
-        'input[type="submit"], button[type="submit"]',
-        function() {
-            // html5 validate対応
-            var valid = true;
-            var form = getAncestorOfTagType(this, "FORM");
-
-            if (
-                typeof form !== "undefined" &&
-                !form.hasAttribute("novalidate")
-            ) {
-                // form validation
-                if (typeof form.checkValidity === "function") {
-                    valid = form.checkValidity();
-                }
-            }
-
-            if (valid) {
-                loadingOverlay();
-            }
+  
+    document.querySelectorAll('.js-submit[type="submit"]').forEach(function(element){
+      element.addEventListener('click', function(){
+        var valid = true;
+        var form = getAncestorOfTagType(element, 'FORM');
+        form && !form.hasAttribute('novalidate') && (valid = form.checkValidity());
+        if (valid) {
+            loadingOverlay();
         }
-    );
+      });
+    });
+    // Toggle header Cart
+    document.querySelector(".js-collapsible").addEventListener('click',function() {
+      this &&
+        this.querySelector(".js-expand").classList.toggle("u-active");
+    });
+
+    const createForm = function(action, data) {
+      let form = document.createElement('form');
+      form.setAttribute('action', action);
+      form.setAttribute('method', 'post');
+      for (const input in data) {
+        form.innerHTML += '<input name="' + input + '" value="' + data[input] + '">'
+      }
+      return form;
+  };
+
+  document.querySelectorAll('a[token-for-anchor]').forEach(function(element){
+    element.addEventListener('click', function(e) {
+      e.preventDefault();
+      const {method, message, confirm} = element.dataset;
+      /*
+       *Confirm deleting cart?
+       * - If no, return
+       * - If yes, continue
+       */
+      if (!confirm || confirm!='false') {
+          const isDelete = window.confirm(message?message:eccube_lang["common.delete_confirm"]);
+          if(!isDelete) return;
+      }
+      // Make a overlay background when trigger action
+      loadingOverlay();
+      const form = createForm(element.href, {
+          _token: element.getAttribute("token-for-anchor"),
+          _method: method
+      });
+      form.style.display = 'none';
+      document.body.appendChild(form); // Firefox requires form to be on the page to allow submission
+      form.submit();
+  });
+});
 });
 
 // Create a overlay to cover page  
@@ -183,38 +191,4 @@ function getAncestorOfTagType(elem, type) {
 // data-confirm : falseを定義すると確認ダイアログを出さない。デフォルトはダイアログを出す
 // data-message : 確認ダイアログを出す際のメッセージをデフォルトから変更する
 //
-$(function() {
-    const createForm = function(action, data) {
-        let form = document.createElement('form');
-        form.setAttribute('action', action);
-        form.setAttribute('method', 'post');
-        for (const input in data) {
-          form.innerHTML += '<input name="' + input + '" value="' + data[input] + '">'
-        }
-        return form;
-    };
-    document.querySelectorAll('a[token-for-anchor]').forEach(function(element){
-      element.addEventListener('click', function(e) {
-        e.preventDefault();
-        const {method, message, confirm} = element.dataset;
-        /*
-         *Confirm deleting cart?
-         * - If no, return
-         * - If yes, continue
-         */
-        if (!confirm || confirm!='false') {
-            const isDelete = window.confirm(message?message:eccube_lang["common.delete_confirm"]);
-            if(!isDelete) return;
-        }
-        // Make a overlay background when trigger action
-        loadingOverlay();
-        const form = createForm(element.href, {
-            _token: element.getAttribute("token-for-anchor"),
-            _method: method
-        });
-        form.style.display = 'none';
-        document.body.appendChild(form); // Firefox requires form to be on the page to allow submission
-        form.submit();
-    });
-  });
-});
+

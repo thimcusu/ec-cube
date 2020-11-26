@@ -215,26 +215,7 @@ file that was distributed with this source code.
             </div>
         {% endif %}
     </div>
-{% endblock %}
-{% block javascript %}
-    <script>
-        eccube.classCategories = {{ class_categories_as_json(Product)|raw }};
-        // 規格2に選択肢を割り当てる。
-        function fnSetClassCategories(form, classcat_id2_selected) {
-            var $form = $(form);
-            var product_id = $form.find('input[name=product_id]').val();
-            var $sele1 = $form.find('select[name=classcategory_id1]');
-            var $sele2 = $form.find('select[name=classcategory_id2]');
-            eccube.setClassCategories($form, product_id, $sele1, $sele2, classcat_id2_selected);
-        }
-        {% if form.classcategory_id2 is defined %}
-        fnSetClassCategories(
-            $('#form1'), {{ form.classcategory_id2.vars.value|json_encode|raw }}
-        );
-        {% elseif form.classcategory_id1 is defined %}
-        eccube.checkStock($('#form1'), {{ Product.id }}, {{ form.classcategory_id1.vars.value|json_encode|raw }}, null);
-        {% endif %}
-    </script>
+    {% block javascripts %}
     <script>
         $(function() {
             // bfcache無効化
@@ -281,6 +262,7 @@ file that was distributed with this source code.
                 'Content-Type': 'application/x-www-form-urlencoded'
               }
             };
+            console.log(body);
             document.querySelector('.add-cart').setAttribute('disabled', true);
             // Call API post cart
             fetch(formElement.action, fetchData)
@@ -292,7 +274,7 @@ file that was distributed with this source code.
                 return res.text();
               })
               .then(function(html){
-                  $('.ec-headerRole__cart').innerHTML = html; 
+                  $('.headerNav__cart').innerHTML = html; 
               });
               
             })
@@ -309,4 +291,5 @@ file that was distributed with this source code.
             $('.ec-modal').hide()
         });
     </script>
+  {% endblock %}
 {% endblock %}

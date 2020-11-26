@@ -17,7 +17,7 @@ sg-wrapper:
 Styleguide 12.5.1
 */
 
-.ec-topicRole {
+.topic{
   padding: 40px 0;
   background: #F8F8F8;
 
@@ -34,7 +34,7 @@ Styleguide 12.5.1
     }
 
   }
-  & &__listItem {
+  & &__item {
     margin-bottom: 20px;
     width: 100%;
     height: auto;
@@ -48,7 +48,7 @@ Styleguide 12.5.1
     }
 
   }
-  & &__listItemTitle {
+  & &__item-title {
     margin-top: .5em;
     font-size: 14px;
     color: black;

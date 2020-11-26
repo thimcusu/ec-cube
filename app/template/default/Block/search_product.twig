@@ -1,6 +1,6 @@
 {% form_theme form 'Form/form_div_layout.twig' %}
 
-<div class="headerNav__search">
+<div class="header__search">
 	<form
 		method="get" class="searchform" action="{{ path('product_list') }}">
 		{# <div class="headerNav__search__category">
@@ -8,11 +8,11 @@
 						{{ form_widget(form.category_id, {'id': null, 'attr': {'class': 'category_id'}}) }}
 					</div>
 				</div> #}
-		<div class="headerNav__search__keyword">
+		<div class="header__search__keyword">
 			<div class="input">
 				{{ form_widget(form.name, {'id': null, 'attr': {'class': 'search-name', 'placeholder' : 'common.search_keyword' }}
 				) }}
-				<button class="headerNav__search__keywordBtn" type="submit">
+				<button class="header__search__keywordBtn js-submit" type="submit">
 					<div class="icon">
 						<img src="{{ asset('assets/icon/search-dark.svg') }}" alt="">
 					</div>

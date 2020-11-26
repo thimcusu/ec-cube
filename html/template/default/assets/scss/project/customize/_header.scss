@@ -3,25 +3,6 @@
 @import "../../mixins/clearfix";
 @import "../../mixins/animation";
 
-/*
-ヘッダー
-
-ヘッダー用のプロジェクトコンポーネントを提供します。
-
-ex [トップページ　ヘッダー](http://demo3.cube.net/)
-
-Markup:
-include /assets/tmpl/elements/11.2.header.pug
-include /assets/tmpl/elements/11.3.headerNavi.pug
-include /assets/tmpl/elements/11.4.categoryNavi.pug
-+b.layoutRole
-  +e.header
-    +headerRole
-    +headerNaviRole
-    +categoryNaviRole
-
-Styleguide 11.2
-*/
 .layoutRole {
   width: 100%;
   transition: transform 0.3s;
@@ -65,28 +46,44 @@ Styleguide 11.2
 
 .header {
   @include container;
-  padding-top: 15px;
-  position: relative;
-  &::before {
-    display: none;
-  }
-  &:after {
-    display: none;
-  }
+  @include flex(row, flex-start, center);
+  background-color: #F0F0F0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 110px;
   @include media_desktop {
     @include clearfix;
+    padding-top: 40px;
+    padding-bottom: 20px;
   }
-  &::before {
-    display: none;
+  &__logo{
+    height: 100%;
+    width: fit-content;
+    h1 {
+      margin: 0;
+      padding: 0;
+      line-height: unset;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 30px;
+      font-weight: bold;
+      color: #090909;
+      @include media_desktop() {
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: auto;
-  @include media_desktop {
-    width: 100%;
-    @include clearfix;
-  }
+  &__search {
+    display: inline-block;
+    margin-left: 40px;
+    max-width: 530px;
+    height: 100%;
+    @include flex(row,null,center);
+    @include reset_link;
 }
 
 .headerNav {
@@ -106,15 +103,6 @@ Styleguide 11.2
   &__left {
     width: calc(100% / 3);
   }
-
-  &__search {
-    display: none;
-    @include media_desktop() {
-      display: inline-block;
-      margin-top: 10px;
-      @include reset_link;
-    }
-  }
   &__right {
     width: calc(100% * 2 / 3);
     display: flex;
@@ -126,9 +114,12 @@ Styleguide 11.2
     display: inline-block;
     @include reset_link;
   }
-  &__cart {
+  .cart {
     display: inline-block;
     @include reset_link;
+    @include media_desktop() {
+      position: relative;
+    }
   }
   &__item {
     margin-left: 0;
@@ -156,20 +147,7 @@ Styleguide 11.2
       display: inline-block;
     }
   }
-  &__title {
-    width: 100%;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #525263;
-    a {
-      width: 100%;
-      font-size: 18px;
-      line-height: 1.4;
-      color: #525263;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
+  
   &__navSP {
     display: block;
     position: absolute;
@@ -227,103 +205,28 @@ Styleguide 11.2
   }
 }
 
-.headerNav__search {
+.header__search {
   @include clearfix;
   width: 100%;
-  &__category {
-    float: none;
-    @include media_desktop {
-      float: left;
-      width: 43%;
-    }
-    .select {
-      overflow: hidden;
-      width: 100%;
-      margin: 0;
-      text-align: center;
-
-      select {
-        width: 100%;
-        cursor: pointer;
-        padding: 8px 24px 8px 8px;
-        text-indent: 0.01px;
-        text-overflow: ellipsis;
-        border: none;
-        outline: none;
-        background: transparent;
-        background-image: none;
-        box-shadow: none;
-        appearance: none;
-        color: #fff;
-
-        @include media_desktop {
-          max-width: 165px;
-          height: 36px;
-        }
-
-        option {
-          color: #000;
-        }
-
-        &::-ms-expand {
-          display: none;
-        }
-      }
-
-      &.select_search {
-        position: relative;
-        border: 0;
-        background: #000;
-        color: #fff;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-
-        @include media_desktop {
-          border-top-right-radius: inherit;
-          border-top-left-radius: 50px;
-          border-bottom-left-radius: 50px;
-        }
-
-        &::before {
-          position: absolute;
-          top: 0.8em;
-          right: 0.4em;
-          width: 0;
-          height: 0;
-          padding: 0;
-          content: "";
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-          border-top: 6px solid #fff;
-          pointer-events: none;
-        }
-      }
-    }
-  }
   &__keyword {
     position: relative;
     color: $clrDarkGray;
-    border: 1px solid #ccc;
-    background-color: #f6f6f6;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-
-    @include media_desktop {
-      float: right;
-      width: 100%;
-      border-bottom-left-radius: inherit;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px;
+    background-color: #F8F8F8;
+    border-radius: 50px;
+    max-width: 530px;
+    .input {
+      height: 100%;
     }
     input[type="search"] {
       width: 100%;
-      height: 34px;
+      height: 40px;
       font-size: 16px;
       border: 0 none;
       padding: 0.5em 50px 0.5em 1em;
       box-shadow: none;
       background: none;
       box-sizing: border-box;
+      outline: 0;
       margin-bottom: 0;
       @include media_desktop {
         font-size: 12px;
@@ -346,7 +249,6 @@ Styleguide 11.2
     z-index: 1;
   }
 }
-
 /*
 ヘッダー：カテゴリナビ
 
@@ -364,158 +266,92 @@ sg-wrapper:
 
 Styleguide 11.2.5
 */
-.categoryNaviRole {
-  @include container;
-  display: none;
-  @include media_desktop() {
-    display: block;
-    width: 100%;
-    @include reset_link;
+.category-navi {
+  height: 100%;
+  border: 1px solid rgba(0,0,0,.25);
+  @include reset_link;
+  a{
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    height: 32px;
+    padding: 5px;
+    font-size: 16px;
+    font{
+      text-align:center;
+    }
+  }
+  & > ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
   }
 }
 
-.itemNav {
+.item-nav {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  text-align: center;
+  text-align: left;
 }
 
-.itemNav__nav {
-  display: block;
+.item-nav__nav {
+  display: inline-block;
   margin: 0 auto;
   padding: 0;
   width: auto;
   height: auto;
-  list-style-type: none;
   text-align: center;
   vertical-align: bottom;
-  @include media_desktop {
+  .has-sub {
+    &:after {
+      content: '';
+      position: absolute;
+      right: 10px;
+      width: 6px;
+      height: 6px;
+      top: 15px;
+      transform: translateY(-75%) rotate(45deg);
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+  }
+  li {
+    float: none;
     display: inline-block;
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    margin-top: -1px;
+    width: 100%;
+    text-align: left;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    @include media_desktop {
+      float: left;
+    }
+    ul {
+      width: 100%;
+      height: 0;
+      transition: all 0.5s ease;
+      overflow: hidden;
+      z-index: 1;
+      justify-content: center;
+      & > :last-child {
+        border-bottom: none;
+      }
+    }
   }
-}
-
-.itemNav__nav li {
-  float: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  @include media_desktop {
-    float: left;
-    width: auto;
+  li:hover{
   }
-}
-
-.itemNav__nav li a {
-  display: block;
-  border-bottom: 1px solid #e8e8e8;
-  margin: 0;
-  padding: 16px;
-  height: auto;
-  color: #2e3233;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: left;
-  background: #fff;
-  border-bottom: 1px solid #e8e8e8;
-  @include media_desktop {
-    text-align: center;
-    border-bottom: none;
-  }
-}
-
-.itemNav__nav li ul {
-  display: none;
-  z-index: 0;
-  margin: 0;
-  padding: 0;
-  min-width: 200px;
-  list-style: none;
-  position: static;
-  top: 100%;
-  left: 0;
-  @include media_desktop {
-    display: block;
-    z-index: 100;
-    position: absolute;
-  }
-}
-
-.itemNav__nav li ul li {
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  transition: 0.3s;
-  @include media_desktop {
-    overflow: hidden;
-    height: 0;
-  }
-}
-
-.itemNav__nav li ul li a {
-  border-bottom: 1px solid #e8e8e8;
-  padding: 16px 22px 16px 16px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-align: left;
-  background: black;
-}
-
-.itemNav__nav > li:hover > a {
-  background: #fafafa;
-}
-
-.itemNav__nav > li:hover li:hover > a {
-  background: #333;
-}
-
-.itemNav__nav > li:hover > ul > li {
-  @include media_desktop {
-    overflow: visible;
+  ul.active {
     height: auto;
+    border-top: 1px solid rgba(0,0,0,.25);
   }
-}
-
-.itemNav__nav li ul li ul {
-  top: 0;
-  left: 100%;
-  width: auto;
-}
-
-.itemNav__nav li ul li ul:before {
-  @include media_desktop {
-    content: "\f054";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 12px;
-    color: white;
-    position: absolute;
-    top: 19px;
-    right: auto;
-    left: -20px;
+  a:hover{
+    color: black;
+    transition: 0.2s all ease;
   }
-}
-
-.itemNav__nav li ul li:hover > ul > li {
-  @include media_desktop {
-    overflow: visible;
-    height: auto;
-    width: auto;
-  }
-}
-
-.itemNav__nav li ul li ul li a {
-  background: #7d7d7d;
-}
-
-.itemNav__nav li:hover ul li ul li a:hover {
-  background: #333;
 }
 
 /*

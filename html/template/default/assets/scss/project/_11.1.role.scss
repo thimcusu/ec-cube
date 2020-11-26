@@ -39,5 +39,33 @@ Styleguide 11.1.2
       padding: 8px 0 18px;
     }
   }
-
+}
+.main{
+  width: 100%;
+  transition: transform 0.3s;
+  background: #fff;
+}
+.layout__left{
+  width: 20%;
+  height: inherit;
+}
+.layout__main{
+  width: 100%;
+}
+.layout__contents{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1150px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.layout__main-bottom{
+  clear: both;
+  width: 100%;
+  margin-top: 20px;
+}
+.layout__main-top:not(:empty){
+  float: left;
+  width: 20%;
+  height: 463px;
 }

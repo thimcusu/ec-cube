@@ -8,53 +8,59 @@ http://www.ec-cube.co.jp/
 For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 #}
-
 <div class="ec-role">
-	<div class="ec-newItemRole">
-		<div class="ec-newItemRole__list">
-			<div class="ec-newItemRole__listItem">
-				<a href="{{ url('product_detail', {'id': '1'}) }}">
-					<div class="ec-newItemRole__extra newLabel">
-						<a href="{{ url('product_list') }}">New</a>
-					</div>
-					<img src="{{ asset(''|no_image_product , 'save_image') }}">
-					<p class="ec-newItemRole__listItemTitle">{{ 'front.block.new_item.item_1_name'|trans }}</p>
-					<p class="ec-newItemRole__listItemPrice">{{ 'front.block.new_item.item_1_price'|trans }}</p>
-				</a>
-			</div>
-			<div class="ec-newItemRole__listItem">
-				<a href="{{ url('product_detail', {'id': '1'}) }}">
-					<div class="ec-newItemRole__extra newLabel">
-						<a href="{{ url('product_list') }}">New</a>
-					</div>
-					<img src="{{ asset('cube-1.png', 'save_image') }}">
-					<p class="ec-newItemRole__listItemTitle">{{ 'front.block.new_item.item_1_name'|trans }}</p>
-					<p class="ec-newItemRole__listItemPrice">{{ 'front.block.new_item.item_1_price'|trans }}</p>
-				</a>
-			</div>
-			<div class="ec-newItemRole__listItem">
-				<a href="{{ url('product_detail', {'id': '2'}) }}">
-					<div class="ec-newItemRole__extra newLabel">
-						<a href="{{ url('product_list') }}">New</a>
-					</div>
-					<img src="{{ asset('sand-1.png', 'save_image') }}">
-					<p class="ec-newItemRole__listItemTitle">{{ 'front.block.new_item.item_2_name'|trans }}</p>
-					<p class="ec-newItemRole__listItemPrice">{{ 'front.block.new_item.item_2_price'|trans }}</p>
-				</a>
-			</div>
-			<div class="ec-newItemRole__listItem">
-				<a href="{{ url('product_detail', {'id': '1'}) }}">
-					<div class="ec-newItemRole__extra newLabel">
-						<a href="{{ url('product_list') }}">New</a>
-					</div>
-					<img src="{{ asset(''|no_image_product , 'save_image') }}">
-					<p class="ec-newItemRole__listItemTitle">{{ 'front.block.new_item.item_3_name'|trans }}</p>
-					<p class="ec-newItemRole__listItemPrice">{{ 'front.block.new_item.item_3_price'|trans }}</p>
-				</a>
-			</div>
-		</div>
-		<div class="ec-newItemRole__more">
-			<a href="{{ url('product_list') }}">{{ 'front.block.new_item.more'|trans }}</a>
-		</div>
-	</div>
+  <div class="news-item">
+    <div class="news__heading heading">
+      <div class="news-item__heading heading">
+          <span class="news-item__heading-en heading__en">{{ 'front.block.new_item.title__en'|trans }}</span>
+          <span class="news-item__heading-line heading__line"></span>
+          <span class="news-item__heading-ja heading__ja">{{ 'front.block.new_item.title__ja'|trans }}</span>
+      </div>
+    </div>
+    <div class="news-item__list">
+      <div class="news-item__item">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+          <div class="news-item__extra newLabel">
+            <a href="{{ url('product_list') }}">New</a>
+          </div>
+          <img src="{{ asset(''|no_image_product , 'save_image') }}">
+          <p class="news-item__item__title">{{ 'front.block.new_item.item_1_name'|trans }}</p>
+          <p class="news-item__item__price">{{ 'front.block.new_item.item_1_price'|trans }}</p>
+        </a>
+      </div>
+      <div class="news-item__item">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+          <div class="news-item__extra newLabel">
+            <a href="{{ url('product_list') }}">New</a>
+          </div>
+          <img src="{{ asset('cube-1.png', 'save_image') }}">
+          <p class="news-item__item__title">{{ 'front.block.new_item.item_1_name'|trans }}</p>
+          <p class="news-item__item__price">{{ 'front.block.new_item.item_1_price'|trans }}</p>
+        </a>
+      </div>
+      <div class="news-item__item">
+        <a href="{{ url('product_detail', {'id': '2'}) }}">
+          <div class="news-item__extra newLabel">
+            <a href="{{ url('product_list') }}">New</a>
+          </div>
+          <img src="{{ asset('sand-1.png', 'save_image') }}">
+          <p class="news-item__item__title">{{ 'front.block.new_item.item_2_name'|trans }}</p>
+          <p class="news-item__item__price">{{ 'front.block.new_item.item_2_price'|trans }}</p>
+        </a>
+      </div>
+      <div class="news-item__item">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+          <div class="news-item__extra newLabel">
+            <a href="{{ url('product_list') }}">New</a>
+          </div>
+          <img src="{{ asset(''|no_image_product , 'save_image') }}">
+          <p class="news-item__item__title">{{ 'front.block.new_item.item_3_name'|trans }}</p>
+          <p class="news-item__item__price">{{ 'front.block.new_item.item_3_price'|trans }}</p>
+        </a>
+      </div>
+    </div>
+    <div class="news-item__more">
+      <a href="{{ url('product_list') }}">{{ 'front.block.new_item.more'|trans }}</a>
+    </div>
+  </div>
 </div>
