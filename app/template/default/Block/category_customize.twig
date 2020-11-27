@@ -1,66 +1,63 @@
-{#
-This file is part of CUBE
-
-Copyright(c) CUBE CO.,LTD. All Rights Reserved.
-
-http://www.cube.co.jp/
-
-For the full copyright and license information, please view the LICENSE
-file that was distributed with this source code.
-#}
-{% set Categories = repository('Eccube\\Entity\\Category').getList() %}
-
-{% macro tree(Category) %}
-	{% from _self import tree %}
-	<a href="{{ url('product_list') }}?category_id={{ Category.id }}">
-		{{ Category.name }}
-	</a>
-	{% if Category.children|length > 0 %}
-		<ul>
-			{% for ChildCategory in Category.children %}
-        {% if ChildCategory.children|length > 0 %}
-          <li class="has-sub" >
-            {{ tree(ChildCategory) }}
-          </li>
-        {% else %}
-          <li>
-            {{ tree(ChildCategory) }}
-          </li>
-        {% endif %}
-			{% endfor %}
-		</ul>
-	{% endif %}
-{% endmacro %}
-
-{# @see https://github.com/bolt/bolt/pull/2388 #}
-{% from _self import tree %}
-<div class="category-navi">
+<div class="category-nav">
+  <div class="category-title">
+    <h3>シャンル</h3>
+  </div>
 	<div class="item-nav">
-		<ul class="item-nav__nav">
-			{% for Category in Categories %}
-        {% if Category.children|length > 0%}
-          <li class="has-sub">
-            {{ tree(Category) }}
-          </li>
-        {% else %}
-          <li>
-            {{ tree(Category) }}
-          </li>
-        {% endif %}
-			{% endfor %}
+    <span>すべての商品</span>
+		<ul class="item-nav__list">
+    {% for i in 0..11 %}
+      <li class="item .has-sub">
+        <span>大カテゴリー</span>
+        <div class="category-panel sub-item-nav">
+          <ul class="sub-item-nav__list">
+              {# 5 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..4 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {# 9 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..8 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {# 5 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..8 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {# 3 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..2 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </li>
+    {% endfor %}
 		</ul>
 	</div>
 </div>
-{% block javascript%}
-  <script>
-    const parentsCategory =  document.querySelectorAll('.has-sub').forEach(function(parent){
-      parent.addEventListener('click',function(event){
-        event.stopPropagation(); 
-        const ulChild = parent.getElementsByTagName('ul')[0];
-        if(ulChild.classList.contains('active'))
-            ulChild.classList.remove('active');
-        else ulChild.classList.add('active');
-      });
-    });
-  </script>
-{%endblock javascript%}

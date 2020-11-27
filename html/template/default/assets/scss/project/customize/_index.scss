@@ -1,0 +1,28 @@
+@import '../../mixins/media';
+
+.main{
+  width: 100%;
+  transition: transform 0.3s;
+  background: #fff;
+}
+.layout__contents{
+  @include container;
+  @include flex(row);
+}
+.layout__left{
+  width: 150px;
+  height: 100%;
+}
+.layout__main{
+  width: 100%;
+}
+.layout__main-bottom{
+  clear: both;
+  width: 100%;
+  margin-top: 20px;
+}
+.layout__main-top:not(:empty){
+  float: left;
+  width: 20%;
+  height: 463px;
+}

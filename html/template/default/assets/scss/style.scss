@@ -1,13 +1,13 @@
 @import url("../../../../../node_modules/normalize.css/normalize.css");
 
 body {
-  font-family: "Tinos", "游ゴシック", YuGothic, "Yu Gothic",
+  font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic",
     "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ",
     Meiryo, sans-serif;
   color: #525263;
   transition: z-index 0ms 5.28455ms;
-  background: #f6f6f6;
-  margin: 0;
+  background: #ffffff;
+  margin: 0 auto;
 }
 a {
   text-decoration: none;
@@ -22,55 +22,55 @@ p {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
-@import "component/1.1.heading";
-@import "component/1.2.typo";
-@import "component/1.3.list";
-@import "component/2.1.buttonsize";
-@import "component/2.2.closebutton.scss";
-@import "component/2.3.otherbutton";
-@import "component/3.1.inputText";
-@import "component/3.2.inputMisc";
-@import "component/3.3.form";
-@import "component/4.1.icon";
-@import "component/5.1.grid";
-@import "component/5.2.layout";
-@import "component/6.1.login";
-@import "component/7.1.itembanner";
-@import "component/7.2.search";
-@import "component/7.3.cart";
-@import "component/8.1.info";
-@import "component/8.2.banner";
-@import "component/9.1.mypage";
-@import "project/11.1.role";
-// @import "project/11.2.header";
+// CUSTOMIZE
+@import "project/customize/index";
+
+@import "component/heading";
+@import "component/typo";
+@import "component/list";
+@import "component/buttonsize";
+@import "component/closebutton";
+@import "component/otherbutton";
+@import "component/inputText";
+@import "component/inputMisc";
+@import "component/form";
+@import "component/icon";
+@import "component/grid";
+@import "component/layout";
+@import "component/login";
+@import "component/itembanner";
+@import "component/search";
+@import "component/cart";
+@import "component/info";
+@import "component/banner";
+@import "component/mypage";
+
+// PROJECTS
+@import "project/news";
+@import "project/searchnav";
+@import "project/shelf";
+@import "project/pager";
+@import "project/cartModal";
+@import "project/product";
+@import "project/cart";
+@import "project/order";
+@import "project/history";
+@import "project/historyDetail";
+@import "project/address";
+@import "project/password";
+@import "project/register";
+@import "project/contact";
+@import "project/customer";
+@import "project/404";
+@import "project/withdraw";
+@import "project/editComplete";
+@import "project/footer";
+@import "project/eyecatch";
+@import "project/button";
+@import "project/heading";
+@import "project/topics";
 // Customize
-@import "project/customize/header";
-
-@import "project/11.3.footer";
-@import "project/12.1.slider";
-@import "project/12.2.eyecatch";
-@import "project/12.3.button";
-@import "project/12.4.heading";
-@import "project/12.5.topics";
-// @import "project/12.6.newItem";
 @import "project/customize/newItem";
-
-@import "project/12.7.category";
-@import "project/12.8.news";
-@import "project/13.1.searchnav";
-@import "project/13.2.shelf";
-@import "project/13.3.pager";
-@import "project/13.4.cartModal";
-@import "project/14.1.product";
-@import "project/15.1.cart";
-@import "project/15.2.order";
-@import "project/16.1.history";
-@import "project/16.2.historyDetail";
-@import "project/17.1.address";
-@import "project/18.1.password";
-@import "project/19.1.register";
-@import "project/19.2.contact";
-@import "project/19.3.customer";
-@import "project/20.1.404";
-@import "project/21.1.withdraw";
-@import "project/22.1.editComplete";
+@import "project/customize/header";
+@import "project/customize/slider";
+@import "project/customize/category";

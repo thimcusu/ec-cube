@@ -1,0 +1,40 @@
+@import "../../mixins/media";
+
+.wrapper-slider{
+  @include container;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  @include media_desktop{
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+}
+.slider{
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  ul{
+    padding: 0;
+    list-style: none;
+  }
+  .main-visual{
+    position: relative;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .slide{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

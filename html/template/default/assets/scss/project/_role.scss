@@ -17,18 +17,6 @@ Styleguide 11.1
   @include container;
 }
 
-/*
-マイページセクション
-
-マイページ専用のコンテナブロックです。
-
-ex [マイページ　コンテナ](http://demo3.ec-cube.net/mypage)
-
-Markup:
-include /assets/tmpl/elements/11.1.role.pug
-+ec-mypageRole
-
-Styleguide 11.1.2
 */
 .ec-mypageRole{
   @include mypageContainer;

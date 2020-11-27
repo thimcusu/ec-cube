@@ -63,10 +63,13 @@
       margin: 0;
       padding: 0;
       line-height: unset;
+      height: inherit;
     }
     a {
       display: inline-block;
       text-decoration: none;
+      vertical-align: middle;
+      margin: auto 0;
       font-size: 30px;
       font-weight: bold;
       color: #090909;
@@ -84,15 +87,21 @@
     height: 100%;
     @include flex(row,null,center);
     @include reset_link;
+  }
 }
 
 .headerNav {
   @include container;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #F4F4F4;
+  height: 70px;
   padding-top: 0px;
   text-align: right;
+  align-items: center;
+  &__list{
+    @include flex(row,flex-start,center);
+    width: 100%;
+    height: 100%;
+  }
   .fa-bars {
     position: absolute;
     top: 50%;
@@ -100,54 +109,58 @@
     transform: translate(-50%, -50%);
   }
 
-  &__left {
-    width: calc(100% / 3);
-  }
-  &__right {
-    width: calc(100% * 2 / 3);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  &__nav {
-    display: inline-block;
-    @include reset_link;
-  }
-  .cart {
-    display: inline-block;
-    @include reset_link;
-    @include media_desktop() {
-      position: relative;
-    }
-  }
   &__item {
     margin-left: 0;
-    display: inline-block;
+    margin-right: 50px;
+    // display: inline-block;
     font-size: 28px;
+    a{
+      @include flex(column,center,center);
+      @include reset_link;
+    }
   }
   &__itemIcon {
     display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
     font-size: 18px;
     color: black;
     @include media_desktop {
-      margin-right: 0;
-      font-size: 20px;
+      font-size: 22px;
     }
   }
   &__itemLink {
     display: none;
-    margin-right: 5px;
-    font-size: 14px;
+    font-size: 13px;
     vertical-align: middle;
-    color: black;
+    padding-top: 5px;
+    color:#090909;
     @include media_desktop {
       display: inline-block;
     }
   }
   
+  &__nav {
+    display: inline-block;
+    @include reset_link;
+  }
+  .cart {
+    @include flex(row,null,center);
+    margin-left: auto;
+    margin-right: 0;
+    .name{
+      color: #090909;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 5px;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 5px;
+    }
+    @include reset_link;
+    @include media_desktop() {
+      position: relative;
+    }
+  }
   &__navSP {
     display: block;
     position: absolute;
@@ -161,66 +174,23 @@
   }
 }
 
-.header__center {
-  @include commonStyle();
-  margin: auto !important;
-  width: 70%;
-  &__title {
-    text-align: center;
-    h1 {
-      margin: 0;
-      padding: 0;
-    }
-    a {
-      display: inline-block;
-      margin-bottom: 30px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      color: black;
-      @include media_desktop() {
-        font-size: 40px;
-      }
-      font-weight: bold;
-      color: black;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  }
-  &__subtitle {
-    font-size: 10px;
-    text-align: center;
-    @include media_desktop() {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    a {
-      display: inline-block;
-      color: #0092c4;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  }
-}
-
 .header__search {
   @include clearfix;
   width: 100%;
   &__keyword {
     position: relative;
-    color: $clrDarkGray;
+    color: #C8C8C8;
     background-color: #F8F8F8;
     border-radius: 50px;
-    max-width: 530px;
+    width: 530px;
     .input {
-      height: 100%;
+      height: 50px;
     }
     input[type="search"] {
       width: 100%;
-      height: 40px;
-      font-size: 16px;
+      height: 50px;
+      font-size: 14px;
+      margin-left: 45px;
       border: 0 none;
       padding: 0.5em 50px 0.5em 1em;
       box-shadow: none;
@@ -228,144 +198,29 @@
       box-sizing: border-box;
       outline: 0;
       margin-bottom: 0;
-      @include media_desktop {
-        font-size: 12px;
-      }
-    }
-    .icon {
-      width: 22px;
-      height: 22px;
     }
   }
   &__keywordBtn {
     border: 0;
     background: none;
     position: absolute;
-    right: 5px;
+    left: 16px;
     top: 50%;
-    transform: translateY(-55%);
+    transform: translateY(-50%);
     display: block;
     white-space: nowrap;
     z-index: 1;
-  }
-}
-/*
-ヘッダー：カテゴリナビ
-
-ヘッダー内で使用されている商品のカテゴリ一覧として使用します。
-`li`の中に`ul > li`要素を入れることで、階層を深くする事ができます。
-
-Markup:
-include /assets/tmpl/elements/11.4.categoryNavi.pug
-+itemNav
-
-sg-wrapper:
-<div class="categoryNaviRole" style="padding-bottom:150px;">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 11.2.5
-*/
-.category-navi {
-  height: 100%;
-  border: 1px solid rgba(0,0,0,.25);
-  @include reset_link;
-  a{
-    display: inline-block;
-    color: inherit;
-    text-decoration: none;
-    height: 32px;
-    padding: 5px;
-    font-size: 16px;
-    font{
-      text-align:center;
-    }
-  }
-  & > ul{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-  }
-}
-
-.item-nav {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  text-align: left;
-}
-
-.item-nav__nav {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 0;
-  width: auto;
-  height: auto;
-  text-align: center;
-  vertical-align: bottom;
-  .has-sub {
-    &:after {
-      content: '';
-      position: absolute;
-      right: 10px;
-      width: 6px;
-      height: 6px;
-      top: 15px;
-      transform: translateY(-75%) rotate(45deg);
-      border-right: 1px solid;
-      border-bottom: 1px solid;
-    }
-  }
-  li {
-    float: none;
-    display: inline-block;
-    border-bottom: 1px solid rgba(0,0,0,.25);
-    margin-top: -1px;
-    width: 100%;
-    text-align: left;
-    vertical-align: middle;
-    position: relative;
-    cursor: pointer;
-    @include media_desktop {
-      float: left;
-    }
-    ul {
+    width: 35px;
+    height: 35px;
+    .icon{
       width: 100%;
-      height: 0;
-      transition: all 0.5s ease;
-      overflow: hidden;
-      z-index: 1;
-      justify-content: center;
-      & > :last-child {
-        border-bottom: none;
+      height: 100%;
+      path{
+        fill: #C8C8C8;
       }
     }
   }
-  li:hover{
-  }
-  ul.active {
-    height: auto;
-    border-top: 1px solid rgba(0,0,0,.25);
-  }
-  a:hover{
-    color: black;
-    transition: 0.2s all ease;
-  }
 }
-
-/*
-ヘッダー：SPヘッダー
-
-SP時のみ出現するヘッダーに関係するコンポーネントです。<br>
-ex [トップページ](http://demo3.cube.net/)画面サイズが768px以下に該当。<br>
-<br>
-`.drawerRole`：SPのドロワー内の要素をwrapするコンポーネントです。<br>
-`.headerSearch`、`.headerNav`、`.itemNav`は`.drawerRole`の子要素にある場合、ドロワーに適したスタイルに変化します。<br><br>
-`.overlayRole`：SPのドロワー出現時にz-indexがドロワー以下の要素に半透明の黒背景をかぶせるコンポーネントです。<br>
-
-Styleguide 11.2.6
-*/
 
 .drawerRole {
   overflow-y: scroll;
@@ -578,25 +433,6 @@ Styleguide 11.2.6
 .headerNavSP.is-active {
   display: none;
 }
-/*
-ヘッダー：test
-
-test
-
-Markup:
-span.itemAccordionParent test1
-ul.itemNavAccordion
-  li.itemNavAccordion__item
-    a(href='') test2
-    ul.itemNavAccordion
-      li.itemNavAccordion__item
-        a(href='') test3
-        ul.itemNavAccordion
-          li.itemNavAccordion__item
-            a(href='') test4
-
-Styleguide 11.2.7
-*/
 
 .itemNavAccordion {
   display: none;

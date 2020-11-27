@@ -2,8 +2,9 @@
   <div class="headerNav__list">
       <div class="headerNav__item favorite">
         <a href="{{ url('mypage_favorite') }}">
-          <i class="headerNav__itemIcon fas fa-heart fa-fw"></i>
-          <span class="headerNav__itemLink">{{ 'front.block.login.favorite'|trans }}</span>
+          <i class="headerNav__itemIcon far fa-heart"></i>
+          <div class="headerNav__itemLink">{{ 'お第に入り
+'|trans }}</div>
         </a>
       </div>
       <div class="headerNav__item transaction">
@@ -16,6 +17,7 @@
         {{ include('Block/login.twig') }}
       </div>
       <div class="headerNav__item cart js-collapsible">
+        <span class="name">齊藤あづさ様</span>
         {{ include('Block/cart.twig') }}
       </div>
   </div>

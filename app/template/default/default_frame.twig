@@ -71,8 +71,7 @@ file that was distributed with this source code.
 			{{ include('block.twig', {'Blocks': Layout.BodyAfter}) }}
 		{% endif %}
 
-		<div
-			class="main layout">
+		<div class="main">
 			{# Layout: HEADER #}
 			{% if Layout.Header %}
 				<div class="layout__header">
@@ -87,8 +86,7 @@ file that was distributed with this source code.
 				</div>
 			{% endif %}
 
-			<div
-				class="layout__contents">
+			<div class="layout__contents">
 				{# Layout: SIDE_LEFT #}
 				{% if Layout.SideLeft %}
 					<div class="layout__left">
@@ -112,8 +110,7 @@ file that was distributed with this source code.
 						</div>
 					{% endif %}
 				</div>
-
-				{# Layout: SIDE_RIGHT #}
+        {# Layout: SIDE_RIGHT #}
 				{% if Layout.SideRight %}
 					<div class="layout__right">
 						{{ include('block.twig', {'Blocks': Layout.SideRight}) }}

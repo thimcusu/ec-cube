@@ -132,31 +132,24 @@ Styleguide 7.3.5
   padding: 10px 0 0 20px;
   width: auto;
   color: black;
-  background: transparent;
-  @include media_desktop {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 99999px;
-    box-sizing: border-box;
-    padding: 12px 17px 10px;
-    width: auto;
-    min-width: 140px;
-    height: 44px;
-    white-space: nowrap;
-    cursor: pointer;
-    background: #F8F8F8;
-  }
-
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px 5px 5px;
+  white-space: nowrap;
+  cursor: pointer;
   &__icon {
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     @include fadeIn(inline-block,200ms);
     position: relative;
-
   }
   &__badge{
-    display: inline-block;
-    border-radius: 99999px;
+    min-width: 15px;
+    position: absolute;
+    left: 20px;
+    top: -10px;
+    border-radius: 50%;
     box-sizing: border-box;
     padding: 5px;
     height: 17px;
@@ -166,17 +159,7 @@ Styleguide 7.3.5
     color: #fff;
     text-align: left;
     white-space: nowrap;
-    background-color: #DE5D50;
-    position: absolute;
-    left: 60%;
-    top: -10px;
-    @include media_desktop {
-      display: inline-block;
-      min-width: 17px;
-      position: relative;
-      left: 0;
-      top: 0;
-    }
+    background-color: #D7482B;
   }
   &__price{
     display: none;

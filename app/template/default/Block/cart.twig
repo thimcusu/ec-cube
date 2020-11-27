@@ -15,9 +15,6 @@ file that was distributed with this source code.
   <i class="cartNav__icon fas fa-shopping-cart">
     <span class="cartNav__badge">{{ totalQuantity|number_format }}</span>
   </i>
-  <div class="cartNav__label">
-    <div class="cartNav__price">{{ totalPrice|price }}</div>
-  </div>
 	{% if totalQuantity > 0 %}
 		<div class="cartNavIsset js-expand">
 			{% for Cart in Carts %}

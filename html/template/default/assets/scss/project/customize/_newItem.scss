@@ -1,22 +1,6 @@
 @import "../../mixins/media";
 @import "../../mixins/clearfix";
 
-/*
-カテゴリ（アイテム4列 スマホの時は2列）
-
-トップページで使用されているアイテムリストのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.6.1
-*/
-
 .news-item{
   padding: 40px 0;
   @include media_desktop {
