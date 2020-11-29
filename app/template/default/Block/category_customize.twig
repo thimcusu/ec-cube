@@ -1,0 +1,63 @@
+<div class="category-nav">
+  <div class="category-title">
+    <h3>シャンル</h3>
+  </div>
+	<div class="item-nav">
+    <span>すべての商品</span>
+		<ul class="item-nav__list">
+    {% for i in 0..11 %}
+      <li class="item .has-sub">
+        <span>大カテゴリー</span>
+        <div class="category-panel sub-item-nav">
+          <ul class="sub-item-nav__list">
+              {# 5 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..4 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {# 9 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..8 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {# 5 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..8 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+              {# 3 Sub item #}
+              <li class="sub-item .has-sub">
+                <div>中力テゴリー</div>
+                <div class="sub-item">
+                  <ul class="sub-item-nav__list">
+                      {% for i in 0..2 %}
+                      <li>小カテゴリー</li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </li>
+    {% endfor %}
+		</ul>
+	</div>
+</div>

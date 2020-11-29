@@ -1,0 +1,36 @@
+{#
+This file is part of CUBE
+
+Copyright(c) CUBE CO.,LTD. All Rights Reserved.
+
+http://www.cube.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+<div class="ec-role">
+  <div class="category">
+    <div class="category__heading heading">
+      <h3 class="category__heading-en heading__en">{{ 'front.block.category.category__en'|trans }}</h3>
+      <span class="category__heading-line heading__line"></span>
+      <span class="category__heading-ja heading__ja">{{ 'front.block.category.category__ja'|trans }}</span>
+    </div>
+    <div class="category__list">
+      <div class="category__item">
+        <a href="{{ url('product_list') }}?category_id=2">
+          <img src="{{ asset('assets/img/top/category_ice.png') }}">
+        </a>
+      </div>
+      <div class="category__item">
+        <a href="{{ url('product_list') }}?category_id=1">
+          <img src="{{ asset('assets/img/top/category_ice.png') }}">
+        </a>
+      </div>
+      <div class="category__item">
+        <a href="{{ url('product_list') }}?category_id=5">
+          <img src="{{ asset('assets/img/top/category_ice.png')  }}">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -370,8 +370,8 @@ body {
   font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
   color: #525263;
   transition: z-index 0ms 5.28455ms;
-  background: #f6f6f6;
-  margin: 0; }
+  background: #ffffff;
+  margin: 0 auto; }
 a {
   text-decoration: none; }
 pre {
@@ -381,6 +381,36 @@ pre {
 p {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+.main {
+  width: 100%;
+  transition: transform 0.3s;
+  background: #fff; }
+.layout__contents {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+.layout__left {
+  width: 150px;
+  height: 100%; }
+.layout__main {
+  width: 100%; }
+.layout__main-bottom {
+  clear: both;
+  width: 100%;
+  margin-top: 20px; }
+.layout__main-top:not(:empty) {
+  float: left;
+  width: 20%;
+  height: 463px; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -3528,24 +3558,32 @@ sg-wrapper:
 
 Styleguide 7.3.5
 */
-.ec-cartNavi {
+.cartNav {
   display: inline-block;
   padding: 10px 0 0 20px;
   width: auto;
   color: black;
-  background: transparent; }
-.ec-cartNavi .ec-cartNavi__icon {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px 5px 5px;
+  white-space: nowrap;
+  cursor: pointer; }
+.cartNav__icon {
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     display: inline-block;
     opacity: 1;
     visibility: visible;
     -webkit-animation: fadeIn 200ms linear 0s;
             animation: fadeIn 200ms linear 0s;
     position: relative; }
-.ec-cartNavi .ec-cartNavi__badge {
-    display: inline-block;
-    border-radius: 99999px;
+.cartNav__badge {
+    min-width: 15px;
+    position: absolute;
+    left: 20px;
+    top: -10px;
+    border-radius: 50%;
     box-sizing: border-box;
     padding: 5px;
     height: 17px;
@@ -3555,54 +3593,18 @@ Styleguide 7.3.5
     color: #fff;
     text-align: left;
     white-space: nowrap;
-    background-color: #DE5D50;
-    position: absolute;
-    left: 60%;
-    top: -10px; }
-.ec-cartNavi .ec-cartNavi__price {
+    background-color: #D7482B; }
+.cartNav__price {
     display: none; }
-.ec-cartNavi.is-active .ec-cartNavi__icon:before {
+.cartNav.u-active .js-expand {
+  display: block; }
+.cartNav.u-active .cartNav__icon:before {
   content: "\f00d";
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
-.ec-cartNavi.is-active .ec-cartNavi__badge {
+.cartNav.u-active .cartNav__badge {
   display: none; }
-/*
-カートナビゲーションのポップアップ(商品詳細)
-
-カートナビゲーションのポップアップを表示します。カートに追加された商品の詳細が表示されます。
-
-ex [カートページ　ナビゲーション部分](http://demo3.ec-cube.net/cart)
-
-Markup:
-div(style="height:350px;")
-  // 上記のdivはスタイルガイド都合上、高さをもたせるため設置(mocでは不要)
-  .is_active
-    .ec-cartNavi
-      .ec-cartNavi__icon
-        img(src='/moc/icon/cart-dark.svg', alt='close')
-      .ec-cartNavi__iconClose
-        img(src='/moc/icon/cross-dark.svg', alt='close')
-      .ec-cartNavi__badge 1
-      .ec-cartNavi__label
-        | 合計
-        .ec-cartNavi__price ¥1920
-    +b.ec-cartNaviIsset
-      +e.cart
-        +e.cartImage
-          img(src='http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg')
-        +e.cartContent
-          +e.cartContentTitle ミニテーブル
-          +e.cartContentPrice ¥ 12,960
-            +e.cartContentTax 税込
-          +e.cartContentNumber 数量：1
-      +e.action
-        a.ec-blockBtn--action(href="/moc/guest/cart1") カートへ進む
-        a.ec-blockBtn.ec-cartNavi--cancel キャンセル
-
-Styleguide 7.3.6
-*/
-.ec-cartNaviIsset {
+.cartNavIsset {
   display: none;
   width: 100%;
   text-align: center;
@@ -3611,90 +3613,43 @@ Styleguide 7.3.6
   padding: 16px;
   z-index: 20;
   position: absolute;
+  top: 100%;
   right: 0; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cart {
+.cartNavIsset__cart {
     border-bottom: 1px solid #E8E8E8;
     margin-bottom: 16px;
     padding-bottom: 32px; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cart:after {
+.cartNavIsset__cart:after {
       content: " ";
       display: table; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cart:after {
+.cartNavIsset__cart:after {
       clear: both; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartImage {
+.cartNavIsset__cartImage {
     float: left;
     width: 45%; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartImage img {
+.cartNavIsset__cartImage img {
       width: 100%; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartContent {
+.cartNavIsset__cartContent {
     float: right;
     width: 55%;
     padding-left: 16px;
     text-align: left;
     box-sizing: border-box; }
-.ec-cartNaviIsset .ec-cartNaviIsset__action .ec-blockBtn--action {
+.cartNavIsset__action .ec-blockBtn--action {
     color: #fff;
     margin-bottom: 8px; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartContentTitle {
+.cartNavIsset__cartContentTitle {
     margin-bottom: 8px; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartContentPrice {
+.cartNavIsset__cartContentPrice {
     font-weight: bold; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartContentTax {
+.cartNavIsset__cartContentTax {
     display: inline-block;
     font-size: 12px;
     font-weight: normal;
     margin-left: 2px; }
-.ec-cartNaviIsset .ec-cartNaviIsset__cartContentNumber {
+.cartNavIsset__cartContentNumber {
     font-size: 14px; }
-.ec-cartNaviIsset.is-active {
-  display: block; }
-/*
-カートナビゲーションのポップアップ(商品なし)
-
-カートナビゲーションのポップアップを表示します。商品が登録されていない場合の表示です。
-
-ex [カートページ　ナビゲーション部分](http://demo3.ec-cube.net/cart)
-
-Markup:
-div(style="height:170px;")
-  // 上記のdivはスタイルガイド都合上、高さをもたせるため設置(mocでは不要)
-  .is_active
-    .ec-cartNavi
-      .ec-cartNavi__icon
-        img(src='/moc/icon/cart-dark.svg', alt='cart')
-      .ec-cartNavi__iconClose
-        img(src='/moc/icon/cross-dark.svg', alt='close')
-      .ec-cartNavi__badge 1
-      .ec-cartNavi__label
-        | 合計
-        .ec-cartNavi__price ¥1920
-    .ec-cartNaviNull
-      .ec-cartNaviNull__message
-        p 現在カート内に
-          br
-          | 商品がございません。
-    //+b.ec-cartNaviIsset
-    //  +e.cart
-    //    +e.cartImage
-    //      img(src='http://demo3.ec-cube.net/upload/save_image/0701104933_5593472d8d179.jpeg')
-    //    +e.cartContent
-    //      +e.cartContentTitle ミニテーブル
-    //      +e.cartContentPrice ¥ 12,960
-    //        +e.cartContentTax 税込
-    //      +e.cartContentNumber 数量：1
-    //  +e.action
-    //    a.ec-blockBtn--action(href="/moc/guest/cart1") カートへ進む
-    //    a.ec-blockBtn キャンセル
-
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-
-Styleguide 7.3.7
-*/
-.ec-cartNaviNull {
+.cartNav__content {
   display: none;
   width: 100%;
   text-align: center;
@@ -3704,30 +3659,15 @@ Styleguide 7.3.7
   z-index: 3;
   position: absolute;
   right: 0; }
-.ec-cartNaviNull .ec-cartNaviNull__message {
-    border: 1px solid #D9D9D9;
-    padding: 16px 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #F99; }
-.ec-cartNaviNull .ec-cartNaviNull__message p {
-      margin: 0; }
-.ec-cartNaviNull.is-active {
-  display: block; }
-/*
-総計
-
-会計時の合計金額、総計を表示します。
-
-ex [カートページ　統計部分](http://demo3.ec-cube.net/cart)
-
-Markup:
-include /assets/tmpl/elements/7.3.cart.pug
-+ec-totalBox
-
-Styleguide 7.3.8
-*/
+.cartNav__message {
+  border: 1px solid #D9D9D9;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #F99; }
+.cartNav__message p {
+    margin: 0; }
 .ec-totalBox {
   background: #F3F3F3;
   padding: 16px;
@@ -4089,1379 +4029,6 @@ SP フォーストで記述する。
 Twitter Bootstrap デフォルト準拠
  */
 /*
-標準セクション
-
-通常のコンテナブロックです。
-
-ex [商品詳細ページ　コンテナ](http://demo3.ec-cube.net/products/detail/33)
-
-Markup:
-include /assets/tmpl/elements/11.1.role.pug
-+ec-roleRole
-
-Styleguide 11.1
-*/
-.ec-role {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-role:after {
-    content: " ";
-    display: table; }
-.ec-role:after {
-    clear: both; }
-.ec-role textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-role img {
-    max-width: 100%; }
-.ec-role html {
-    box-sizing: border-box; }
-.ec-role *,
-  .ec-role *::before,
-  .ec-role *::after {
-    box-sizing: inherit; }
-.ec-role img {
-    width: 100%; }
-/*
-マイページセクション
-
-マイページ専用のコンテナブロックです。
-
-ex [マイページ　コンテナ](http://demo3.ec-cube.net/mypage)
-
-Markup:
-include /assets/tmpl/elements/11.1.role.pug
-+ec-mypageRole
-
-Styleguide 11.1.2
-*/
-.ec-mypageRole {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%; }
-.ec-mypageRole:after {
-    content: " ";
-    display: table; }
-.ec-mypageRole:after {
-    clear: both; }
-.ec-mypageRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-mypageRole img {
-    max-width: 100%; }
-.ec-mypageRole html {
-    box-sizing: border-box; }
-.ec-mypageRole *,
-  .ec-mypageRole *::before,
-  .ec-mypageRole *::after {
-    box-sizing: inherit; }
-.ec-mypageRole img {
-    width: 100%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
- * ECCUBE 固有のスタイルユーティリティ
- */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    visibility: hidden; }
-  100% {
-    opacity: 1;
-    visibility: visible; } }
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    visibility: visible; }
-  100% {
-    opacity: 0;
-    visibility: hidden; } }
-.bg-load-overlay {
-  background: rgba(255, 255, 255, 0.4);
-  box-sizing: border-box;
-  position: fixed;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-around;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2147483647;
-  opacity: 1; }
-/*
-ヘッダー
-
-ヘッダー用のプロジェクトコンポーネントを提供します。
-
-ex [トップページ　ヘッダー](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/11.2.header.pug
-include /assets/tmpl/elements/11.3.headerNavi.pug
-include /assets/tmpl/elements/11.4.categoryNavi.pug
-+b.ec-layoutRole
-  +e.header
-    +ec-headerRole
-    +ec-headerNaviRole
-    +ec-categoryNaviRole
-
-Styleguide 11.2
-*/
-.ec-layoutRole {
-  width: 100%;
-  transition: transform 0.3s;
-  background: #fff; }
-.ec-layoutRole .ec-layoutRole__contentTop {
-    padding: 0; }
-.ec-layoutRole .ec-layoutRole__contents {
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
-    max-width: 1150px;
-    display: flex;
-    flex-wrap: nowrap; }
-.ec-layoutRole .ec-layoutRole__main {
-    width: 100%; }
-.ec-layoutRole .ec-layoutRole__mainWithColumn {
-    width: 100%; }
-.ec-layoutRole .ec-layoutRole__mainBetweenColumn {
-    width: 100%; }
-.ec-layoutRole .ec-layoutRole__left,
-  .ec-layoutRole .ec-layoutRole__right {
-    display: none; }
-.ec-headerRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  padding-top: 15px;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: auto; }
-.ec-headerRole:after {
-    content: " ";
-    display: table; }
-.ec-headerRole:after {
-    clear: both; }
-.ec-headerRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerRole img {
-    max-width: 100%; }
-.ec-headerRole html {
-    box-sizing: border-box; }
-.ec-headerRole *,
-  .ec-headerRole *::before,
-  .ec-headerRole *::after {
-    box-sizing: inherit; }
-.ec-headerRole img {
-    width: 100%; }
-.ec-headerRole:after {
-    display: none; }
-.ec-headerRole::before {
-    display: none; }
-.ec-headerRole .ec-headerRole__title {
-    width: 100%; }
-.ec-headerRole .ec-headerRole__navSP {
-    display: block;
-    position: absolute;
-    top: 15px;
-    width: 27%;
-    right: 0;
-    text-align: right; }
-.ec-headerNaviRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 15px; }
-.ec-headerNaviRole:after {
-    content: " ";
-    display: table; }
-.ec-headerNaviRole:after {
-    clear: both; }
-.ec-headerNaviRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerNaviRole img {
-    max-width: 100%; }
-.ec-headerNaviRole html {
-    box-sizing: border-box; }
-.ec-headerNaviRole *,
-  .ec-headerNaviRole *::before,
-  .ec-headerNaviRole *::after {
-    box-sizing: inherit; }
-.ec-headerNaviRole img {
-    width: 100%; }
-.ec-headerNaviRole .fa-bars {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-.ec-headerNaviRole .ec-headerNaviRole__left {
-    width: calc(100% / 3); }
-.ec-headerNaviRole .ec-headerNaviRole__search {
-    display: none; }
-.ec-headerNaviRole .ec-headerNaviRole__navSP {
-    display: block; }
-.ec-headerNaviRole .ec-headerNaviRole__right {
-    width: calc(100% * 2 / 3);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; }
-.ec-headerNaviRole .ec-headerNaviRole__nav {
-    display: inline-block; }
-.ec-headerNaviRole .ec-headerNaviRole__nav a {
-      color: inherit;
-      text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__nav a:hover {
-      text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__cart {
-    display: inline-block; }
-.ec-headerNaviRole .ec-headerNaviRole__cart a {
-      color: inherit;
-      text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__cart a:hover {
-      text-decoration: none; }
-.ec-headerNavSP {
-  display: block;
-  cursor: pointer;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  text-align: center;
-  color: black;
-  background: white;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000; }
-.ec-headerNavSP .fas {
-    vertical-align: top; }
-.ec-headerNavSP.is-active {
-  display: none; }
-/*
-ヘッダー：タイトル
-
-ヘッダー内で使用されるタイトルコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.2.header.pug
-+ec-headerTitle
-
-Styleguide 11.2.1
-*/
-.ec-headerTitle {
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%; }
-.ec-headerTitle textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerTitle img {
-    max-width: 100%; }
-.ec-headerTitle html {
-    box-sizing: border-box; }
-.ec-headerTitle *,
-  .ec-headerTitle *::before,
-  .ec-headerTitle *::after {
-    box-sizing: inherit; }
-.ec-headerTitle img {
-    width: 100%; }
-.ec-headerTitle .ec-headerTitle__title {
-    text-align: center; }
-.ec-headerTitle .ec-headerTitle__title h1 {
-      margin: 0;
-      padding: 0; }
-.ec-headerTitle .ec-headerTitle__title a {
-      display: inline-block;
-      margin-bottom: 30px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      color: black; }
-.ec-headerTitle .ec-headerTitle__title a:hover {
-        opacity: .8; }
-.ec-headerTitle .ec-headerTitle__subtitle {
-    font-size: 10px;
-    text-align: center; }
-.ec-headerTitle .ec-headerTitle__subtitle a {
-      display: inline-block;
-      color: #0092C4;
-      text-decoration: none;
-      cursor: pointer; }
-/*
-ヘッダー：ユーザナビゲーション
-
-ヘッダー内でユーザに関与するナビゲーションコンポーネントです。
-<br><br>
-`.ec-headerNaviRole`>`.ec-headerNaviRole__nav`内に記述すると２カラム上の右側に配置することができます。
-
-Markup:
-include /assets/tmpl/elements/11.3.headerNavi.pug
-+ec-headerNav
-
-sg-wrapper:
-<div class="ec-headerNaviRole">
-  <div class="ec-headerNaviRole__nav">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.2.3
-*/
-.ec-headerNav {
-  text-align: right; }
-.ec-headerNav .ec-headerNav__item {
-    margin-left: 0;
-    display: inline-block;
-    font-size: 28px; }
-.ec-headerNav .ec-headerNav__itemIcon {
-    display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 18px;
-    color: black; }
-.ec-headerNav .ec-headerNav__itemLink {
-    display: none;
-    margin-right: 5px;
-    font-size: 14px;
-    vertical-align: middle;
-    color: black; }
-/*
-ヘッダー：検索ボックス
-
-ヘッダー内で使用される商品検索コンポーネントです。
-<br><br>
-`.ec-headerNaviRole`>`.ec-headerNaviRole__search`内に記述すると２カラム上の右側に配置することができます。
-
-Markup:
-include /assets/tmpl/elements/11.3.headerNavi.pug
-+ec-headerSearch
-
-sg-wrapper:
-<div class="ec-headerNaviRole">
-  <div class="ec-headerNaviRole__search">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.2.4
-*/
-.ec-headerSearch:after {
-  content: " ";
-  display: table; }
-.ec-headerSearch:after {
-  clear: both; }
-.ec-headerSearch .ec-headerSearch__category {
-  float: none; }
-.ec-headerSearch .ec-headerSearch__category .ec-select {
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
-    text-align: center; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select {
-      width: 100%;
-      cursor: pointer;
-      padding: 8px 24px 8px 8px;
-      text-indent: 0.01px;
-      text-overflow: ellipsis;
-      border: none;
-      outline: none;
-      background: transparent;
-      background-image: none;
-      box-shadow: none;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      color: #fff; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select option {
-        color: #000; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select::-ms-expand {
-        display: none; }
-.ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search {
-      position: relative;
-      border: 0;
-      background: #000;
-      color: #fff;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px; }
-.ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search::before {
-        position: absolute;
-        top: 0.8em;
-        right: 0.4em;
-        width: 0;
-        height: 0;
-        padding: 0;
-        content: '';
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid #fff;
-        pointer-events: none; }
-.ec-headerSearch .ec-headerSearch__keyword {
-  position: relative;
-  color: #525263;
-  border: 1px solid #ccc;
-  background-color: #f6f6f6;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; }
-.ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
-    width: 100%;
-    height: 34px;
-    font-size: 16px;
-    border: 0 none;
-    padding: 0.5em 50px 0.5em 1em;
-    box-shadow: none;
-    background: none;
-    box-sizing: border-box;
-    margin-bottom: 0; }
-.ec-headerSearch .ec-headerSearch__keyword .ec-icon {
-    width: 22px;
-    height: 22px; }
-.ec-headerSearch .ec-headerSearch__keywordBtn {
-  border: 0;
-  background: none;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-55%);
-  display: block;
-  white-space: nowrap;
-  z-index: 1; }
-/*
-ヘッダー：カテゴリナビ
-
-ヘッダー内で使用されている商品のカテゴリ一覧として使用します。
-`li`の中に`ul > li`要素を入れることで、階層を深くする事ができます。
-
-Markup:
-include /assets/tmpl/elements/11.4.categoryNavi.pug
-+ec-itemNav
-
-sg-wrapper:
-<div class="ec-categoryNaviRole" style="padding-bottom:150px;">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 11.2.5
-*/
-.ec-categoryNaviRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  display: none; }
-.ec-categoryNaviRole:after {
-    content: " ";
-    display: table; }
-.ec-categoryNaviRole:after {
-    clear: both; }
-.ec-categoryNaviRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-categoryNaviRole img {
-    max-width: 100%; }
-.ec-categoryNaviRole html {
-    box-sizing: border-box; }
-.ec-categoryNaviRole *,
-  .ec-categoryNaviRole *::before,
-  .ec-categoryNaviRole *::after {
-    box-sizing: inherit; }
-.ec-categoryNaviRole img {
-    width: 100%; }
-.ec-itemNav {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center; }
-.ec-itemNav__nav {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: auto;
-  height: auto;
-  list-style-type: none;
-  text-align: center;
-  vertical-align: bottom; }
-.ec-itemNav__nav li {
-  float: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  position: relative; }
-.ec-itemNav__nav li a {
-  display: block;
-  border-bottom: 1px solid #E8E8E8;
-  margin: 0;
-  padding: 16px;
-  height: auto;
-  color: #2e3233;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: left;
-  background: #fff;
-  border-bottom: 1px solid #E8E8E8; }
-.ec-itemNav__nav li ul {
-  display: none;
-  z-index: 0;
-  margin: 0;
-  padding: 0;
-  min-width: 200px;
-  list-style: none;
-  position: static;
-  top: 100%;
-  left: 0; }
-.ec-itemNav__nav li ul li {
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  transition: .3s; }
-.ec-itemNav__nav li ul li a {
-  border-bottom: 1px solid #E8E8E8;
-  padding: 16px 22px 16px 16px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-align: left;
-  background: black; }
-.ec-itemNav__nav > li:hover > a {
-  background: #fafafa; }
-.ec-itemNav__nav > li:hover li:hover > a {
-  background: #333; }
-.ec-itemNav__nav li ul li ul {
-  top: 0;
-  left: 100%;
-  width: auto; }
-.ec-itemNav__nav li ul li ul li a {
-  background: #7D7D7D; }
-.ec-itemNav__nav li:hover ul li ul li a:hover {
-  background: #333; }
-/*
-ヘッダー：SPヘッダー
-
-SP時のみ出現するヘッダーに関係するコンポーネントです。<br>
-ex [トップページ](http://demo3.ec-cube.net/)画面サイズが768px以下に該当。<br>
-<br>
-`.ec-drawerRole`：SPのドロワー内の要素をwrapするコンポーネントです。<br>
-`.ec-headerSearch`、`.ec-headerNav`、`.ec-itemNav`は`.ec-drawerRole`の子要素にある場合、ドロワーに適したスタイルに変化します。<br><br>
-`.ec-overlayRole`：SPのドロワー出現時にz-indexがドロワー以下の要素に半透明の黒背景をかぶせるコンポーネントです。<br>
-
-Styleguide 11.2.6
-*/
-.ec-drawerRole {
-  overflow-y: scroll;
-  background: black;
-  width: 260px;
-  height: 100vh;
-  transform: translateX(-300px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition: z-index 0ms 1ms; }
-.ec-drawerRole .ec-headerSearchArea {
-    padding: 20px 10px;
-    width: 100%;
-    background: #F8F8F8; }
-.ec-drawerRole .ec-headerSearch {
-    padding: 16px 8px 26px;
-    background: #EBEBEB;
-    color: #636378; }
-.ec-drawerRole .ec-headerSearch select {
-      width: 100% !important; }
-.ec-drawerRole .ec-headerCategoryArea .ec-headerCategoryArea__heading {
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-    padding: 1em 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    background: #F8F8F8; }
-.ec-drawerRole .ec-headerCategoryArea p {
-    margin-top: 0;
-    margin-bottom: 0; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li a {
-    border-bottom: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    color: black;
-    font-weight: normal;
-    background: #f8f8f8; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li a {
-    border-bottom: 1px solid #ccc;
-    padding-left: 20px;
-    font-weight: normal;
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav > li:hover > a {
-    background: #f8f8f8; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav > li:hover li:hover > a {
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li ul li a {
-    padding-left: 40px;
-    color: black;
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li:hover ul li ul li a:hover {
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li ul li ul li a {
-    padding-left: 60px;
-    font-weight: normal; }
-.ec-drawerRole .ec-headerLinkArea {
-    background: black; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__list {
-      border-top: 1px solid #ccc; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__item {
-      display: block;
-      border-bottom: 1px solid #ccc;
-      padding: 15px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      color: white; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__icon {
-      display: inline-block;
-      width: 28px;
-      font-size: 17px; }
-.ec-drawerRoleClose {
-  display: none;
-  cursor: pointer;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  text-align: center;
-  color: black;
-  background: white;
-  position: fixed;
-  top: 10px;
-  left: 270px;
-  z-index: 1000; }
-.ec-drawerRoleClose .fas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-.ec-drawerRole.is_active {
-  display: block;
-  transform: translateX(0);
-  transition: all .3s;
-  z-index: 100000; }
-.ec-drawerRoleClose.is_active {
-  display: inline-block;
-  transition: all .3s; }
-.ec-overlayRole {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background: transparent;
-  transform: translateX(0);
-  transition: all .3s;
-  visibility: hidden; }
-.have_curtain .ec-overlayRole {
-  display: block;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.5);
-  visibility: visible; }
-/*
-ヘッダー：test
-
-test
-
-Markup:
-span.ec-itemAccordionParent test1
-ul.ec-itemNavAccordion
-  li.ec-itemNavAccordion__item
-    a(href='') test2
-    ul.ec-itemNavAccordion
-      li.ec-itemNavAccordion__item
-        a(href='') test3
-        ul.ec-itemNavAccordion
-          li.ec-itemNavAccordion__item
-            a(href='') test4
-
-Styleguide 11.2.7
-*/
-.ec-itemNavAccordion {
-  display: none; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
- * ECCUBE 固有のスタイルユーティリティ
- */
-/*
-フッター
-
-全ページで使用されるフッターのプロジェクトコンポーネントです。
-
-ex [トップページ　フッター](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerRole
-
-Styleguide 11.3
-*/
-.ec-footerRole {
-  border-top: 1px solid #7d7d7d;
-  margin-top: 30px;
-  background: black; }
-/*
-フッターナビ
-
-フッタープロジェクトで使用するナビゲーション用のコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerNav
-
-sg-wrapper:
-<div class="ec-footerRole">
-  <div class="ec-footerRole__inner">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.3.1
-*/
-.ec-footerNavi {
-  padding: 0;
-  color: white;
-  list-style: none;
-  text-align: center; }
-.ec-footerNavi .ec-footerNavi__link {
-    display: block; }
-.ec-footerNavi .ec-footerNavi__link a {
-      display: block;
-      border-bottom: 1px solid #7d7d7d;
-      padding: 15px 0;
-      font-size: 14px;
-      color: inherit;
-      text-decoration: none; }
-.ec-footerNavi .ec-footerNavi__link:hover a {
-      opacity: .8;
-      text-decoration: none; }
-/*
-フッタータイトル
-
-フッタープロジェクトで使用するタイトル用のコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerTitle
-
-sg-wrapper:
-<div class="ec-footerRole">
-  <div class="ec-footerRole__inner">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.3.2
-*/
-.ec-footerTitle {
-  padding: 40px 0 60px;
-  text-align: center;
-  color: white; }
-.ec-footerTitle .ec-footerTitle__logo {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold; }
-.ec-footerTitle .ec-footerTitle__logo a {
-      color: inherit;
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__logo a:hover {
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__logo a {
-      font-size: 22px;
-      color: inherit; }
-.ec-footerTitle .ec-footerTitle__logo:hover a {
-      opacity: .8;
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__copyright {
-    font-size: 10px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-トップページ
-
-トップページ スライド部に関する Project コンポーネントを定義します。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/12.1.slider.pug
-+ec-sliderRole
-
-Styleguide 12.1
-*/
-.ec-sliderRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  margin-bottom: 24px; }
-.ec-sliderRole:after {
-    content: " ";
-    display: table; }
-.ec-sliderRole:after {
-    clear: both; }
-.ec-sliderRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-sliderRole img {
-    max-width: 100%; }
-.ec-sliderRole html {
-    box-sizing: border-box; }
-.ec-sliderRole *,
-  .ec-sliderRole *::before,
-  .ec-sliderRole *::after {
-    box-sizing: inherit; }
-.ec-sliderRole img {
-    width: 100%; }
-.ec-sliderRole ul {
-    padding: 0;
-    list-style: none; }
-.ec-sliderItemRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  margin-bottom: 24px; }
-.ec-sliderItemRole:after {
-    content: " ";
-    display: table; }
-.ec-sliderItemRole:after {
-    clear: both; }
-.ec-sliderItemRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-sliderItemRole img {
-    max-width: 100%; }
-.ec-sliderItemRole html {
-    box-sizing: border-box; }
-.ec-sliderItemRole *,
-  .ec-sliderItemRole *::before,
-  .ec-sliderItemRole *::after {
-    box-sizing: inherit; }
-.ec-sliderItemRole img {
-    width: 100%; }
-.ec-sliderItemRole ul {
-    padding: 0;
-    list-style: none; }
-.ec-sliderItemRole .item_nav {
-    display: none; }
-.ec-sliderItemRole .slideThumb {
-    margin-bottom: 25px;
-    width: 33%;
-    opacity: .8;
-    cursor: pointer; }
-.ec-sliderItemRole .slideThumb:focus {
-      outline: none; }
-.ec-sliderItemRole .slideThumb:hover {
-      opacity: 1; }
-.ec-sliderItemRole .slideThumb img {
-      width: 80%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-アイキャッチ
-
-トップページ アイキャッチ部に関する Project コンポーネントを定義します。
-
-ex [トップページスライダー直下 アイキャッチ部](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/12.2.eyecatch.pug
-+ec-eyecatchRole
-
-Styleguide 12.2
-*/
-.ec-eyecatchRole {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  /* Deprecated https://github.com/EC-CUBE/ec-cube/pull/4220 */ }
-.ec-eyecatchRole .ec-eyecatchRole__image {
-    display: block;
-    margin-bottom: 40px;
-    width: 100%;
-    height: 100%; }
-.ec-eyecatchRole .ec-eyecatchRole__intro {
-    color: black; }
-.ec-eyecatchRole .ec-eyecatchRole__introEnTitle {
-    margin-bottom: .8em;
-    font-size: 16px;
-    font-weight: normal; }
-.ec-eyecatchRole .ec-eyecatchRole__introTitle {
-    margin-bottom: .8em;
-    font-size: 24px;
-    font-weight: bold; }
-.ec-eyecatchRole .ec-eyecatchRole__introDescriptiron {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 2; }
-.ec-eyecatchRole .ec-eyecatchRole__introDescription {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 2; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-ボタン
-
-トップページで使用されているボタンのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.3
-*/
-/*
-通常ボタン
-
-インラインの要素としてボタンを定義出来ます。
-
-Markup:
-.ec-inlineBtn--top more
-
-Styleguide 12.3.1
-*/
-.ec-inlineBtn--top {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  border-radius: 0px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  border-color: black; }
-.ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus, .ec-inlineBtn--top:active:focus, .ec-inlineBtn--top:active.focus, .ec-inlineBtn--top.active:focus, .ec-inlineBtn--top.active.focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px; }
-.ec-inlineBtn--top:hover, .ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus {
-    color: #525263;
-    text-decoration: none; }
-.ec-inlineBtn--top:active, .ec-inlineBtn--top.active {
-    outline: 0;
-    background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-.ec-inlineBtn--top.disabled, .ec-inlineBtn--top[disabled],
-  fieldset[disabled] .ec-inlineBtn--top {
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    opacity: 0.65;
-    box-shadow: none; }
-.ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-inlineBtn--top:hover {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-inlineBtn--top:active, .ec-inlineBtn--top.active,
-  .open > .ec-inlineBtn--top.dropdown-toggle {
-    color: white;
-    background-color: black;
-    background-image: none;
-    border-color: black; }
-.ec-inlineBtn--top:active:hover, .ec-inlineBtn--top:active:focus, .ec-inlineBtn--top:active.focus, .ec-inlineBtn--top.active:hover, .ec-inlineBtn--top.active:focus, .ec-inlineBtn--top.active.focus,
-    .open > .ec-inlineBtn--top.dropdown-toggle:hover,
-    .open > .ec-inlineBtn--top.dropdown-toggle:focus,
-    .open > .ec-inlineBtn--top.dropdown-toggle.focus {
-      color: white;
-      background-color: black;
-      border-color: black; }
-.ec-inlineBtn--top.disabled:hover, .ec-inlineBtn--top.disabled:focus, .ec-inlineBtn--top.disabled.focus, .ec-inlineBtn--top[disabled]:hover, .ec-inlineBtn--top[disabled]:focus, .ec-inlineBtn--top[disabled].focus,
-  fieldset[disabled] .ec-inlineBtn--top:hover,
-  fieldset[disabled] .ec-inlineBtn--top:focus,
-  fieldset[disabled] .ec-inlineBtn--top.focus {
-    background-color: black;
-    border-color: black; }
-.ec-inlineBtn--top .badge {
-    color: black;
-    background-color: white; }
-.ec-inlineBtn--top .ec-icon img {
-    width: 1em;
-    vertical-align: text-bottom; }
-/*
-ロングボタン（全幅）
-
-ロングタイプのボタンです。
-
-Markup:
-.ec-blockBtn--top 商品一覧へ
-
-Styleguide 2.1.2
-*/
-.ec-blockBtn--top {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  border-radius: 0px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  border-color: black;
-  display: block;
-  height: 56px;
-  line-height: 56px;
-  padding-top: 0;
-  padding-bottom: 0; }
-.ec-blockBtn--top:focus, .ec-blockBtn--top.focus, .ec-blockBtn--top:active:focus, .ec-blockBtn--top:active.focus, .ec-blockBtn--top.active:focus, .ec-blockBtn--top.active.focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px; }
-.ec-blockBtn--top:hover, .ec-blockBtn--top:focus, .ec-blockBtn--top.focus {
-    color: #525263;
-    text-decoration: none; }
-.ec-blockBtn--top:active, .ec-blockBtn--top.active {
-    outline: 0;
-    background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-.ec-blockBtn--top.disabled, .ec-blockBtn--top[disabled],
-  fieldset[disabled] .ec-blockBtn--top {
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    opacity: 0.65;
-    box-shadow: none; }
-.ec-blockBtn--top:focus, .ec-blockBtn--top.focus {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-blockBtn--top:hover {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-blockBtn--top:active, .ec-blockBtn--top.active,
-  .open > .ec-blockBtn--top.dropdown-toggle {
-    color: white;
-    background-color: black;
-    background-image: none;
-    border-color: black; }
-.ec-blockBtn--top:active:hover, .ec-blockBtn--top:active:focus, .ec-blockBtn--top:active.focus, .ec-blockBtn--top.active:hover, .ec-blockBtn--top.active:focus, .ec-blockBtn--top.active.focus,
-    .open > .ec-blockBtn--top.dropdown-toggle:hover,
-    .open > .ec-blockBtn--top.dropdown-toggle:focus,
-    .open > .ec-blockBtn--top.dropdown-toggle.focus {
-      color: white;
-      background-color: black;
-      border-color: black; }
-.ec-blockBtn--top.disabled:hover, .ec-blockBtn--top.disabled:focus, .ec-blockBtn--top.disabled.focus, .ec-blockBtn--top[disabled]:hover, .ec-blockBtn--top[disabled]:focus, .ec-blockBtn--top[disabled].focus,
-  fieldset[disabled] .ec-blockBtn--top:hover,
-  fieldset[disabled] .ec-blockBtn--top:focus,
-  fieldset[disabled] .ec-blockBtn--top.focus {
-    background-color: black;
-    border-color: black; }
-.ec-blockBtn--top .badge {
-    color: black;
-    background-color: white; }
-.ec-blockBtn--top .ec-icon img {
-    width: 1em;
-    vertical-align: text-bottom; }
-/*
-見出し
-
-トップページで使用されている見出しのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.4
-*/
-/*
-横並び見出し
-
-横並びの見出しです。
-
-Markup:
-.ec-secHeading
-  span.ec-secHeading__en TOPIC
-  span.ec-secHeading__line |
-  span.ec-secHeading__ja 特集
-
-Styleguide 12.4.1
-*/
-.ec-secHeading {
-  margin-bottom: 15px;
-  color: black; }
-.ec-secHeading .ec-secHeading__en {
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: .2em; }
-.ec-secHeading .ec-secHeading__line {
-    display: inline-block;
-    margin: 0 20px;
-    width: 1px;
-    height: 14px;
-    background: black; }
-.ec-secHeading .ec-secHeading__ja {
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: .15em;
-    vertical-align: 2px; }
-/*
-縦並び見出し
-
-縦並びの見出しです。
-
-Markup:
-.ec-secHeading--tandem
-  span.ec-secHeading__en TOPIC
-  span.ec-secHeading__line |
-  span.ec-secHeading__ja 特集
-
-Styleguide 12.4.2
-*/
-.ec-secHeading--tandem {
-  margin-bottom: 15px;
-  color: black;
-  text-align: center; }
-.ec-secHeading--tandem .ec-secHeading__en {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: .2em; }
-.ec-secHeading--tandem .ec-secHeading__line {
-    display: block;
-    margin: 13px auto;
-    width: 20px;
-    height: 1px;
-    background: black; }
-.ec-secHeading--tandem .ec-secHeading__ja {
-    display: block;
-    margin-bottom: 30px;
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: .15em;
-    vertical-align: 2px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-トピック（アイテム2列）
-
-トップページで使用されているトピックのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.5.1
-*/
-.ec-topicRole {
-  padding: 40px 0;
-  background: #F8F8F8; }
-.ec-topicRole .ec-topicRole__list {
-    display: flex;
-    flex-wrap: wrap; }
-.ec-topicRole .ec-topicRole__listItem {
-    margin-bottom: 20px;
-    width: 100%;
-    height: auto; }
-.ec-topicRole .ec-topicRole__listItemTitle {
-    margin-top: .5em;
-    font-size: 14px;
-    color: black; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-カテゴリ（アイテム4列 スマホの時は2列）
-
-トップページで使用されているアイテムリストのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.6.1
-*/
-.ec-newItemRole {
-  padding: 40px 0; }
-.ec-newItemRole .ec-newItemRole__list {
-    display: flex;
-    flex-wrap: wrap; }
-.ec-newItemRole .ec-newItemRole__listItem {
-    margin-bottom: 4%;
-    width: 48%;
-    height: auto; }
-.ec-newItemRole .ec-newItemRole__listItem:not(:first-child) a {
-      color: black; }
-.ec-newItemRole .ec-newItemRole__listItem:nth-child(odd) {
-      margin-right: 4%; }
-.ec-newItemRole .ec-newItemRole__listItemHeading {
-    margin-top: calc(45% - 20px); }
-.ec-newItemRole .ec-newItemRole__listItemTitle {
-    margin: 8px 0;
-    font-size: 14px;
-    font-weight: bold; }
-.ec-newItemRole .ec-newItemRole__listItemPrice {
-    font-size: 12px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-カテゴリ（アイテム3列）
-
-トップページで使用されているカテゴリのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.7.1
-*/
-.ec-categoryRole {
-  padding: 40px 0;
-  color: black;
-  background: #F8F8F8; }
-.ec-categoryRole .ec-categoryRole__list {
-    display: flex;
-    flex-wrap: wrap; }
-.ec-categoryRole .ec-categoryRole__listItem {
-    margin-bottom: 20px;
-    width: 100%;
-    height: auto; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
 見出し
 
 トップページで使用されている新着情報のスタイルです。
@@ -5556,39 +4123,15 @@ Styleguide 13.1
   margin-bottom: 0;
   padding: 0; }
 .ec-searchnavRole .ec-searchnavRole__infos {
-    margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #525263;
-    -webkit-text-size-adjust: 100%;
     width: 100%;
-    max-width: 1130px;
     display: flex;
     border-top: 0;
     margin-bottom: 16px;
     padding-top: 5px;
     flex-direction: column; }
-.ec-searchnavRole .ec-searchnavRole__infos:after {
-      content: " ";
-      display: table; }
-.ec-searchnavRole .ec-searchnavRole__infos:after {
-      clear: both; }
-.ec-searchnavRole .ec-searchnavRole__infos textarea {
-      /* for chrome fontsize bug */
-      font-family: sans-serif; }
-.ec-searchnavRole .ec-searchnavRole__infos img {
-      max-width: 100%; }
-.ec-searchnavRole .ec-searchnavRole__infos html {
-      box-sizing: border-box; }
-.ec-searchnavRole .ec-searchnavRole__infos *,
-    .ec-searchnavRole .ec-searchnavRole__infos *::before,
-    .ec-searchnavRole .ec-searchnavRole__infos *::after {
-      box-sizing: inherit; }
-.ec-searchnavRole .ec-searchnavRole__infos img {
-      width: 100%; }
 .ec-searchnavRole .ec-searchnavRole__counter {
     margin-bottom: 16px;
     width: 100%; }
@@ -5619,34 +4162,10 @@ Styleguide 13.2
 
 */
 .ec-shelfRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-shelfRole:after {
-    content: " ";
-    display: table; }
-.ec-shelfRole:after {
-    clear: both; }
-.ec-shelfRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-shelfRole img {
-    max-width: 100%; }
-.ec-shelfRole html {
-    box-sizing: border-box; }
-.ec-shelfRole *,
-  .ec-shelfRole *::before,
-  .ec-shelfRole *::after {
-    box-sizing: inherit; }
-.ec-shelfRole img {
-    width: 100%; }
+  width: 100%; }
 /*
 商品一覧グリッド
 
@@ -5840,34 +4359,10 @@ include /assets/tmpl/elements/14.1.product.pug
 Styleguide 14.1
 */
 .ec-productRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-productRole:after {
-    content: " ";
-    display: table; }
-.ec-productRole:after {
-    clear: both; }
-.ec-productRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-productRole img {
-    max-width: 100%; }
-.ec-productRole html {
-    box-sizing: border-box; }
-.ec-productRole *,
-  .ec-productRole *::before,
-  .ec-productRole *::after {
-    box-sizing: inherit; }
-.ec-productRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-productRole .ec-productRole__img {
     margin-right: 0;
     margin-bottom: 20px; }
@@ -5947,37 +4442,13 @@ Styleguide 15.1
 
 */
 .ec-cartRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
   width: 100%;
-  max-width: 1130px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end; }
-.ec-cartRole:after {
-    content: " ";
-    display: table; }
-.ec-cartRole:after {
-    clear: both; }
-.ec-cartRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-cartRole img {
-    max-width: 100%; }
-.ec-cartRole html {
-    box-sizing: border-box; }
-.ec-cartRole *,
-  .ec-cartRole *::before,
-  .ec-cartRole *::after {
-    box-sizing: inherit; }
-.ec-cartRole img {
-    width: 100%; }
 .ec-cartRole::before {
     display: none; }
 .ec-cartRole .ec-cartRole__progress {
@@ -6067,34 +4538,10 @@ Styleguide 15.1.3
     overflow-x: hidden;
     font-weight: bold; }
 .ec-cartCompleteRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-cartCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-cartCompleteRole:after {
-    clear: both; }
-.ec-cartCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-cartCompleteRole img {
-    max-width: 100%; }
-.ec-cartCompleteRole html {
-    box-sizing: border-box; }
-.ec-cartCompleteRole *,
-  .ec-cartCompleteRole *::before,
-  .ec-cartCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-cartCompleteRole img {
-    width: 100%; }
+  width: 100%; }
 /*
 カート内商品
 
@@ -6317,37 +4764,13 @@ include /assets/tmpl/elements/15.2.order.pug
 Styleguide 15.2
 */
 .ec-orderRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
   width: 100%;
-  max-width: 1130px;
   display: flex;
   flex-direction: column;
   margin-top: 0; }
-.ec-orderRole:after {
-    content: " ";
-    display: table; }
-.ec-orderRole:after {
-    clear: both; }
-.ec-orderRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-orderRole img {
-    max-width: 100%; }
-.ec-orderRole html {
-    box-sizing: border-box; }
-.ec-orderRole *,
-  .ec-orderRole *::before,
-  .ec-orderRole *::after {
-    box-sizing: inherit; }
-.ec-orderRole img {
-    width: 100%; }
 .ec-orderRole .ec-inlineBtn {
     font-weight: normal; }
 .ec-orderRole .ec-orderRole__detail {
@@ -6785,34 +5208,10 @@ Styleguide 18.1
 
 */
 .ec-forgotRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-forgotRole:after {
-    content: " ";
-    display: table; }
-.ec-forgotRole:after {
-    clear: both; }
-.ec-forgotRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-forgotRole img {
-    max-width: 100%; }
-.ec-forgotRole html {
-    box-sizing: border-box; }
-.ec-forgotRole *,
-  .ec-forgotRole *::before,
-  .ec-forgotRole *::after {
-    box-sizing: inherit; }
-.ec-forgotRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-forgotRole .ec-forgotRole__intro {
     font-size: 16px; }
 .ec-forgotRole .ec-forgotRole__form {
@@ -6837,34 +5236,10 @@ Styleguide 19.1
 
 */
 .ec-registerRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-registerRole:after {
-    content: " ";
-    display: table; }
-.ec-registerRole:after {
-    clear: both; }
-.ec-registerRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-registerRole img {
-    max-width: 100%; }
-.ec-registerRole html {
-    box-sizing: border-box; }
-.ec-registerRole *,
-  .ec-registerRole *::before,
-  .ec-registerRole *::after {
-    box-sizing: inherit; }
-.ec-registerRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-registerRole .ec-registerRole__actions {
     padding-top: 20px;
     text-align: center; }
@@ -6873,34 +5248,10 @@ Styleguide 19.1
 .ec-registerRole .ec-blockBtn--action {
     margin-bottom: 16px; }
 .ec-registerCompleteRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-registerCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-registerCompleteRole:after {
-    clear: both; }
-.ec-registerCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-registerCompleteRole img {
-    max-width: 100%; }
-.ec-registerCompleteRole html {
-    box-sizing: border-box; }
-.ec-registerCompleteRole *,
-  .ec-registerCompleteRole *::before,
-  .ec-registerCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-registerCompleteRole img {
-    width: 100%; }
+  width: 100%; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -6921,100 +5272,28 @@ Styleguide 19.2
 
 */
 .ec-contactRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-contactRole:after {
-    content: " ";
-    display: table; }
-.ec-contactRole:after {
-    clear: both; }
-.ec-contactRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactRole img {
-    max-width: 100%; }
-.ec-contactRole html {
-    box-sizing: border-box; }
-.ec-contactRole *,
-  .ec-contactRole *::before,
-  .ec-contactRole *::after {
-    box-sizing: inherit; }
-.ec-contactRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-contactRole .ec-contactRole__actions {
     padding-top: 20px; }
 .ec-contactRole p {
     margin: 16px 0; }
 .ec-contactConfirmRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-contactConfirmRole:after {
-    content: " ";
-    display: table; }
-.ec-contactConfirmRole:after {
-    clear: both; }
-.ec-contactConfirmRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactConfirmRole img {
-    max-width: 100%; }
-.ec-contactConfirmRole html {
-    box-sizing: border-box; }
-.ec-contactConfirmRole *,
-  .ec-contactConfirmRole *::before,
-  .ec-contactConfirmRole *::after {
-    box-sizing: inherit; }
-.ec-contactConfirmRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-contactConfirmRole .ec-contactConfirmRole__actions {
     padding-top: 20px; }
 .ec-contactConfirmRole .ec-blockBtn--action {
     margin-bottom: 16px; }
 .ec-contactCompleteRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-contactCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-contactCompleteRole:after {
-    clear: both; }
-.ec-contactCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactCompleteRole img {
-    max-width: 100%; }
-.ec-contactCompleteRole html {
-    box-sizing: border-box; }
-.ec-contactCompleteRole *,
-  .ec-contactCompleteRole *::before,
-  .ec-contactCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-contactCompleteRole img {
-    width: 100%; }
+  width: 100%; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -7036,100 +5315,28 @@ Styleguide 19.3
 
 */
 .ec-customerRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-customerRole:after {
-    content: " ";
-    display: table; }
-.ec-customerRole:after {
-    clear: both; }
-.ec-customerRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-customerRole img {
-    max-width: 100%; }
-.ec-customerRole html {
-    box-sizing: border-box; }
-.ec-customerRole *,
-  .ec-customerRole *::before,
-  .ec-customerRole *::after {
-    box-sizing: inherit; }
-.ec-customerRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-customerRole .ec-customerRole__actions {
     padding-top: 20px; }
 .ec-customerRole .ec-blockBtn--action {
     margin-bottom: 10px; }
 .ec-contactConfirmRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-contactConfirmRole:after {
-    content: " ";
-    display: table; }
-.ec-contactConfirmRole:after {
-    clear: both; }
-.ec-contactConfirmRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactConfirmRole img {
-    max-width: 100%; }
-.ec-contactConfirmRole html {
-    box-sizing: border-box; }
-.ec-contactConfirmRole *,
-  .ec-contactConfirmRole *::before,
-  .ec-contactConfirmRole *::after {
-    box-sizing: inherit; }
-.ec-contactConfirmRole img {
-    width: 100%; }
+  width: 100%; }
 .ec-contactConfirmRole .ec-contactConfirmRole__actions {
     padding-top: 20px; }
 .ec-contactConfirmRole .ec-blockBtn--action {
     margin-bottom: 16px; }
 .ec-contactCompleteRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px; }
-.ec-contactCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-contactCompleteRole:after {
-    clear: both; }
-.ec-contactCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactCompleteRole img {
-    max-width: 100%; }
-.ec-contactCompleteRole html {
-    box-sizing: border-box; }
-.ec-contactCompleteRole *,
-  .ec-contactCompleteRole *::before,
-  .ec-contactCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-contactCompleteRole img {
-    width: 100%; }
+  width: 100%; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -7226,36 +5433,12 @@ Styleguide 21.1
 
 */
 .ec-withdrawRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
   width: 100%;
-  max-width: 1130px;
   text-align: center;
   padding: 0 16px; }
-.ec-withdrawRole:after {
-    content: " ";
-    display: table; }
-.ec-withdrawRole:after {
-    clear: both; }
-.ec-withdrawRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-withdrawRole img {
-    max-width: 100%; }
-.ec-withdrawRole html {
-    box-sizing: border-box; }
-.ec-withdrawRole *,
-  .ec-withdrawRole *::before,
-  .ec-withdrawRole *::after {
-    box-sizing: inherit; }
-.ec-withdrawRole img {
-    width: 100%; }
 .ec-withdrawRole .ec-withdrawRole__title {
     margin-bottom: 16px;
     font-weight: bold;
@@ -7312,36 +5495,12 @@ Styleguide 22.1
 
 */
 .ec-userEditCompleteRole {
-  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
   width: 100%;
-  max-width: 1130px;
   text-align: center;
   padding: 0 16px; }
-.ec-userEditCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-userEditCompleteRole:after {
-    clear: both; }
-.ec-userEditCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-userEditCompleteRole img {
-    max-width: 100%; }
-.ec-userEditCompleteRole html {
-    box-sizing: border-box; }
-.ec-userEditCompleteRole *,
-  .ec-userEditCompleteRole *::before,
-  .ec-userEditCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-userEditCompleteRole img {
-    width: 100%; }
 .ec-userEditCompleteRole .ec-userEditCompleteRole__title {
     margin-bottom: 16px;
     font-weight: bold;
@@ -7349,7 +5508,943 @@ Styleguide 22.1
 .ec-userEditCompleteRole .ec-userEditCompleteRole__description {
     margin-bottom: 32px;
     font-size: 16px; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/**
+ * ECCUBE 固有のスタイルユーティリティ
+ */
+/*
+フッター
+
+全ページで使用されるフッターのプロジェクトコンポーネントです。
+
+ex [トップページ　フッター](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/11.8.footer.pug
++ec-footerRole
+
+Styleguide 11.3
+*/
+.ec-footerRole {
+  border-top: 1px solid #7d7d7d;
+  margin-top: 30px;
+  background: black; }
+/*
+フッターナビ
+
+フッタープロジェクトで使用するナビゲーション用のコンポーネントです。
+
+Markup:
+include /assets/tmpl/elements/11.8.footer.pug
++ec-footerNav
+
+sg-wrapper:
+<div class="ec-footerRole">
+  <div class="ec-footerRole__inner">
+    <sg-wrapper-content/>
+  </div>
+</div>
+
+Styleguide 11.3.1
+*/
+.ec-footerNavi {
+  padding: 0;
+  color: white;
+  list-style: none;
+  text-align: center; }
+.ec-footerNavi .ec-footerNavi__link {
+    display: block; }
+.ec-footerNavi .ec-footerNavi__link a {
+      display: block;
+      border-bottom: 1px solid #7d7d7d;
+      padding: 15px 0;
+      font-size: 14px;
+      color: inherit;
+      text-decoration: none; }
+.ec-footerNavi .ec-footerNavi__link:hover a {
+      opacity: .8;
+      text-decoration: none; }
+/*
+フッタータイトル
+
+フッタープロジェクトで使用するタイトル用のコンポーネントです。
+
+Markup:
+include /assets/tmpl/elements/11.8.footer.pug
++ec-footerTitle
+
+sg-wrapper:
+<div class="ec-footerRole">
+  <div class="ec-footerRole__inner">
+    <sg-wrapper-content/>
+  </div>
+</div>
+
+Styleguide 11.3.2
+*/
+.ec-footerTitle {
+  padding: 40px 0 60px;
+  text-align: center;
+  color: white; }
+.ec-footerTitle .ec-footerTitle__logo {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; }
+.ec-footerTitle .ec-footerTitle__logo a {
+      color: inherit;
+      text-decoration: none; }
+.ec-footerTitle .ec-footerTitle__logo a:hover {
+      text-decoration: none; }
+.ec-footerTitle .ec-footerTitle__logo a {
+      font-size: 22px;
+      color: inherit; }
+.ec-footerTitle .ec-footerTitle__logo:hover a {
+      opacity: .8;
+      text-decoration: none; }
+.ec-footerTitle .ec-footerTitle__copyright {
+    font-size: 10px; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/*
+アイキャッチ
+
+トップページ アイキャッチ部に関する Project コンポーネントを定義します。
+
+ex [トップページスライダー直下 アイキャッチ部](http://demo3.ec-cube.net/)
+
+Markup:
+include /assets/tmpl/elements/12.2.eyecatch.pug
++ec-eyecatchRole
+
+Styleguide 12.2
+*/
+.ec-eyecatchRole {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  /* Deprecated https://github.com/EC-CUBE/ec-cube/pull/4220 */ }
+.ec-eyecatchRole .ec-eyecatchRole__image {
+    display: block;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 100%; }
+.ec-eyecatchRole .ec-eyecatchRole__intro {
+    color: black; }
+.ec-eyecatchRole .ec-eyecatchRole__introEnTitle {
+    margin-bottom: .8em;
+    font-size: 16px;
+    font-weight: normal; }
+.ec-eyecatchRole .ec-eyecatchRole__introTitle {
+    margin-bottom: .8em;
+    font-size: 24px;
+    font-weight: bold; }
+.ec-eyecatchRole .ec-eyecatchRole__introDescriptiron {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 2; }
+.ec-eyecatchRole .ec-eyecatchRole__introDescription {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 2; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/*
+ボタン
+
+トップページで使用されているボタンのスタイルです。
+
+ex [トップページ](http://demo3.ec-cube.net/)
+
+Markup:
+sg-wrapper:
+<div class="ec-role">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 12.3
+*/
+/*
+通常ボタン
+
+インラインの要素としてボタンを定義出来ます。
+
+Markup:
+.ec-inlineBtn--top more
+
+Styleguide 12.3.1
+*/
+.ec-inlineBtn--top {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 0px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-color: black; }
+.ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus, .ec-inlineBtn--top:active:focus, .ec-inlineBtn--top:active.focus, .ec-inlineBtn--top.active:focus, .ec-inlineBtn--top.active.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+.ec-inlineBtn--top:hover, .ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus {
+    color: #525263;
+    text-decoration: none; }
+.ec-inlineBtn--top:active, .ec-inlineBtn--top.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+.ec-inlineBtn--top.disabled, .ec-inlineBtn--top[disabled],
+  fieldset[disabled] .ec-inlineBtn--top {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: 0.65;
+    box-shadow: none; }
+.ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus {
+    color: white;
+    background-color: black;
+    border-color: black; }
+.ec-inlineBtn--top:hover {
+    color: white;
+    background-color: black;
+    border-color: black; }
+.ec-inlineBtn--top:active, .ec-inlineBtn--top.active,
+  .open > .ec-inlineBtn--top.dropdown-toggle {
+    color: white;
+    background-color: black;
+    background-image: none;
+    border-color: black; }
+.ec-inlineBtn--top:active:hover, .ec-inlineBtn--top:active:focus, .ec-inlineBtn--top:active.focus, .ec-inlineBtn--top.active:hover, .ec-inlineBtn--top.active:focus, .ec-inlineBtn--top.active.focus,
+    .open > .ec-inlineBtn--top.dropdown-toggle:hover,
+    .open > .ec-inlineBtn--top.dropdown-toggle:focus,
+    .open > .ec-inlineBtn--top.dropdown-toggle.focus {
+      color: white;
+      background-color: black;
+      border-color: black; }
+.ec-inlineBtn--top.disabled:hover, .ec-inlineBtn--top.disabled:focus, .ec-inlineBtn--top.disabled.focus, .ec-inlineBtn--top[disabled]:hover, .ec-inlineBtn--top[disabled]:focus, .ec-inlineBtn--top[disabled].focus,
+  fieldset[disabled] .ec-inlineBtn--top:hover,
+  fieldset[disabled] .ec-inlineBtn--top:focus,
+  fieldset[disabled] .ec-inlineBtn--top.focus {
+    background-color: black;
+    border-color: black; }
+.ec-inlineBtn--top .badge {
+    color: black;
+    background-color: white; }
+.ec-inlineBtn--top .ec-icon img {
+    width: 1em;
+    vertical-align: text-bottom; }
+/*
+ロングボタン（全幅）
+
+ロングタイプのボタンです。
+
+Markup:
+.ec-blockBtn--top 商品一覧へ
+
+Styleguide 2.1.2
+*/
+.ec-blockBtn--top {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 0px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-color: black;
+  display: block;
+  height: 56px;
+  line-height: 56px;
+  padding-top: 0;
+  padding-bottom: 0; }
+.ec-blockBtn--top:focus, .ec-blockBtn--top.focus, .ec-blockBtn--top:active:focus, .ec-blockBtn--top:active.focus, .ec-blockBtn--top.active:focus, .ec-blockBtn--top.active.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+.ec-blockBtn--top:hover, .ec-blockBtn--top:focus, .ec-blockBtn--top.focus {
+    color: #525263;
+    text-decoration: none; }
+.ec-blockBtn--top:active, .ec-blockBtn--top.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+.ec-blockBtn--top.disabled, .ec-blockBtn--top[disabled],
+  fieldset[disabled] .ec-blockBtn--top {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: 0.65;
+    box-shadow: none; }
+.ec-blockBtn--top:focus, .ec-blockBtn--top.focus {
+    color: white;
+    background-color: black;
+    border-color: black; }
+.ec-blockBtn--top:hover {
+    color: white;
+    background-color: black;
+    border-color: black; }
+.ec-blockBtn--top:active, .ec-blockBtn--top.active,
+  .open > .ec-blockBtn--top.dropdown-toggle {
+    color: white;
+    background-color: black;
+    background-image: none;
+    border-color: black; }
+.ec-blockBtn--top:active:hover, .ec-blockBtn--top:active:focus, .ec-blockBtn--top:active.focus, .ec-blockBtn--top.active:hover, .ec-blockBtn--top.active:focus, .ec-blockBtn--top.active.focus,
+    .open > .ec-blockBtn--top.dropdown-toggle:hover,
+    .open > .ec-blockBtn--top.dropdown-toggle:focus,
+    .open > .ec-blockBtn--top.dropdown-toggle.focus {
+      color: white;
+      background-color: black;
+      border-color: black; }
+.ec-blockBtn--top.disabled:hover, .ec-blockBtn--top.disabled:focus, .ec-blockBtn--top.disabled.focus, .ec-blockBtn--top[disabled]:hover, .ec-blockBtn--top[disabled]:focus, .ec-blockBtn--top[disabled].focus,
+  fieldset[disabled] .ec-blockBtn--top:hover,
+  fieldset[disabled] .ec-blockBtn--top:focus,
+  fieldset[disabled] .ec-blockBtn--top.focus {
+    background-color: black;
+    border-color: black; }
+.ec-blockBtn--top .badge {
+    color: black;
+    background-color: white; }
+.ec-blockBtn--top .ec-icon img {
+    width: 1em;
+    vertical-align: text-bottom; }
+.heading {
+  color: black;
+  margin-bottom: 15px; }
+.heading__en, .heading h3 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: .2em; }
+.heading__line {
+    display: inline-block;
+    margin: 0 20px;
+    width: 1px;
+    height: 14px;
+    background: black; }
+.heading__ja {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: .15em;
+    vertical-align: 2px; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/*
+トピック（アイテム2列）
+
+トップページで使用されているトピックのスタイルです。
+
+ex [トップページ](http://demo3.ec-cube.net/)
+
+Markup:
+sg-wrapper:
+<div class="ec-role">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 12.5.1
+*/
+.topic {
+  padding: 40px 0;
+  background: #F8F8F8; }
+.topic .topic__list {
+    display: flex;
+    flex-wrap: wrap; }
+.topic .topic__item {
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto; }
+.topic .topic__item-title {
+    margin-top: .5em;
+    font-size: 14px;
+    color: black; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+.news-item {
+  padding: 40px 0; }
+.news-item .news-item__list {
+    display: flex;
+    flex-wrap: wrap; }
+.news-item__extra {
+    position: absolute;
+    top: 0;
+    left: 54px;
+    width: 66px;
+    height: 36px;
+    text-align: center;
+    transform-origin: top left;
+    transform: rotate(90deg); }
+.news-item__extra a {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff !important;
+      line-height: 30px;
+      text-decoration: none; }
+.news-item .news-item__item {
+    margin-bottom: 4%;
+    width: 48%;
+    height: auto;
+    position: relative; }
+.news-item .news-item__item .newLabel {
+      background: #6c6a74; }
+.news-item .news-item__item a {
+      color: black; }
+.news-item .news-item__item:nth-child(odd) {
+      margin-right: 4%; }
+.news-item .news-item__item__title {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: bold; }
+.news-item .news-item__item__price {
+    font-size: 12px; }
+.news-item .news-item__more {
+    text-align: right; }
+.news-item .news-item__more a {
+      display: inline-block;
+      margin-left: auto;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      padding-right: 20px; }
+.news-item .news-item__more a:first-letter {
+      text-transform: uppercase; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+/**
+ * ECCUBE 固有のスタイルユーティリティ
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden; }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+.bg-load-overlay {
+  background: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647;
+  opacity: 1; }
+.layoutRole {
+  width: 100%;
+  transition: transform 0.3s;
+  background: #fff; }
+.layoutRole .layoutRole__contentTop {
+    padding: 0; }
+.layoutRole .layoutRole__contents {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    flex-wrap: nowrap; }
+.layoutRole .layoutRole__main {
+    width: 100%; }
+.layoutRole .layoutRole__mainWithColumn {
+    width: 100%; }
+.layoutRole .layoutRole__mainBetweenColumn {
+    width: 100%; }
+.layoutRole .layoutRole__left,
+  .layoutRole .layoutRole__right {
+    display: none; }
+.header {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #F0F0F0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 110px; }
+.header__logo {
+    height: 100%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; }
+.header__logo h1 {
+      margin: 0;
+      padding: 0;
+      line-height: unset;
+      height: inherit; }
+.header__logo a {
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: middle;
+      margin: auto 0;
+      font-size: 30px;
+      font-weight: bold;
+      color: #090909; }
+.header__logo a:hover {
+        opacity: 0.8; }
+.header__search {
+    display: inline-block;
+    margin-left: 40px;
+    max-width: 530px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap; }
+.header__search a {
+      color: inherit;
+      text-decoration: none; }
+.header__search a:hover {
+      text-decoration: none; }
+.headerNav {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #F4F4F4;
+  height: 70px;
+  padding-top: 0px;
+  text-align: right;
+  align-items: center; }
+.headerNav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%; }
+.headerNav .fa-bars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+.headerNav__item {
+    margin-left: 0;
+    margin-right: 50px;
+    font-size: 28px; }
+.headerNav__item a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap; }
+.headerNav__item a a {
+        color: inherit;
+        text-decoration: none; }
+.headerNav__item a a:hover {
+        text-decoration: none; }
+.headerNav__itemIcon {
+    display: inline-block;
+    font-size: 18px;
+    color: black; }
+.headerNav__itemLink {
+    display: none;
+    font-size: 13px;
+    vertical-align: middle;
+    padding-top: 5px;
+    color: #090909; }
+.headerNav__nav {
+    display: inline-block; }
+.headerNav__nav a {
+      color: inherit;
+      text-decoration: none; }
+.headerNav__nav a:hover {
+      text-decoration: none; }
+.headerNav .cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: 0; }
+.headerNav .cart .name {
+      color: #090909;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 5px;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 5px; }
+.headerNav .cart a {
+      color: inherit;
+      text-decoration: none; }
+.headerNav .cart a:hover {
+      text-decoration: none; }
+.headerNav__navSP {
+    display: block;
+    position: absolute;
+    top: 15px;
+    width: 27%;
+    right: 0;
+    text-align: right; }
+.header__search {
+  width: 100%; }
+.header__search:after {
+    content: " ";
+    display: table; }
+.header__search:after {
+    clear: both; }
+.header__search__keyword {
+    position: relative;
+    color: #C8C8C8;
+    background-color: #F8F8F8;
+    border-radius: 50px;
+    width: 530px; }
+.header__search__keyword .input {
+      height: 50px; }
+.header__search__keyword input[type="search"] {
+      width: 100%;
+      height: 50px;
+      font-size: 14px;
+      margin-left: 45px;
+      border: 0 none;
+      padding: 0.5em 50px 0.5em 1em;
+      box-shadow: none;
+      background: none;
+      box-sizing: border-box;
+      outline: 0;
+      margin-bottom: 0; }
+.header__search__keywordBtn {
+    border: 0;
+    background: none;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    white-space: nowrap;
+    z-index: 1;
+    width: 35px;
+    height: 35px; }
+.header__search__keywordBtn .icon {
+      width: 100%;
+      height: 100%; }
+.header__search__keywordBtn .icon path {
+        fill: #C8C8C8; }
+.drawerRole {
+  overflow-y: scroll;
+  background: black;
+  width: 260px;
+  height: 100vh;
+  transform: translateX(-300px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: z-index 0ms 1ms; }
+.drawerRole .headerSearchArea {
+    padding: 20px 10px;
+    width: 100%;
+    background: #f8f8f8; }
+.drawerRole .headerSearch {
+    padding: 16px 8px 26px;
+    background: #ebebeb;
+    color: #636378; }
+.drawerRole .headerSearch select {
+      width: 100% !important; }
+.drawerRole .headerCategoryArea .headerCategoryArea__heading {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 1em 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background: #f8f8f8; }
+.drawerRole .headerCategoryArea p {
+    margin-top: 0;
+    margin-bottom: 0; }
+.drawerRole .headerCategoryArea .itemNav__nav li a {
+    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    color: black;
+    font-weight: normal;
+    background: #f8f8f8; }
+.drawerRole .headerCategoryArea .itemNav__nav li ul li a {
+    border-bottom: 1px solid #ccc;
+    padding-left: 20px;
+    font-weight: normal;
+    background: white; }
+.drawerRole .headerCategoryArea .itemNav__nav > li:hover > a {
+    background: #f8f8f8; }
+.drawerRole .headerCategoryArea .itemNav__nav > li:hover li:hover > a {
+    background: white; }
+.drawerRole .headerCategoryArea .itemNav__nav li ul li ul li a {
+    padding-left: 40px;
+    color: black;
+    background: white; }
+.drawerRole .headerCategoryArea .itemNav__nav li:hover ul li ul li a:hover {
+    background: white; }
+.drawerRole .headerCategoryArea .itemNav__nav li ul li ul li ul li a {
+    padding-left: 60px;
+    font-weight: normal; }
+.drawerRole .headerLinkArea {
+    background: black; }
+.drawerRole .headerLinkArea .headerLink__list {
+      border-top: 1px solid #ccc; }
+.drawerRole .headerLinkArea .headerLink__item {
+      display: block;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white; }
+.drawerRole .headerLinkArea .headerLink__icon {
+      display: inline-block;
+      width: 28px;
+      font-size: 17px; }
+.drawerRoleClose {
+  display: none;
+  cursor: pointer;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  background: white;
+  position: fixed;
+  top: 10px;
+  left: 270px;
+  z-index: 1000; }
+.drawerRoleClose .fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+.drawerRole.is_active {
+  display: block;
+  transform: translateX(0);
+  transition: all 0.3s;
+  z-index: 100000; }
+.drawerRoleClose.is_active {
+  display: inline-block;
+  transition: all 0.3s; }
+.overlayRole {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: transparent;
+  transform: translateX(0);
+  transition: all 0.3s;
+  visibility: hidden; }
+.have_curtain .overlayRole {
+  display: block;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: visible; }
+.headerNav__navSP {
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  background: white;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; }
+.headerNav__navSP .fas {
+    vertical-align: top; }
+.headerNavSP.is-active {
+  display: none; }
+.itemNavAccordion {
+  display: none; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+.wrapper-slider {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px; }
+.slider {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden; }
+.slider ul {
+    padding: 0;
+    list-style: none; }
+.slider .main-visual {
+    position: relative;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+.slider .main-visual .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block; }
+.slider .main-visual .slide img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+.category-nav {
+  height: 100%;
+  color: #0A0A0A; }
+.category-nav a {
+    color: inherit;
+    text-decoration: none; }
+.category-nav a:hover {
+    text-decoration: none; }
+.category-nav a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    height: 32px;
+    padding: 5px;
+    font-size: 16px; }
+.category-nav a font {
+      text-align: center; }
+.category-title h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #C1C1C1; }
+.item-nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left; }
+.item-nav ul {
+    list-style: none; }
+.item-nav > span {
+    padding: 10px 0; }
+.item-nav__list {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
+  height: auto;
+  text-align: center;
+  vertical-align: bottom; }
+.item-nav__list .has-sub:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    top: 15px;
+    transform: translateY(-75%) rotate(45deg);
+    border-right: 1px solid;
+    border-bottom: 1px solid; }
+.item-nav__list li.has-sub :hover {
+    display: block; }
+.item-nav__list > li {
+    padding: 10px 0;
+    display: inline-block;
+    margin-top: -1px;
+    text-align: left;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer; }
+.item-nav__list > li .sub-item-nav {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      display: none;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      z-index: 1;
+      justify-content: center; }
+.item-nav__list ul.active {
+    height: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.25); }
+.item-nav__list a:hover {
+    color: black;
+    transition: 0.2s all ease; }
 @media (min-width: 768px) {
+    .layout__contents {
+      padding-left: 125px;
+      padding-right: 125px; }
       .ec-grid2 .ec-grid2__cell {
         width: 50%; }
       .ec-grid2 .ec-grid2__cell2 {
@@ -7367,7 +6462,67 @@ Styleguide 22.1
       .ec-grid6 .ec-grid6__cell2 {
         width: 33.33333%; }
       .ec-grid6 .ec-grid6__cell3 {
-        width: 50%; } }
+        width: 50%; }
+      .ec-searchnavRole .ec-searchnavRole__infos {
+        padding-left: 125px;
+        padding-right: 125px; }
+    .ec-shelfRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-productRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-cartRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-cartCompleteRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-orderRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-forgotRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-registerRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-registerCompleteRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-contactRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-contactConfirmRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-contactCompleteRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-customerRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-contactConfirmRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-contactCompleteRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-withdrawRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-userEditCompleteRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .header {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .headerNav {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .wrapper-slider {
+      padding-left: 125px;
+      padding-right: 125px; } }
 @media only screen and (min-width: 768px) {
     .ec-pageHeader h1 {
       border-top: none;
@@ -7507,38 +6662,18 @@ Styleguide 22.1
         width: 42px;
         height: 42px;
         font-size: 20px; }
-  .ec-cartNaviWrap {
-    position: relative; }
-    .ec-cartNavi {
-      display: flex;
-      justify-content: space-between;
-      border-radius: 99999px;
-      box-sizing: border-box;
-      padding: 12px 17px 10px;
-      width: auto;
-      min-width: 140px;
-      height: 44px;
-      white-space: nowrap;
-      cursor: pointer;
-      background: #F8F8F8; }
-      .ec-cartNavi .ec-cartNavi__badge {
-        display: inline-block;
-        min-width: 17px;
-        position: relative;
-        left: 0;
-        top: 0; }
-      .ec-cartNavi .ec-cartNavi__price {
+      .cartNav__price {
         display: inline-block;
         font-size: 14px;
         font-weight: normal;
         vertical-align: middle; }
-    .ec-cartNavi.is-active .ec-cartNavi__badge {
+    .cartNav.u-active .cartNav__badge {
       display: none; }
-    .ec-cartNaviIsset {
+    .cartNavIsset {
       margin-top: 10px;
       min-width: 256px;
       max-width: 256px; }
-      .ec-cartNaviIsset::before {
+      .cartNavIsset::before {
         display: inline-block;
         content: "";
         width: 0;
@@ -7548,11 +6683,11 @@ Styleguide 22.1
         border-color: transparent transparent #f8f8f8 transparent;
         position: absolute;
         top: -9px; }
-    .ec-cartNaviNull {
+    .cartNav__content {
       margin-top: 10px;
       min-width: 256px;
       max-width: 256px; }
-      .ec-cartNaviNull::before {
+      .cartNav__content::before {
         display: inline-block;
         content: "";
         width: 0;
@@ -7585,233 +6720,6 @@ Styleguide 22.1
         height: 250px; }
     .ec-favoriteRole .ec-favoriteRole__item {
       width: 25%; }
-    .ec-mypageRole {
-      padding-left: 26px;
-      padding-right: 26px; }
-    .ec-mypageRole .ec-pageHeader h1 {
-      margin: 10px 0 48px;
-      padding: 8px 0 18px; }
-      .ec-layoutRole .ec-layoutRole__mainWithColumn {
-        width: 75%; }
-      .ec-layoutRole .ec-layoutRole__mainBetweenColumn {
-        width: 50%; }
-      .ec-layoutRole .ec-layoutRole__left,
-      .ec-layoutRole .ec-layoutRole__right {
-        display: block;
-        width: 25%; }
-    .ec-headerRole:after {
-      content: " ";
-      display: table; }
-    .ec-headerRole:after {
-      clear: both; }
-    .ec-headerRole {
-      width: 100%; }
-      .ec-headerRole:after {
-        content: " ";
-        display: table; }
-      .ec-headerRole:after {
-        clear: both; }
-      .ec-headerRole .ec-headerRole__navSP {
-        display: none; }
-    .ec-headerNaviRole {
-      padding-bottom: 40px; }
-      .ec-headerNaviRole .ec-headerNaviRole__search {
-        display: inline-block;
-        margin-top: 10px; }
-        .ec-headerNaviRole .ec-headerNaviRole__search a {
-          color: inherit;
-          text-decoration: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__search a:hover {
-          text-decoration: none; }
-      .ec-headerNaviRole .ec-headerNaviRole__navSP {
-        display: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__navSP a {
-          color: inherit;
-          text-decoration: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__navSP a:hover {
-          text-decoration: none; }
-    .ec-headerNavSP {
-      display: none; }
-        .ec-headerTitle .ec-headerTitle__title a {
-          font-size: 40px; }
-      .ec-headerTitle .ec-headerTitle__subtitle {
-        font-size: 16px;
-        margin-bottom: 10px; }
-      .ec-headerNav .ec-headerNav__itemIcon {
-        margin-right: 0;
-        font-size: 20px; }
-      .ec-headerNav .ec-headerNav__itemLink {
-        display: inline-block; }
-    .ec-headerSearch .ec-headerSearch__category {
-      float: left;
-      width: 43%; }
-        .ec-headerSearch .ec-headerSearch__category .ec-select select {
-          max-width: 165px;
-          height: 36px; }
-        .ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search {
-          border-top-right-radius: inherit;
-          border-top-left-radius: 50px;
-          border-bottom-left-radius: 50px; }
-    .ec-headerSearch .ec-headerSearch__keyword {
-      float: right;
-      width: 57%;
-      border-bottom-left-radius: inherit;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px; }
-      .ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
-        font-size: 12px; }
-    .ec-categoryNaviRole {
-      display: block;
-      width: 100%; }
-      .ec-categoryNaviRole a {
-        color: inherit;
-        text-decoration: none; }
-      .ec-categoryNaviRole a:hover {
-        text-decoration: none; }
-    .ec-itemNav__nav {
-      display: inline-block; }
-    .ec-itemNav__nav li {
-      float: left;
-      width: auto; }
-    .ec-itemNav__nav li a {
-      text-align: center;
-      border-bottom: none; }
-    .ec-itemNav__nav li ul {
-      display: block;
-      z-index: 100;
-      position: absolute; }
-    .ec-itemNav__nav li ul li {
-      overflow: hidden;
-      height: 0; }
-  .ec-itemNav__nav > li:hover > ul > li {
-    overflow: visible;
-    height: auto; }
-  .ec-itemNav__nav li ul li ul:before {
-    content: "\f054";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 12px;
-    color: white;
-    position: absolute;
-    top: 19px;
-    right: auto;
-    left: -20px; }
-  .ec-itemNav__nav li ul li:hover > ul > li {
-    overflow: visible;
-    height: auto;
-    width: auto; }
-    .ec-drawerRole {
-      display: none; }
-    .ec-drawerRoleClose {
-      display: none; }
-    .ec-drawerRole.is_active {
-      display: none; }
-    .ec-drawerRoleClose.is_active {
-      display: none; }
-    .ec-overlayRole {
-      display: none; }
-    .have_curtain .ec-overlayRole {
-      display: none; }
-    .ec-footerRole {
-      padding-top: 40px;
-      margin-top: 100px; }
-    .ec-footerRole .ec-footerRole__inner {
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-      box-sizing: border-box;
-      font-size: 16px;
-      line-height: 1.4;
-      color: #525263;
-      -webkit-text-size-adjust: 100%;
-      width: 100%;
-      max-width: 1130px; }
-      .ec-footerRole .ec-footerRole__inner:after {
-        content: " ";
-        display: table; }
-      .ec-footerRole .ec-footerRole__inner:after {
-        clear: both; }
-      .ec-footerRole .ec-footerRole__inner textarea {
-        /* for chrome fontsize bug */
-        font-family: sans-serif; }
-      .ec-footerRole .ec-footerRole__inner img {
-        max-width: 100%; }
-      .ec-footerRole .ec-footerRole__inner html {
-        box-sizing: border-box; }
-      .ec-footerRole .ec-footerRole__inner *,
-      .ec-footerRole .ec-footerRole__inner *::before,
-      .ec-footerRole .ec-footerRole__inner *::after {
-        box-sizing: inherit; }
-      .ec-footerRole .ec-footerRole__inner img {
-        width: 100%; }
-      .ec-footerNavi .ec-footerNavi__link {
-        display: inline-block; }
-        .ec-footerNavi .ec-footerNavi__link a {
-          display: inline-block;
-          border-bottom: none;
-          margin: 0 10px;
-          padding: 0;
-          text-decoration: underline; }
-    .ec-footerTitle {
-      padding: 50px 0 80px; }
-        .ec-footerTitle .ec-footerTitle__logo a {
-          font-size: 24px; }
-      .ec-footerTitle .ec-footerTitle__copyright {
-        font-size: 12px; }
-      .ec-sliderItemRole .item_nav {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        margin-bottom: 0; }
-    .ec-eyecatchRole {
-      flex-wrap: nowrap; }
-      .ec-eyecatchRole .ec-eyecatchRole__image {
-        order: 2; }
-      .ec-eyecatchRole .ec-eyecatchRole__intro {
-        padding-right: 5%;
-        order: 1; }
-      .ec-eyecatchRole .ec-eyecatchRole__introEnTitle {
-        margin-top: 45px; }
-      .ec-eyecatchRole .ec-eyecatchRole__introTitle {
-        margin-bottom: 1em;
-        font-size: 26px; }
-      .ec-eyecatchRole .ec-eyecatchRole__introDescriptiron {
-        margin-bottom: 30px; }
-      .ec-eyecatchRole .ec-eyecatchRole__introDescription {
-        margin-bottom: 30px; }
-    .ec-blockBtn--top {
-      max-width: 260px; }
-    .ec-topicRole {
-      padding: 60px 0; }
-      .ec-topicRole .ec-topicRole__list {
-        flex-wrap: nowrap; }
-      .ec-topicRole .ec-topicRole__listItem {
-        width: calc(100% / 2); }
-        .ec-topicRole .ec-topicRole__listItem:not(:last-of-type) {
-          margin-right: 30px; }
-      .ec-topicRole .ec-topicRole__listItemTitle {
-        margin-top: 1em; }
-    .ec-newItemRole {
-      padding: 60px 0; }
-      .ec-newItemRole .ec-newItemRole__list {
-        flex-wrap: nowrap; }
-      .ec-newItemRole .ec-newItemRole__listItem {
-        margin-bottom: 15px;
-        width: calc(100% / 4); }
-        .ec-newItemRole .ec-newItemRole__listItem:not(:last-of-type) {
-          margin-right: 30px; }
-        .ec-newItemRole .ec-newItemRole__listItem:nth-child(odd) {
-          margin-right: 30px; }
-      .ec-newItemRole .ec-newItemRole__listItemTitle {
-        margin: 20px 0 10px; }
-    .ec-categoryRole {
-      padding: 60px 0; }
-      .ec-categoryRole .ec-categoryRole__list {
-        flex-wrap: nowrap; }
-      .ec-categoryRole .ec-categoryRole__listItem {
-        width: calc(100% / 3); }
-        .ec-categoryRole .ec-categoryRole__listItem:not(:last-of-type) {
-          margin-right: 30px; }
     .ec-newsRole {
       padding: 60px 0 0; }
       .ec-newsRole .ec-newsRole__news {
@@ -7840,34 +6748,10 @@ Styleguide 22.1
       .ec-newsRole__newsItem.is_active .ec-newsRole__newsDescription {
         margin: 20px 0 0; }
     .ec-searchnavRole {
-      margin: 0 auto;
       padding-left: 20px;
       padding-right: 20px;
       box-sizing: border-box;
-      font-size: 16px;
-      line-height: 1.4;
-      color: #525263;
-      -webkit-text-size-adjust: 100%;
-      width: 100%;
-      max-width: 1130px; }
-      .ec-searchnavRole:after {
-        content: " ";
-        display: table; }
-      .ec-searchnavRole:after {
-        clear: both; }
-      .ec-searchnavRole textarea {
-        /* for chrome fontsize bug */
-        font-family: sans-serif; }
-      .ec-searchnavRole img {
-        max-width: 100%; }
-      .ec-searchnavRole html {
-        box-sizing: border-box; }
-      .ec-searchnavRole *,
-      .ec-searchnavRole *::before,
-      .ec-searchnavRole *::after {
-        box-sizing: inherit; }
-      .ec-searchnavRole img {
-        width: 100%; }
+      width: 100%; }
       .ec-searchnavRole .ec-searchnavRole__infos {
         padding-left: 0;
         padding-right: 0;
@@ -8002,7 +6886,111 @@ Styleguide 22.1
       .ec-customerRole .ec-blockBtn--action {
         margin-bottom: 16px; }
       .ec-userEditCompleteRole .ec-userEditCompleteRole__title {
-        font-size: 32px; } }
+        font-size: 32px; }
+    .ec-footerRole {
+      padding-top: 40px;
+      margin-top: 100px; }
+    .ec-footerRole .ec-footerRole__inner {
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+      width: 100%; }
+      .ec-footerNavi .ec-footerNavi__link {
+        display: inline-block; }
+        .ec-footerNavi .ec-footerNavi__link a {
+          display: inline-block;
+          border-bottom: none;
+          margin: 0 10px;
+          padding: 0;
+          text-decoration: underline; }
+    .ec-footerTitle {
+      padding: 50px 0 80px; }
+        .ec-footerTitle .ec-footerTitle__logo a {
+          font-size: 24px; }
+      .ec-footerTitle .ec-footerTitle__copyright {
+        font-size: 12px; }
+    .ec-eyecatchRole {
+      flex-wrap: nowrap; }
+      .ec-eyecatchRole .ec-eyecatchRole__image {
+        order: 2; }
+      .ec-eyecatchRole .ec-eyecatchRole__intro {
+        padding-right: 5%;
+        order: 1; }
+      .ec-eyecatchRole .ec-eyecatchRole__introEnTitle {
+        margin-top: 45px; }
+      .ec-eyecatchRole .ec-eyecatchRole__introTitle {
+        margin-bottom: 1em;
+        font-size: 26px; }
+      .ec-eyecatchRole .ec-eyecatchRole__introDescriptiron {
+        margin-bottom: 30px; }
+      .ec-eyecatchRole .ec-eyecatchRole__introDescription {
+        margin-bottom: 30px; }
+    .ec-blockBtn--top {
+      max-width: 260px; }
+    .topic {
+      padding: 60px 0; }
+      .topic .topic__list {
+        flex-wrap: nowrap; }
+      .topic .topic__item {
+        width: calc(100% / 2); }
+        .topic .topic__item:not(:last-of-type) {
+          margin-right: 30px; }
+      .topic .topic__item-title {
+        margin-top: 1em; }
+    .news-item {
+      padding: 60px 0; }
+      .news-item .news-item__list {
+        flex-wrap: nowrap; }
+      .news-item .news-item__item {
+        margin-bottom: 15px;
+        width: calc(100% / 4); }
+        .news-item .news-item__item:not(:last-of-type) {
+          margin-right: 30px; }
+        .news-item .news-item__item:nth-child(odd) {
+          margin-right: 30px; }
+      .news-item .news-item__item__title {
+        margin: 20px 0 10px; }
+      .layoutRole .layoutRole__mainWithColumn {
+        width: 75%; }
+      .layoutRole .layoutRole__mainBetweenColumn {
+        width: 50%; }
+      .layoutRole .layoutRole__left,
+      .layoutRole .layoutRole__right {
+        display: block;
+        width: 25%; }
+    .header {
+      padding-top: 40px;
+      padding-bottom: 20px; }
+      .header:after {
+        content: " ";
+        display: table; }
+      .header:after {
+        clear: both; }
+      .headerNav__itemIcon {
+        font-size: 22px; }
+      .headerNav__itemLink {
+        display: inline-block; }
+      .headerNav .cart {
+        position: relative; }
+      .headerNav__navSP {
+        display: none; }
+    .drawerRole {
+      display: none; }
+    .drawerRoleClose {
+      display: none; }
+    .drawerRole.is_active {
+      display: none; }
+    .drawerRoleClose.is_active {
+      display: none; }
+    .overlayRole {
+      display: none; }
+    .have_curtain .overlayRole {
+      display: none; }
+    .headerNav__navSP {
+      display: none; }
+    .wrapper-slider {
+      margin-top: 40px;
+      margin-bottom: 70px; } }
 @media only screen and (min-width: 768px) and (min-width: 768px) {
     .ec-off1Grid {
       display: flex; }
@@ -8013,5 +7001,11 @@ Styleguide 22.1
     .ec-off3Grid .ec-off3Grid__cell {
       width: 50%; }
     .ec-off4Grid .ec-off4Grid__cell {
-      width: 33.33333%; } }
+      width: 33.33333%; }
+    .ec-searchnavRole {
+      padding-left: 125px;
+      padding-right: 125px; }
+    .ec-footerRole .ec-footerRole__inner {
+      padding-left: 125px;
+      padding-right: 125px; } }
 /*# sourceMappingURL=style.css.map */

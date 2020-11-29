@@ -14,202 +14,38 @@ file that was distributed with this source code.
 
 {% block stylesheet %}
     <style>
+        .slick-slider { margin-bottom: 30px; }
 
-        .slick-slider {
-            margin-bottom: 30px;
-        }
+        .slick-dots { position: absolute; bottom: -45px; display: block; width:
+        100%; padding: 0; list-style: none; text-align: center; }
 
-        .slick-dots {
-            position: absolute;
-            bottom: -45px;
-            display: block;
-            width: 100%;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
+        .slick-dots li { position: relative; display: inline-block; width: 20px;
+        height: 20px; margin: 0 5px; padding: 0;
 
-        .slick-dots li {
-            position: relative;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin: 0 5px;
-            padding: 0;
+        cursor: pointer; }
 
-            cursor: pointer;
-        }
+        .slick-dots li button { font-size: 0; line-height: 0; display: block;
+        width: 20px; height: 20px; padding: 5px; cursor: pointer; color:
+        transparent; border: 0; outline: none; background: transparent; }
 
-        .slick-dots li button {
-            font-size: 0;
-            line-height: 0;
-            display: block;
-            width: 20px;
-            height: 20px;
-            padding: 5px;
-            cursor: pointer;
-            color: transparent;
-            border: 0;
-            outline: none;
-            background: transparent;
-        }
+        .slick-dots li button:hover, .slick-dots li button:focus { outline:
+        none; }
 
-        .slick-dots li button:hover,
-        .slick-dots li button:focus {
-            outline: none;
-        }
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+        opacity: 1; }
 
-        .slick-dots li button:hover:before,
-        .slick-dots li button:focus:before {
-            opacity: 1;
-        }
-
-        .slick-dots li button:before {
-            content: " ";
-            line-height: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 12px;
-            height: 12px;
-            text-align: center;
-            opacity: .25;
-            background-color: black;
-            border-radius: 50%;
+        .slick-dots li button:before { content: " "; line-height: 20px;
+        position: absolute; top: 0; left: 0; width: 12px; height: 12px;
+        text-align: center; opacity: .25; background-color: black;
+        border-radius: 50%;
 
         }
 
-        .slick-dots li.slick-active button:before {
-            opacity: .75;
-            background-color: black;
-        }
+        .slick-dots li.slick-active button:before { opacity: .75;
+        background-color: black; }
 
-        .slick-dots li button.thumbnail img {
-            width: 0;
-            height: 0;
-        }
-
+        .slick-dots li button.thumbnail img { width: 0; height: 0; }
     </style>
-{% endblock %}
-
-{% block javascript %}
-    <script>
-        eccube.classCategories = {{ class_categories_as_json(Product)|raw }};
-
-        // 規格2に選択肢を割り当てる。
-        function fnSetClassCategories(form, classcat_id2_selected) {
-            var $form = $(form);
-            var product_id = $form.find('input[name=product_id]').val();
-            var $sele1 = $form.find('select[name=classcategory_id1]');
-            var $sele2 = $form.find('select[name=classcategory_id2]');
-            eccube.setClassCategories($form, product_id, $sele1, $sele2, classcat_id2_selected);
-        }
-
-        {% if form.classcategory_id2 is defined %}
-        fnSetClassCategories(
-            $('#form1'), {{ form.classcategory_id2.vars.value|json_encode|raw }}
-        );
-        {% elseif form.classcategory_id1 is defined %}
-        eccube.checkStock($('#form1'), {{ Product.id }}, {{ form.classcategory_id1.vars.value|json_encode|raw }}, null);
-        {% endif %}
-    </script>
-    <script>
-        $(function() {
-            // bfcache無効化
-            $(window).bind('pageshow', function(event) {
-                if (event.originalEvent.persisted) {
-                    location.reload(true);
-                }
-            });
-
-            $('.item_visual').slick({
-                dots: false,
-                arrows: false,
-                responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        dots: true
-                    }
-                }]
-            });
-
-            $('.slideThumb').on('click', function() {
-                var index = $(this).attr('data-index');
-                $('.item_visual').slick('slickGoTo', index, false);
-            })
-        });
-    </script>
-    <script>
-        $(function() {
-            $('.add-cart').on('click', function(event) {
-                {% if form.classcategory_id1 is defined %}
-                // 規格1フォームの必須チェック
-                if ($('#classcategory_id1').val() == '__unselected' || $('#classcategory_id1').val() == '') {
-                    $('#classcategory_id1')[0].setCustomValidity('{{ 'front.product.product_class_unselected'|trans }}');
-                    return true;
-                } else {
-                    $('#classcategory_id1')[0].setCustomValidity('');
-                }
-                {% endif %}
-
-                {% if form.classcategory_id2 is defined %}
-                // 規格2フォームの必須チェック
-                if ($('#classcategory_id2').val() == '__unselected' || $('#classcategory_id2').val() == '') {
-                    $('#classcategory_id2')[0].setCustomValidity('{{ 'front.product.product_class_unselected'|trans }}');
-                    return true;
-                } else {
-                    $('#classcategory_id2')[0].setCustomValidity('');
-                }
-                {% endif %}
-
-                // 個数フォームのチェック
-                if ($('#quantity').val() < 1) {
-                    $('#quantity')[0].setCustomValidity('{{ 'front.product.invalid_quantity'|trans }}');
-                    return true;
-                } else {
-                    $('#quantity')[0].setCustomValidity('');
-                }
-
-                event.preventDefault();
-                $form = $('#form1');
-                $.ajax({
-                    url: $form.attr('action'),
-                    type: $form.attr('method'),
-                    data: $form.serialize(),
-                    dataType: 'json',
-                    beforeSend: function(xhr, settings) {
-                        // Buttonを無効にする
-                        $('.add-cart').prop('disabled', true);
-                    }
-                }).done(function(data) {
-                    // レスポンス内のメッセージをalertで表示
-                    $.each(data.messages, function() {
-                        $('#ec-modal-header').html(this);
-                    });
-
-                    $('.ec-modal').show()
-
-                    // カートブロックを更新する
-                    $.ajax({
-                        url: "{{ url('block_cart') }}",
-                        type: 'GET',
-                        dataType: 'html'
-                    }).done(function(html) {
-                        $('.ec-headerRole__cart').html(html);
-                    });
-                }).fail(function(data) {
-                    alert('{{ 'front.product.add_cart_error'|trans }}');
-                }).always(function(data) {
-                    // Buttonを有効にする
-                    $('.add-cart').prop('disabled', false);
-                });
-            });
-        });
-
-        $('.ec-modal-overlay, .ec-modal .ec-inlineBtn--cancel').on('click', function() {
-            $('.ec-modal').hide()
-        });
-    </script>
 {% endblock %}
 
 {% block main %}
@@ -379,4 +215,81 @@ file that was distributed with this source code.
             </div>
         {% endif %}
     </div>
+    {% block javascripts %}
+    <script>
+        $(function() {
+            // bfcache無効化
+            $(window).bind('pageshow', function(event) {
+                if (event.originalEvent.persisted) {
+                    location.reload(true);
+                }
+            });
+            $('.item_visual').slick({
+                dots: false,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        dots: true
+                    }
+                }]
+            });
+            $('.slideThumb').on('click', function() {
+                var index = $(this).attr('data-index');
+                $('.item_visual').slick('slickGoTo', index, false);
+            })
+        });
+    </script>
+    <script>
+        $(function() {
+          document.querySelector('.add-cart').addEventListener('click', function(event) {
+            const quantity = document.querySelector('#quantity');
+            if (quantity.value < 1){ 
+              quantity.setCustomValidity('{{ 'front.product.invalid_quantity'|trans }}'); 
+              return true; 
+            } else { quantity.setCustomValidity(''); }
+
+            //Handle submit add cart
+            event.preventDefault(); 
+            const formElement = document.querySelector('#form1'); 
+            const body = new URLSearchParams(new FormData(formElement)).toString();
+            const fetchData = { 
+              method: 'POST',
+              body,
+              mode: 'cors',
+              cache: 'no-cache',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              }
+            };
+            console.log(body);
+            document.querySelector('.add-cart').setAttribute('disabled', true);
+            // Call API post cart
+            fetch(formElement.action, fetchData)
+            .then(function(data){
+              document.querySelector('#ec-modal-header').innerHTML = 'Add to cart';
+              document.querySelector('.ec-modal').style.display = 'block';
+              fetch('{{ url('block_cart') }}',{ method: 'GET' })
+              .then(function(res){
+                return res.text();
+              })
+              .then(function(html){
+                  $('.headerNav__cart').innerHTML = html; 
+              });
+              
+            })
+            .catch(function(data){ 
+              alert('{{ 'front.product.add_cart_error'|trans}}'); 
+            })
+            .finally(function(data){
+              document.querySelector('.add-cart').disabled = false; 
+            });
+          });
+        });
+
+        $('.ec-modal-overlay, .ec-modal .ec-inlineBtn--cancel').on('click', function() {
+            $('.ec-modal').hide()
+        });
+    </script>
+  {% endblock %}
 {% endblock %}
