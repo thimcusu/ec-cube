@@ -1,11 +1,30 @@
-{#
-This file is part of EC-CUBE
-
-Copyright(c) EC-CUBE CO.,LTD. All Rights Reserved.
-
-http://www.ec-cube.co.jp/
-
-For the full copyright and license information, please view the LICENSE
-file that was distributed with this source code.
-#}
 {% extends 'default_frame.twig' %}
+{# CONTENTS_TOP #}
+{% block main %}
+    {# SLIDER  #}
+    <div class="main-top">
+        {{ include('Block/slider.twig')}}
+    </div>
+
+    <div class="content">
+         {# SIDE_LEFT  #}
+        <aside class="content__left sidebar">
+            {{ include('Block/category.twig')}}
+        </aside>
+         {# MAIN_CONTENT #}
+        <div class="content__main">
+            {{ include('Block/topics.twig')}}
+            {{ include('Block/new_item.twig')}}
+            {{ include('Block/products_rec.twig')}}
+            {{ include('Block/products_rank.twig')}}
+            {{ include('Block/products_attracted.twig')}}
+            {{ include('Block/shops_recent.twig')}}
+            {{ include('Block/products_rec_bottom.twig')}}
+        </div>
+    </div>
+    {# {% block javascripts %}
+        {{ app.request.attributes.get("_controller")|json_encode|raw}}
+        console.log({{_context|json_encode|raw}});
+        {{Layout.Header[0].file_name}};
+    {%endblock javascripts %}   #}
+{% endblock %}

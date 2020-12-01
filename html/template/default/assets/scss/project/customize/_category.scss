@@ -35,9 +35,11 @@
   text-align: left;
   ul {
     list-style: none;
+    padding: 0;
   }
   & > span {
     padding: 10px 0;
+    display: block;
   }
 }
 
@@ -48,21 +50,77 @@
   width: auto;
   text-align: left;
   vertical-align: bottom;
-  .has-sub {
-    &:after {
-      content: "";
+  .category-panel {
+    position: absolute;
+    left: calc(100% + 30px);
+    top: 0;
+    display: none;
+    transition: all 0.3s ease;
+    transform: translateY(-15%);
+    overflow: hidden;
+    z-index: 10;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  li.has-sub {
+    &:hover {
+      .category-panel {
+        display: block;
+      }
+      &:before {
+        display: block;
+      }
+    }
+    &:before {
       position: absolute;
-      right: 10px;
-      width: 6px;
-      height: 6px;
-      top: 15px;
-      transform: translateY(-75%) rotate(45deg);
-      border-right: 1px solid;
-      border-bottom: 1px solid;
+      display: none;
+      content: "";
+      left: calc(100% + 22px);
+      top: 13px;
+      width: 15px;
+      height: 15px;
+      transform: rotate(-45deg);
+      box-shadow: rgba(0, 0, 0, 0.16) -2px -2px 2px;
+      background-color: #f8f8f8;
+      z-index: 20;
     }
   }
-  li.has-sub :hover {
-    display: block;
+  .sub-item-nav {
+    justify-content: center;
+    & > ul {
+      position: relative;
+      @include flex(row, null, null, wrap);
+      & > li {
+        @include flex(row);
+        background-color: #ffffff;
+        border-bottom: 1px solid #c1c1c1;
+        & > :first-child {
+          font-weight: 600;
+          background-color: #f8f8f8;
+          min-width: 160px;
+          padding: 20px 15px;
+        }
+        & > .sub-item {
+          padding: 18px 15px;
+          padding-bottom: 5px;
+          & > ul {
+            width: 465px;
+            @include flex(row, flex-start, center, wrap);
+            li {
+              width: 50%;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @for $i from 5 through 12 {
+    & > li:nth-child(#{$i}) {
+      .category-panel {
+        transform: translateY(calc(-30% - #{$i} * 5%));
+      }
+    }
   }
   & > li {
     padding: 10px 0;
@@ -72,18 +130,6 @@
     vertical-align: middle;
     position: relative;
     cursor: pointer;
-    .sub-item-nav {
-      position: absolute;
-      right: 100%;
-      top: 0;
-      display: none;
-      transition: all 0.3s ease;
-      overflow: hidden;
-      z-index: 1;
-      justify-content: center;
-      & > :last-child {
-      }
-    }
   }
   ul.active {
     height: auto;

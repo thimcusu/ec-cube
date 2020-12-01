@@ -1,27 +1,90 @@
 <div class="wrapper-slider">
-  <div class="slider">
-    <div class="main-visual slider-items">
+  <div class="slick">
+    <div class="slider-items js-slider">
       <div class="slide">
-        <img class="slide-backround" src="{{ asset('assets/img/top/slider.jpg') }}"></img>
+        <img class="slide-backround js-slide prev" src="{{ asset('assets/img/top/img_bnr02.jpg') }}"></img>
       </div>
       <div class="slide">
-        <img class="slide-backround" src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
+        <img class="slide-backround js-slide" src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
       </div>
       <div class="slide">
-        <img class="slide-backround" src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
+        <img class="slide-backround js-slide" src="{{ asset('assets/img/top/fruit.jpeg') }}" /></img>
       </div>
       <div class="slide">
-        <img class="slide-backround" src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
+        <img class="slide-backround js-slide" src="{{ asset('assets/img/top/fish.jpeg') }}" /></img>
       </div>
       <div class="slide">
-        <img class="slide-backround" src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
+        <img class="slide-backround js-slide" src="{{ asset('assets/img/top/img_hero_pc02.jpg') }}" /></img>
       </div>
       <div class="slide">
-        <img class="slide-backround" src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
+        <img class="slide-backround js-slide" src="{{ asset('assets/img/top/img_bnr02.jpg') }}" /></img>
+      </div>
+      <div class="slide">
+        <img class="slide-backround js-slide"  src="{{ asset('assets/img/top/slider.jpg') }}" /></img>
       </div>
     </div>
-    <div class="slider-items dots"></div>
-    <div class="button-left"></div>
-    <div class="button-right"></div>
+    {# <div class="slider-items dots"></div>
+    <div class="slider-button">
+			<div class="button js-slide-left"><i class="fas fa-angle-left"></i></div>
+			<div class="button js-slide-right"><i class="fas fa-angle-right"></i></div>
+		</div> #}
   </div>
 </div>
+<script>
+    const slider = document.querySelector(".js-slider");
+    const slides = document.querySelectorAll(".js-slide");
+    const btnGoLeft = document.querySelector(".js-slide-left");
+    const btnGoRight = document.querySelector(".js-slide-right");
+    let current = 1;
+    const gotoPrev = () => {
+        console.log('prev', current-1);
+        if(current===1){
+            slider.addEventListener('transitionend',resetStart)
+        }
+        gotoNum(current-1);
+    }
+
+    const gotoNext = () => {
+      console.log('next', current);
+        if(current===5){
+            slider.addEventListener('transitionend',resetEnd)
+        }
+        gotoNum(current+1);
+    }
+
+    const resetStart = () =>{
+        console.log('reset start');
+        slider.classList.add('reset');
+        slider.style.transform =  `translateX(${-100/7}%)`;
+    }
+    const resetEnd = () =>{
+        console.log('reset end');
+        slider.classListdef.add('reset');
+        slider.style.transform =  `translateX(${-100*5/7}%)`;
+    }
+    const gotoNum = number => {
+        slides[current].classList.remove("active");
+        slider.classList.remove('reset');
+        console.log(number);
+        if(number!==6||number!==0){
+            console.log('yes');
+            slides[number].classList.add("active");
+            current = number;
+            slider.removeEventListener('transitionend', resetEnd);
+            slider.removeEventListener('transitionend', resetStart);
+        }
+        slider.style.transform =  `translateX(${-100*number/7}%)`;
+        if(number===6){
+            slides[1].classList.add("active");
+            current = 1;
+        }
+        if(number===0){
+            slides[5].classList.add("active");
+            current = 5;
+        }
+    }
+
+    btnGoLeft.addEventListener("click", () => gotoPrev());
+    btnGoRight.addEventListener("click", ()=> gotoNext());
+
+</script>

@@ -390,7 +390,7 @@ Twitter Bootstrap デフォルト準拠
   width: 100%;
   transition: transform 0.3s;
   background: #fff; }
-.layout__contents {
+.content {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
@@ -398,19 +398,126 @@ Twitter Bootstrap デフォルト準拠
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap; }
-.layout__left {
+.content__left {
   width: 150px;
+  min-width: 150px;
   height: 100%; }
-.layout__main {
+.content__main {
   width: 100%; }
-.layout__main-bottom {
-  clear: both;
-  width: 100%;
-  margin-top: 20px; }
 .layout__main-top:not(:empty) {
   float: left;
   width: 20%;
   height: 463px; }
+.item-container {
+  padding: 20px 0;
+  margin-top: 15px;
+  border-top: 2px solid #e0e0e0; }
+.item-container__heading {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; }
+.item-container__heading h3 {
+      font-weight: 600;
+      display: inline-block;
+      font-size: 18px;
+      margin: 0 auto;
+      padding: 0;
+      color: #0a0a0a; }
+.item-container__heading span {
+      margin-left: 10px;
+      font-size: 14px;
+      color: #e2aa79; }
+.item-container__button button {
+    margin-left: 5px; }
+.item-container__dots {
+    display: flex; }
+.item-container__dots span {
+      display: block;
+      background-color: #dedede;
+      width: 10px;
+      height: 10px;
+      margin-left: 10px;
+      border-radius: 50%; }
+.item-container__dots :first-child {
+      background-color: #d7482b; }
+.item-container__list {
+    display: flex;
+    flex-wrap: wrap; }
+.item-container__item {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; }
+.card-product .card {
+  min-width: 160px;
+  min-height: 160px;
+  position: relative; }
+.card-product .card img {
+    max-width: 100%;
+    max-height: 100%; }
+.card-product__title {
+  margin-top: 15px;
+  font-weight: 600;
+  display: -webkit-box;
+  color: #0a0a0a;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+.card-product__note {
+  margin: 5px auto;
+  color: #bbbbbb; }
+.card-product__price {
+  color: #d7482b;
+  font-weight: 600;
+  font-size: 16px; }
+.card-product__rating {
+  text-align: left; }
+.card-product__rating span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    font-size: 10px; }
+.card-product__rating span:not(:last-child):before {
+      content: "\2605";
+      position: absolute;
+      color: #d7482b; }
+.card-product .label {
+  position: absolute;
+  content: "";
+  margin: 10px 15px;
+  padding: 0;
+  text-align: center;
+  font-size: 22px;
+  color: #fff; }
+.card-product .label:after {
+    position: absolute;
+    content: "";
+    top: calc(-10px - 20 * 1.3px);
+    left: -20px;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid #da9052;
+    transform: rotate(45deg); }
+.card-shop .card {
+  position: relative;
+  min-width: 160px;
+  min-height: 160px; }
+.card-shop .card img {
+    max-width: 100%;
+    max-height: 100%; }
+.card-shop__brand {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -512,7 +619,7 @@ Styleguide 1.1.5
 */
 .ec-rectHeading h1, .ec-rectHeading h2, .ec-rectHeading h3,
 .ec-rectHeading h4, .ec-rectHeading h5, .ec-rectHeading h6 {
-  background: #F3F3F3;
+  background: #f3f3f3;
   padding: 8px 12px;
   font-size: 20px;
   font-weight: bold; }
@@ -1899,7 +2006,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #d7482b; }
 .error.ec-input input, .error.ec-halfInput input, .error.ec-numberInput input, .error.ec-zipInput input, .error.ec-telInput input, .error.ec-select input, .error.ec-birth input, .error.ec-input select, .error.ec-halfInput select, .error.ec-numberInput select, .error.ec-zipInput select, .error.ec-telInput select, .error.ec-select select, .error.ec-birth select {
   margin-bottom: 5px;
   border-color: #CF3F34;
@@ -1908,7 +2015,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #d7482b; }
 .error.ec-checkbox input, .error.ec-checkbox label {
   border-color: #CF3F34;
   background: #FDF1F0; }
@@ -2284,7 +2391,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #d7482b; }
 .error.ec-input input, .error.ec-halfInput input, .error.ec-numberInput input, .error.ec-zipInput input, .error.ec-telInput input, .error.ec-select input, .error.ec-birth input, .error.ec-input select, .error.ec-halfInput select, .error.ec-numberInput select, .error.ec-zipInput select, .error.ec-telInput select, .error.ec-select select, .error.ec-birth select {
   margin-bottom: 5px;
   border-color: #CF3F34;
@@ -2293,7 +2400,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #d7482b; }
 .error.ec-checkbox input, .error.ec-checkbox label {
   border-color: #CF3F34;
   background: #FDF1F0; }
@@ -3097,7 +3204,7 @@ Styleguide 6.1.1
     margin-top: 5px;
     margin-left: 0; }
 .ec-login .ec-errorMessage {
-    color: #DE5D50;
+    color: #d7482b;
     margin-bottom: 20px; }
 /*
 ゲスト購入
@@ -3406,9 +3513,9 @@ Styleguide 7.2.2
     .ec-pager .ec-pager__item--active a:hover {
       color: inherit; }
 .ec-pager .ec-pager__item--active {
-    background: #F3F3F3; }
+    background: #f3f3f3; }
 .ec-pager .ec-pager__item:hover {
-    background: #F3F3F3; }
+    background: #f3f3f3; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -3683,7 +3790,7 @@ Styleguide 7.3.5
 .ec-totalBox .ec-totalBox__spec dd {
       text-align: right; }
 .ec-totalBox .ec-totalBox__spec .ec-totalBox .ec-totalBox__spec__specTotal {
-      color: #DE5D50; }
+      color: #d7482b; }
 .ec-totalBox .ec-totalBox__total {
     border-top: 1px dotted #ccc;
     padding: 8px 0;
@@ -3697,7 +3804,7 @@ Styleguide 7.3.5
     font-weight: bold; }
 .ec-totalBox .ec-totalBox__paymentTotal .ec-totalBox__price,
     .ec-totalBox .ec-totalBox__paymentTotal .ec-totalBox__taxLabel {
-      color: #DE5D50; }
+      color: #d7482b; }
 .ec-totalBox .ec-totalBox__price {
     margin-left: 16px;
     font-size: 16px;
@@ -5516,97 +5623,43 @@ Twitter Bootstrap デフォルト準拠
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
-/*
-フッター
-
-全ページで使用されるフッターのプロジェクトコンポーネントです。
-
-ex [トップページ　フッター](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerRole
-
-Styleguide 11.3
-*/
-.ec-footerRole {
-  border-top: 1px solid #7d7d7d;
-  margin-top: 30px;
-  background: black; }
-/*
-フッターナビ
-
-フッタープロジェクトで使用するナビゲーション用のコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerNav
-
-sg-wrapper:
-<div class="ec-footerRole">
-  <div class="ec-footerRole__inner">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.3.1
-*/
-.ec-footerNavi {
+.footer {
   padding: 0;
-  color: white;
-  list-style: none;
-  text-align: center; }
-.ec-footerNavi .ec-footerNavi__link {
-    display: block; }
-.ec-footerNavi .ec-footerNavi__link a {
-      display: block;
-      border-bottom: 1px solid #7d7d7d;
-      padding: 15px 0;
-      font-size: 14px;
-      color: inherit;
-      text-decoration: none; }
-.ec-footerNavi .ec-footerNavi__link:hover a {
-      opacity: .8;
-      text-decoration: none; }
-/*
-フッタータイトル
-
-フッタープロジェクトで使用するタイトル用のコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerTitle
-
-sg-wrapper:
-<div class="ec-footerRole">
-  <div class="ec-footerRole__inner">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.3.2
-*/
-.ec-footerTitle {
-  padding: 40px 0 60px;
+  margin: 0 auto;
+  background-color: #222222;
+  color: #fff;
+  height: 105px;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  color: white; }
-.ec-footerTitle .ec-footerTitle__logo {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold; }
-.ec-footerTitle .ec-footerTitle__logo a {
-      color: inherit;
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__logo a:hover {
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__logo a {
-      font-size: 22px;
-      color: inherit; }
-.ec-footerTitle .ec-footerTitle__logo:hover a {
-      opacity: .8;
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__copyright {
-    font-size: 10px; }
+  align-items: center; }
+.footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px; }
+.footer ul li {
+      display: inline-block; }
+.footer ul li:not(:last-child) {
+      padding-right: 25px;
+      position: relative; }
+.footer ul li:not(:last-child):after {
+        content: "";
+        position: absolute;
+        display: block;
+        right: 10px;
+        top: 5px;
+        height: calc(100% - 8px);
+        width: 2px;
+        background-color: #fff;
+        z-index: 2;
+        opacity: 0.5; }
+.footer .title {
+    font-size: 14px; }
+.footer .title span {
+      font-size: 18px; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -5658,192 +5711,21 @@ Styleguide 12.2
 SP フォーストで記述する。
 Twitter Bootstrap デフォルト準拠
  */
-/*
-ボタン
-
-トップページで使用されているボタンのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.3
-*/
-/*
-通常ボタン
-
-インラインの要素としてボタンを定義出来ます。
-
-Markup:
-.ec-inlineBtn--top more
-
-Styleguide 12.3.1
-*/
-.ec-inlineBtn--top {
+.btn {
+  padding: 5px 20px;
+  background-color: #dedede;
+  color: #0a0a0a;
+  outline: none;
+  border-radius: 30px;
   display: inline-block;
   margin-bottom: 0;
-  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  border-radius: 0px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  border-color: black; }
-.ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus, .ec-inlineBtn--top:active:focus, .ec-inlineBtn--top:active.focus, .ec-inlineBtn--top.active:focus, .ec-inlineBtn--top.active.focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px; }
-.ec-inlineBtn--top:hover, .ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus {
-    color: #525263;
-    text-decoration: none; }
-.ec-inlineBtn--top:active, .ec-inlineBtn--top.active {
-    outline: 0;
-    background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-.ec-inlineBtn--top.disabled, .ec-inlineBtn--top[disabled],
-  fieldset[disabled] .ec-inlineBtn--top {
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    opacity: 0.65;
-    box-shadow: none; }
-.ec-inlineBtn--top:focus, .ec-inlineBtn--top.focus {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-inlineBtn--top:hover {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-inlineBtn--top:active, .ec-inlineBtn--top.active,
-  .open > .ec-inlineBtn--top.dropdown-toggle {
-    color: white;
-    background-color: black;
-    background-image: none;
-    border-color: black; }
-.ec-inlineBtn--top:active:hover, .ec-inlineBtn--top:active:focus, .ec-inlineBtn--top:active.focus, .ec-inlineBtn--top.active:hover, .ec-inlineBtn--top.active:focus, .ec-inlineBtn--top.active.focus,
-    .open > .ec-inlineBtn--top.dropdown-toggle:hover,
-    .open > .ec-inlineBtn--top.dropdown-toggle:focus,
-    .open > .ec-inlineBtn--top.dropdown-toggle.focus {
-      color: white;
-      background-color: black;
-      border-color: black; }
-.ec-inlineBtn--top.disabled:hover, .ec-inlineBtn--top.disabled:focus, .ec-inlineBtn--top.disabled.focus, .ec-inlineBtn--top[disabled]:hover, .ec-inlineBtn--top[disabled]:focus, .ec-inlineBtn--top[disabled].focus,
-  fieldset[disabled] .ec-inlineBtn--top:hover,
-  fieldset[disabled] .ec-inlineBtn--top:focus,
-  fieldset[disabled] .ec-inlineBtn--top.focus {
-    background-color: black;
-    border-color: black; }
-.ec-inlineBtn--top .badge {
-    color: black;
-    background-color: white; }
-.ec-inlineBtn--top .ec-icon img {
-    width: 1em;
-    vertical-align: text-bottom; }
-/*
-ロングボタン（全幅）
-
-ロングタイプのボタンです。
-
-Markup:
-.ec-blockBtn--top 商品一覧へ
-
-Styleguide 2.1.2
-*/
-.ec-blockBtn--top {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  border-radius: 0px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  border-color: black;
-  display: block;
-  height: 56px;
-  line-height: 56px;
-  padding-top: 0;
-  padding-bottom: 0; }
-.ec-blockBtn--top:focus, .ec-blockBtn--top.focus, .ec-blockBtn--top:active:focus, .ec-blockBtn--top:active.focus, .ec-blockBtn--top.active:focus, .ec-blockBtn--top.active.focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px; }
-.ec-blockBtn--top:hover, .ec-blockBtn--top:focus, .ec-blockBtn--top.focus {
-    color: #525263;
-    text-decoration: none; }
-.ec-blockBtn--top:active, .ec-blockBtn--top.active {
-    outline: 0;
-    background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-.ec-blockBtn--top.disabled, .ec-blockBtn--top[disabled],
-  fieldset[disabled] .ec-blockBtn--top {
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    opacity: 0.65;
-    box-shadow: none; }
-.ec-blockBtn--top:focus, .ec-blockBtn--top.focus {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-blockBtn--top:hover {
-    color: white;
-    background-color: black;
-    border-color: black; }
-.ec-blockBtn--top:active, .ec-blockBtn--top.active,
-  .open > .ec-blockBtn--top.dropdown-toggle {
-    color: white;
-    background-color: black;
-    background-image: none;
-    border-color: black; }
-.ec-blockBtn--top:active:hover, .ec-blockBtn--top:active:focus, .ec-blockBtn--top:active.focus, .ec-blockBtn--top.active:hover, .ec-blockBtn--top.active:focus, .ec-blockBtn--top.active.focus,
-    .open > .ec-blockBtn--top.dropdown-toggle:hover,
-    .open > .ec-blockBtn--top.dropdown-toggle:focus,
-    .open > .ec-blockBtn--top.dropdown-toggle.focus {
-      color: white;
-      background-color: black;
-      border-color: black; }
-.ec-blockBtn--top.disabled:hover, .ec-blockBtn--top.disabled:focus, .ec-blockBtn--top.disabled.focus, .ec-blockBtn--top[disabled]:hover, .ec-blockBtn--top[disabled]:focus, .ec-blockBtn--top[disabled].focus,
-  fieldset[disabled] .ec-blockBtn--top:hover,
-  fieldset[disabled] .ec-blockBtn--top:focus,
-  fieldset[disabled] .ec-blockBtn--top.focus {
-    background-color: black;
-    border-color: black; }
-.ec-blockBtn--top .badge {
-    color: black;
-    background-color: white; }
-.ec-blockBtn--top .ec-icon img {
-    width: 1em;
-    vertical-align: text-bottom; }
+  cursor: pointer; }
+.btn-secondary {
+  background-color: #d7482b;
+  color: #fff; }
 .heading {
   color: black;
   margin-bottom: 15px; }
@@ -5864,94 +5746,10 @@ Styleguide 2.1.2
     font-weight: normal;
     letter-spacing: .15em;
     vertical-align: 2px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/*
-トピック（アイテム2列）
-
-トップページで使用されているトピックのスタイルです。
-
-ex [トップページ](http://demo3.ec-cube.net/)
-
-Markup:
-sg-wrapper:
-<div class="ec-role">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 12.5.1
-*/
 .topic {
-  padding: 40px 0;
-  background: #F8F8F8; }
-.topic .topic__list {
-    display: flex;
-    flex-wrap: wrap; }
-.topic .topic__item {
-    margin-bottom: 20px;
-    width: 100%;
-    height: auto; }
-.topic .topic__item-title {
-    margin-top: .5em;
-    font-size: 14px;
-    color: black; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-.news-item {
-  padding: 40px 0; }
-.news-item .news-item__list {
-    display: flex;
-    flex-wrap: wrap; }
-.news-item__extra {
-    position: absolute;
-    top: 0;
-    left: 54px;
-    width: 66px;
-    height: 36px;
-    text-align: center;
-    transform-origin: top left;
-    transform: rotate(90deg); }
-.news-item__extra a {
-      display: block;
-      font-size: 16px;
-      font-weight: 500;
-      color: #ffffff !important;
-      line-height: 30px;
-      text-decoration: none; }
-.news-item .news-item__item {
-    margin-bottom: 4%;
-    width: 48%;
-    height: auto;
-    position: relative; }
-.news-item .news-item__item .newLabel {
-      background: #6c6a74; }
-.news-item .news-item__item a {
-      color: black; }
-.news-item .news-item__item:nth-child(odd) {
-      margin-right: 4%; }
-.news-item .news-item__item__title {
-    margin: 8px 0;
-    font-size: 14px;
-    font-weight: bold; }
-.news-item .news-item__item__price {
-    font-size: 12px; }
-.news-item .news-item__more {
-    text-align: right; }
-.news-item .news-item__more a {
-      display: inline-block;
-      margin-left: auto;
-      color: black;
-      font-size: 16px;
-      font-weight: bold;
-      padding-right: 20px; }
-.news-item .news-item__more a:first-letter {
-      text-transform: uppercase; }
+  padding-top: 0;
+  border-top: none;
+  margin-top: 0; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -5988,29 +5786,7 @@ Twitter Bootstrap デフォルト準拠
   height: 100%;
   z-index: 2147483647;
   opacity: 1; }
-.layoutRole {
-  width: 100%;
-  transition: transform 0.3s;
-  background: #fff; }
-.layoutRole .layoutRole__contentTop {
-    padding: 0; }
-.layoutRole .layoutRole__contents {
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
-    max-width: 1150px;
-    display: flex;
-    flex-wrap: nowrap; }
-.layoutRole .layoutRole__main {
-    width: 100%; }
-.layoutRole .layoutRole__mainWithColumn {
-    width: 100%; }
-.layoutRole .layoutRole__mainBetweenColumn {
-    width: 100%; }
-.layoutRole .layoutRole__left,
-  .layoutRole .layoutRole__right {
-    display: none; }
-.header {
+.header-main {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
@@ -6020,31 +5796,32 @@ Twitter Bootstrap デフォルト準拠
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   padding-top: 20px;
   padding-bottom: 20px;
-  height: 110px; }
-.header__logo {
+  height: 110px;
+  width: 100%; }
+.header-main a {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: auto 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #090909; }
+.header-main a:hover {
+      opacity: 0.8; }
+.header-main__logo {
     height: 100%;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content; }
-.header__logo h1 {
+.header-main__logo h1 {
       margin: 0;
       padding: 0;
       line-height: unset;
       height: inherit; }
-.header__logo a {
-      display: inline-block;
-      text-decoration: none;
-      vertical-align: middle;
-      margin: auto 0;
-      font-size: 30px;
-      font-weight: bold;
-      color: #090909; }
-.header__logo a:hover {
-        opacity: 0.8; }
-.header__search {
+.header-main__search {
     display: inline-block;
     margin-left: 40px;
     max-width: 530px;
@@ -6053,21 +5830,30 @@ Twitter Bootstrap デフォルト準拠
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap; }
-.header__search a {
+.header-main__search a {
       color: inherit;
       text-decoration: none; }
-.header__search a:hover {
+.header-main__search a:hover {
       text-decoration: none; }
 .headerNav {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
   width: 100%;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   height: 70px;
   padding-top: 0px;
   text-align: right;
   align-items: center; }
+.headerNav a {
+    color: #090909;
+    text-decoration: none; }
+.headerNav a:hover {
+      color: #d7482b; }
+.headerNav a:hover i {
+        color: #d7482b; }
+.headerNav a:hover .headerNav__itemLink {
+        color: #d7482b; }
 .headerNav__list {
     display: flex;
     flex-direction: row;
@@ -6141,22 +5927,22 @@ Twitter Bootstrap デフォルト準拠
     width: 27%;
     right: 0;
     text-align: right; }
-.header__search {
+.header-main__search {
   width: 100%; }
-.header__search:after {
+.header-main__search:after {
     content: " ";
     display: table; }
-.header__search:after {
+.header-main__search:after {
     clear: both; }
-.header__search__keyword {
+.header-main__search__keyword {
     position: relative;
-    color: #C8C8C8;
-    background-color: #F8F8F8;
+    color: #c8c8c8;
+    background-color: #f8f8f8;
     border-radius: 50px;
     width: 530px; }
-.header__search__keyword .input {
+.header-main__search__keyword .input {
       height: 50px; }
-.header__search__keyword input[type="search"] {
+.header-main__search__keyword input[type="search"] {
       width: 100%;
       height: 50px;
       font-size: 14px;
@@ -6168,7 +5954,7 @@ Twitter Bootstrap デフォルト準拠
       box-sizing: border-box;
       outline: 0;
       margin-bottom: 0; }
-.header__search__keywordBtn {
+.header-main__search__keywordBtn {
     border: 0;
     background: none;
     position: absolute;
@@ -6180,11 +5966,11 @@ Twitter Bootstrap デフォルト準拠
     z-index: 1;
     width: 35px;
     height: 35px; }
-.header__search__keywordBtn .icon {
+.header-main__search__keywordBtn .icon {
       width: 100%;
       height: 100%; }
-.header__search__keywordBtn .icon path {
-        fill: #C8C8C8; }
+.header-main__search__keywordBtn .icon path {
+        fill: #c8c8c8; }
 .drawerRole {
   overflow-y: scroll;
   background: black;
@@ -6337,29 +6123,59 @@ Twitter Bootstrap デフォルト準拠
   margin-bottom: 40px; }
 .slider {
   position: relative;
-  width: 100%;
   height: 360px;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 100%; }
 .slider ul {
     padding: 0;
     list-style: none; }
 .slider .main-visual {
     position: relative;
+    transition: smooth;
+    transition: all 1.2s ease;
     height: 100%;
+    display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    width: 700%;
+    transform: translateX(calc(-100% / 7));
+    overflow: hidden; }
 .slider .main-visual .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
+      display: block;
       width: 100%;
-      height: 100%;
-      display: block; }
+      height: 100%; }
 .slider .main-visual .slide img {
         width: 100%;
         height: 100%;
         -o-object-fit: cover;
            object-fit: cover; }
+.slider .slider-button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 100; }
+.slider .slider-button .button {
+      color: #fff;
+      font-size: 25px;
+      padding: 0 5px;
+      margin: 0 15px;
+      cursor: pointer;
+      position: relative;
+      opacity: 0.75;
+      transition: all 300ms ease-in-out; }
+.slider .slider-button .button:hover i {
+        color: #d7482b; }
+.slider .reset {
+    transition: none;
+    -webkit-animation: none;
+            animation: none; }
 /**
 メディアクエリ
 SP フォーストで記述する。
@@ -6367,7 +6183,7 @@ Twitter Bootstrap デフォルト準拠
  */
 .category-nav {
   height: 100%;
-  color: #0A0A0A; }
+  color: #0a0a0a; }
 .category-nav a {
     color: inherit;
     text-decoration: none; }
@@ -6387,7 +6203,7 @@ Twitter Bootstrap デフォルト準拠
   font-weight: 600;
   margin: 0 auto;
   padding-bottom: 25px;
-  border-bottom: 2px solid #C1C1C1; }
+  border-bottom: 2px solid #c1c1c1; }
 .item-nav {
   margin: 0;
   padding: 0;
@@ -6395,29 +6211,92 @@ Twitter Bootstrap デフォルト準拠
   height: 100%;
   text-align: left; }
 .item-nav ul {
-    list-style: none; }
+    list-style: none;
+    padding: 0; }
 .item-nav > span {
-    padding: 10px 0; }
+    padding: 10px 0;
+    display: block; }
 .item-nav__list {
   display: inline-block;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   width: auto;
-  height: auto;
-  text-align: center;
+  text-align: left;
   vertical-align: bottom; }
-.item-nav__list .has-sub:after {
-    content: '';
+.item-nav__list .category-panel {
     position: absolute;
-    right: 10px;
-    width: 6px;
-    height: 6px;
-    top: 15px;
-    transform: translateY(-75%) rotate(45deg);
-    border-right: 1px solid;
-    border-bottom: 1px solid; }
-.item-nav__list li.has-sub :hover {
+    left: calc(100% + 30px);
+    top: 0;
+    display: none;
+    transition: all 0.3s ease;
+    transform: translateY(-15%);
+    overflow: hidden;
+    z-index: 10;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; }
+.item-nav__list li.has-sub:hover .category-panel {
     display: block; }
+.item-nav__list li.has-sub:hover:before {
+    display: block; }
+.item-nav__list li.has-sub:before {
+    position: absolute;
+    display: none;
+    content: "";
+    left: calc(100% + 22px);
+    top: 13px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(-45deg);
+    box-shadow: rgba(0, 0, 0, 0.16) -2px -2px 2px;
+    background-color: #f8f8f8;
+    z-index: 20; }
+.item-nav__list .sub-item-nav {
+    justify-content: center; }
+.item-nav__list .sub-item-nav > ul {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+.item-nav__list .sub-item-nav > ul > li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: #ffffff;
+        border-bottom: 1px solid #c1c1c1; }
+.item-nav__list .sub-item-nav > ul > li > :first-child {
+          font-weight: 600;
+          background-color: #f8f8f8;
+          min-width: 160px;
+          padding: 20px 15px; }
+.item-nav__list .sub-item-nav > ul > li > .sub-item {
+          padding: 18px 15px;
+          padding-bottom: 5px; }
+.item-nav__list .sub-item-nav > ul > li > .sub-item > ul {
+            width: 465px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap; }
+.item-nav__list .sub-item-nav > ul > li > .sub-item > ul li {
+              width: 50%;
+              padding-bottom: 10px; }
+.item-nav__list > li:nth-child(5) .category-panel {
+    transform: translateY(calc(-30% - 5 * 5%)); }
+.item-nav__list > li:nth-child(6) .category-panel {
+    transform: translateY(calc(-30% - 6 * 5%)); }
+.item-nav__list > li:nth-child(7) .category-panel {
+    transform: translateY(calc(-30% - 7 * 5%)); }
+.item-nav__list > li:nth-child(8) .category-panel {
+    transform: translateY(calc(-30% - 8 * 5%)); }
+.item-nav__list > li:nth-child(9) .category-panel {
+    transform: translateY(calc(-30% - 9 * 5%)); }
+.item-nav__list > li:nth-child(10) .category-panel {
+    transform: translateY(calc(-30% - 10 * 5%)); }
+.item-nav__list > li:nth-child(11) .category-panel {
+    transform: translateY(calc(-30% - 11 * 5%)); }
+.item-nav__list > li:nth-child(12) .category-panel {
+    transform: translateY(calc(-30% - 12 * 5%)); }
 .item-nav__list > li {
     padding: 10px 0;
     display: inline-block;
@@ -6426,23 +6305,57 @@ Twitter Bootstrap デフォルト準拠
     vertical-align: middle;
     position: relative;
     cursor: pointer; }
-.item-nav__list > li .sub-item-nav {
-      position: absolute;
-      right: 100%;
-      top: 0;
-      display: none;
-      transition: all 0.3s ease;
-      overflow: hidden;
-      z-index: 1;
-      justify-content: center; }
 .item-nav__list ul.active {
     height: auto;
     border-top: 1px solid rgba(0, 0, 0, 0.25); }
 .item-nav__list a:hover {
     color: black;
     transition: 0.2s all ease; }
+/**
+メディアクエリ
+SP フォーストで記述する。
+Twitter Bootstrap デフォルト準拠
+ */
+.news {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #eaeaea;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+.news__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; }
+.news__list :last-child {
+      margin-right: 0; }
+.news__item {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin-left: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative; }
+.news__item h4 {
+      font-size: 16px;
+      color: black;
+      opacity: 0.8;
+      font-weight: 600;
+      margin: 0; }
+.news__item ul {
+      list-style: none;
+      padding: 10px; }
+.news__item ul li {
+        margin: 5px 0; }
 @media (min-width: 768px) {
-    .layout__contents {
+    .content {
       padding-left: 125px;
       padding-right: 125px; }
       .ec-grid2 .ec-grid2__cell {
@@ -6514,7 +6427,7 @@ Twitter Bootstrap デフォルト準拠
     .ec-userEditCompleteRole {
       padding-left: 125px;
       padding-right: 125px; }
-    .header {
+    .header-main {
       padding-left: 125px;
       padding-right: 125px; }
     .headerNav {
@@ -6522,8 +6435,18 @@ Twitter Bootstrap デフォルト準拠
       padding-right: 125px; }
     .wrapper-slider {
       padding-left: 125px;
+      padding-right: 125px; }
+    .news {
+      padding-left: 125px;
       padding-right: 125px; } }
 @media only screen and (min-width: 768px) {
+      .item-container__list {
+        flex-wrap: nowrap; }
+      .item-container__item {
+        width: calc(100% / 5); }
+        .item-container__item:not(:last-of-type) {
+          margin-right: 20px;
+          margin-bottom: 0; }
     .ec-pageHeader h1 {
       border-top: none;
       border-bottom: 1px solid #ccc;
@@ -6887,28 +6810,6 @@ Twitter Bootstrap デフォルト準拠
         margin-bottom: 16px; }
       .ec-userEditCompleteRole .ec-userEditCompleteRole__title {
         font-size: 32px; }
-    .ec-footerRole {
-      padding-top: 40px;
-      margin-top: 100px; }
-    .ec-footerRole .ec-footerRole__inner {
-      padding-left: 20px;
-      padding-right: 20px;
-      box-sizing: border-box;
-      width: 100%; }
-      .ec-footerNavi .ec-footerNavi__link {
-        display: inline-block; }
-        .ec-footerNavi .ec-footerNavi__link a {
-          display: inline-block;
-          border-bottom: none;
-          margin: 0 10px;
-          padding: 0;
-          text-decoration: underline; }
-    .ec-footerTitle {
-      padding: 50px 0 80px; }
-        .ec-footerTitle .ec-footerTitle__logo a {
-          font-size: 24px; }
-      .ec-footerTitle .ec-footerTitle__copyright {
-        font-size: 12px; }
     .ec-eyecatchRole {
       flex-wrap: nowrap; }
       .ec-eyecatchRole .ec-eyecatchRole__image {
@@ -6925,46 +6826,13 @@ Twitter Bootstrap デフォルト準拠
         margin-bottom: 30px; }
       .ec-eyecatchRole .ec-eyecatchRole__introDescription {
         margin-bottom: 30px; }
-    .ec-blockBtn--top {
-      max-width: 260px; }
-    .topic {
-      padding: 60px 0; }
-      .topic .topic__list {
-        flex-wrap: nowrap; }
-      .topic .topic__item {
-        width: calc(100% / 2); }
-        .topic .topic__item:not(:last-of-type) {
-          margin-right: 30px; }
-      .topic .topic__item-title {
-        margin-top: 1em; }
-    .news-item {
-      padding: 60px 0; }
-      .news-item .news-item__list {
-        flex-wrap: nowrap; }
-      .news-item .news-item__item {
-        margin-bottom: 15px;
-        width: calc(100% / 4); }
-        .news-item .news-item__item:not(:last-of-type) {
-          margin-right: 30px; }
-        .news-item .news-item__item:nth-child(odd) {
-          margin-right: 30px; }
-      .news-item .news-item__item__title {
-        margin: 20px 0 10px; }
-      .layoutRole .layoutRole__mainWithColumn {
-        width: 75%; }
-      .layoutRole .layoutRole__mainBetweenColumn {
-        width: 50%; }
-      .layoutRole .layoutRole__left,
-      .layoutRole .layoutRole__right {
-        display: block;
-        width: 25%; }
-    .header {
+    .header-main {
       padding-top: 40px;
       padding-bottom: 20px; }
-      .header:after {
+      .header-main:after {
         content: " ";
         display: table; }
-      .header:after {
+      .header-main:after {
         clear: both; }
       .headerNav__itemIcon {
         font-size: 22px; }
@@ -6990,7 +6858,12 @@ Twitter Bootstrap デフォルト準拠
       display: none; }
     .wrapper-slider {
       margin-top: 40px;
-      margin-bottom: 70px; } }
+      margin-bottom: 70px; }
+      .news__list {
+        flex-wrap: nowrap; }
+      .news__item {
+        flex-wrap: nowrap;
+        width: cacl(100%/3); } }
 @media only screen and (min-width: 768px) and (min-width: 768px) {
     .ec-off1Grid {
       display: flex; }
@@ -7003,9 +6876,6 @@ Twitter Bootstrap デフォルト準拠
     .ec-off4Grid .ec-off4Grid__cell {
       width: 33.33333%; }
     .ec-searchnavRole {
-      padding-left: 125px;
-      padding-right: 125px; }
-    .ec-footerRole .ec-footerRole__inner {
       padding-left: 125px;
       padding-right: 125px; } }
 /*# sourceMappingURL=style.css.map */

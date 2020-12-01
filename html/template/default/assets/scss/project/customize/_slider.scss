@@ -1,40 +1,69 @@
 @import "../../mixins/media";
 
-.wrapper-slider{
+.wrapper-slider {
   @include container;
   margin-top: 20px;
   margin-bottom: 40px;
-  @include media_desktop{
+  @include media_desktop {
     margin-top: 40px;
     margin-bottom: 70px;
   }
 }
-.slider{
+.slider {
   position: relative;
-  width: 100%;
   height: 360px;
   overflow: hidden;
-  ul{
+  width: 100%;
+  ul {
     padding: 0;
     list-style: none;
   }
-  .main-visual{
+  .main-visual {
     position: relative;
+    transition: smooth;
+    transition: all 1.2s ease;
     height: 100%;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    .slide{
-      position: absolute;
-      top: 0;
-      left: 0;
+    @include flex(row);
+    width: 700%;
+    transform: translateX(calc(-100% / 7));
+    overflow: hidden;
+    .slide {
+      display: block;
       width: 100%;
       height: 100%;
-      display: block;
-      img{
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
+  }
+  .slider-button {
+    position: absolute;
+    @include flex(row, space-between, center);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 100;
+    .button {
+      color: #fff;
+      font-size: 25px;
+      padding: 0 5px;
+      margin: 0 15px;
+      cursor: pointer;
+      position: relative;
+      opacity: 0.75;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        i {
+          color: $clrRed;
+        }
+      }
+    }
+  }
+  .reset {
+    transition: none;
+    animation: none;
   }
 }

@@ -10,14 +10,12 @@
 */
 
 (function() {
-  console.log(11111);
     // 名前空間の重複を防ぐ
     if (window.eccube === undefined) {
         window.eccube = {};
     }
 
     var eccube = window.eccube;
-    console.log(eccube);
     // グローバルに使用できるようにする
     window.eccube = eccube;
 

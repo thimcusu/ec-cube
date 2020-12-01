@@ -3,60 +3,35 @@
 @import "../../mixins/clearfix";
 @import "../../mixins/animation";
 
-.layoutRole {
-  width: 100%;
-  transition: transform 0.3s;
-  background: #fff;
-  & &__contentTop {
-    padding: 0;
-  }
-
-  & &__contents {
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
-    max-width: 1150px;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  & &__main {
-    width: 100%;
-  }
-  & &__mainWithColumn {
-    width: 100%;
-    @include media_desktop() {
-      width: 75%;
-    }
-  }
-  & &__mainBetweenColumn {
-    width: 100%;
-    @include media_desktop() {
-      width: 50%;
-    }
-  }
-  & &__left,
-  & &__right {
-    display: none;
-    @include media_desktop() {
-      display: block;
-      width: 25%;
-    }
-  }
+.header {
 }
 
-.header {
+.header-main {
   @include container;
   @include flex(row, flex-start, center);
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   padding-top: 20px;
   padding-bottom: 20px;
   height: 110px;
+  width: 100%;
   @include media_desktop {
     @include clearfix;
     padding-top: 40px;
     padding-bottom: 20px;
   }
-  &__logo{
+  a {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: auto 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #090909;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__logo {
     height: 100%;
     width: fit-content;
     h1 {
@@ -65,40 +40,39 @@
       line-height: unset;
       height: inherit;
     }
-    a {
-      display: inline-block;
-      text-decoration: none;
-      vertical-align: middle;
-      margin: auto 0;
-      font-size: 30px;
-      font-weight: bold;
-      color: #090909;
-      @include media_desktop() {
-      }
-      &:hover {
-        opacity: 0.8;
-      }
-    }
   }
   &__search {
     display: inline-block;
     margin-left: 40px;
     max-width: 530px;
     height: 100%;
-    @include flex(row,null,center);
+    @include flex(row, null, center);
     @include reset_link;
   }
 }
 
 .headerNav {
   @include container;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   height: 70px;
   padding-top: 0px;
   text-align: right;
   align-items: center;
-  &__list{
-    @include flex(row,flex-start,center);
+  a {
+    color: #090909;
+    text-decoration: none;
+    &:hover {
+      color: $clrRed;
+      i {
+        color: $clrRed;
+      }
+      .headerNav__itemLink {
+        color: $clrRed;
+      }
+    }
+  }
+  &__list {
+    @include flex(row, flex-start, center);
     width: 100%;
     height: 100%;
   }
@@ -114,8 +88,8 @@
     margin-right: 50px;
     // display: inline-block;
     font-size: 28px;
-    a{
-      @include flex(column,center,center);
+    a {
+      @include flex(column, center, center);
       @include reset_link;
     }
   }
@@ -132,21 +106,21 @@
     font-size: 13px;
     vertical-align: middle;
     padding-top: 5px;
-    color:#090909;
+    color: #090909;
     @include media_desktop {
       display: inline-block;
     }
   }
-  
+
   &__nav {
     display: inline-block;
     @include reset_link;
   }
   .cart {
-    @include flex(row,null,center);
+    @include flex(row, null, center);
     margin-left: auto;
     margin-right: 0;
-    .name{
+    .name {
       color: #090909;
       font-size: 14px;
       font-weight: 600;
@@ -174,13 +148,13 @@
   }
 }
 
-.header__search {
+.header-main__search {
   @include clearfix;
   width: 100%;
   &__keyword {
     position: relative;
-    color: #C8C8C8;
-    background-color: #F8F8F8;
+    color: #c8c8c8;
+    background-color: #f8f8f8;
     border-radius: 50px;
     width: 530px;
     .input {
@@ -212,11 +186,11 @@
     z-index: 1;
     width: 35px;
     height: 35px;
-    .icon{
+    .icon {
       width: 100%;
       height: 100%;
-      path{
-        fill: #C8C8C8;
+      path {
+        fill: #c8c8c8;
       }
     }
   }

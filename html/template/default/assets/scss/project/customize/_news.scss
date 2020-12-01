@@ -1,0 +1,48 @@
+@import "../../mixins/media";
+@import "../../mixins/clearfix";
+
+.news {
+  @include container;
+  @include flex(row, space-between, center);
+  background-color: #eaeaea;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    @include media_desktop {
+      flex-wrap: nowrap;
+    }
+    :last-child {
+      margin-right: 0;
+    }
+  }
+  &__item {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin-left: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    @include media_desktop {
+      flex-wrap: nowrap;
+      width: cacl(100%/3);
+    }
+    h4 {
+      font-size: 16px;
+      color: black;
+      opacity: 0.8;
+      font-weight: 600;
+      margin: 0;
+    }
+    ul {
+      list-style: none;
+      padding: 10px;
+      li {
+        margin: 5px 0;
+      }
+    }
+  }
+}

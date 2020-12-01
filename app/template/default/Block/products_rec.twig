@@ -1,1 +1,26 @@
-products_rec
+<div class="wrapper">
+    <div class="item-container product-rec">
+        <div class="item-container__heading product-rec-heading">
+            <div class="item-container__title product-rec-title">
+                <h3 class="item-container__title-big">あなたにおすすめの商品</h3>
+            </div>
+        </div>
+        <div class="item-container__list product-rec-list">
+            <div class="item-container__item product-rec-item">
+                {{ include('Block/card.twig') }}
+            </div>
+            <div class="item-container__item product-rec-item">
+                {{ include('Block/card.twig') }}
+            </div>
+            <div class="item-container__item product-rec-item">
+                {{ include('Block/card.twig') }}
+            </div>
+            <div class="item-container__item product-rec-item">
+                {{ include('Block/card.twig') }}
+            </div>
+            <div class="item-container__item product-rec-item">
+                {{ include('Block/card.twig') }}
+            </div>
+        </div>
+    </div>
+</div>

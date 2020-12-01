@@ -152,8 +152,59 @@ window.addEventListener('DOMContentLoaded', function(){
       form.style.display = 'none';
       document.body.appendChild(form); // Firefox requires form to be on the page to allow submission
       form.submit();
+    });
   });
-});
+
+    // Slider
+
+    function carouselSlider(){
+        const slider = document.querySelector(".js-slider");
+        const slides = document.querySelectorAll(".js-slide");
+        const btnGoLeft = document.querySelector(".js-slide-left");
+        const btnGoRight = document.querySelector(".js-slide-right");
+
+        btnGoLeft.addEventListener("click", gotoPrev);
+        btnGoRight.addEventListener("click", gotoNext);
+
+        let current = 1;
+
+        const gotoPrev = () => {
+            if(current=1){
+                slider.addEventListener('transitionend',resetStart)
+            }
+            gotoNum(current-1);
+        }
+
+        const gotoNext = () => {
+            if(current=5){
+                slider.addEventListener('transitionend',resetEnd)
+            }
+            gotoNum(current+1);
+        }
+
+        const resetStart = () =>{
+            slider.classList.add('reset');
+            slider.style.transform =  `translateX(${-100/7}%)`;
+        }
+        const resetEnd = () =>{
+            slider.classList.add('reset');
+            slider.style.transform =  `translateX(${-100*5/7}%)`;
+        }
+        const gotoNum = number => {
+            slides[current].classList.remove("active");
+            slider.classList.remove('reset');
+            if(number!==6||number!==0){
+                slides[number].classList.add("active");
+            }
+            slider.style.transform =  `translateX(${-100*number/7}%)`;
+            if(number===6){
+                slides[1].classList.add("active");
+            }
+            if(number===0){
+                slides[5].classList.add("active");
+            }
+        }
+    }();
 });
 
 // Create a overlay to cover page  
@@ -183,12 +234,11 @@ function getAncestorOfTagType(elem, type) {
     return type === elem.tagName ? elem : undefined;
 }
 
-// anchorをクリックした時にformを裏で作って指定のメソッドでリクエストを飛ばす
-// Twigには以下のように埋め込む
-// <a href="PATH" {{ csrf_token_for_anchor() }} data-method="(put/delete/postのうちいずれか)" data-confirm="xxxx" data-message="xxxx">
-//
-// オプション要素
-// data-confirm : falseを定義すると確認ダイアログを出さない。デフォルトはダイアログを出す
-// data-message : 確認ダイアログを出す際のメッセージをデフォルトから変更する
-//
+// Slider
 
+function slideLeft(){
+    document.querySelector("js-slider")
+}
+function slideRight(){
+
+}
