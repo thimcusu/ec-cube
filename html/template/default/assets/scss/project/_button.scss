@@ -5,8 +5,8 @@
 .btn {
   padding: 5px 20px;
   background-color: #dedede;
+  transition: all 0.2s ease;
   color: #0a0a0a;
-  outline: none;
   border-radius: 30px;
   display: inline-block;
   margin-bottom: 0;
@@ -14,8 +14,24 @@
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: #fff;
+    background-color: $clrRed;
+  }
 }
 .btn-secondary {
+  outline: 0;
   background-color: $clrRed;
+  transition: all 0.2s ease;
   color: #fff;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: #fff;
+    background-color: $clrRed;
+  }
 }

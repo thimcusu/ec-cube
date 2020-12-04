@@ -155,56 +155,52 @@ window.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-    // Slider
-
-    function carouselSlider(){
-        const slider = document.querySelector(".js-slider");
-        const slides = document.querySelectorAll(".js-slide");
-        const btnGoLeft = document.querySelector(".js-slide-left");
-        const btnGoRight = document.querySelector(".js-slide-right");
-
-        btnGoLeft.addEventListener("click", gotoPrev);
-        btnGoRight.addEventListener("click", gotoNext);
-
-        let current = 1;
-
-        const gotoPrev = () => {
-            if(current=1){
-                slider.addEventListener('transitionend',resetStart)
-            }
-            gotoNum(current-1);
+  // SIDE BAR
+  const elmsCategoryHasSub = document.querySelectorAll('.js-item.has-sub');
+  for (var i = 0; i < elmsCategoryHasSub.length; i++) {
+    elmsCategoryHasSub[i].addEventListener('focus', function(){
+        const prevActiveElm = document.querySelector('.js-item.active');
+        if(prevActiveElm){
+            prevActiveElm.classList.remove('active');
         }
+        this && this.classList.add('active');
+    });
+  }
 
-        const gotoNext = () => {
-            if(current=5){
-                slider.addEventListener('transitionend',resetEnd)
+  //SLIDER
+  $('.product-slider').slick({
+    dots: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    autoplaySpeed: 10000,
+    autoplay: true,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
             }
-            gotoNum(current+1);
-        }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+    ]
+  });
 
-        const resetStart = () =>{
-            slider.classList.add('reset');
-            slider.style.transform =  `translateX(${-100/7}%)`;
-        }
-        const resetEnd = () =>{
-            slider.classList.add('reset');
-            slider.style.transform =  `translateX(${-100*5/7}%)`;
-        }
-        const gotoNum = number => {
-            slides[current].classList.remove("active");
-            slider.classList.remove('reset');
-            if(number!==6||number!==0){
-                slides[number].classList.add("active");
-            }
-            slider.style.transform =  `translateX(${-100*number/7}%)`;
-            if(number===6){
-                slides[1].classList.add("active");
-            }
-            if(number===0){
-                slides[5].classList.add("active");
-            }
-        }
-    }();
+  //SHOP SLIDER
+  $('.shop-slider').slick({
+    dots: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+  });
 });
 
 // Create a overlay to cover page  
@@ -234,11 +230,22 @@ function getAncestorOfTagType(elem, type) {
     return type === elem.tagName ? elem : undefined;
 }
 
-// Slider
+// Check whether element is in viewport
+function isInViewport(elem) {
+    const bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+const image = document.querySelector('[data-image]');
 
-function slideLeft(){
-    document.querySelector("js-slider")
-}
-function slideRight(){
-
-}
+// Disable panel sub category when active category item is not in view port
+window.addEventListener('scroll', function () {
+    const activeCategoryElm = document.querySelector('.js-item.active');
+    if (activeCategoryElm && !isInViewport(activeCategoryElm)) {
+        activeCategoryElm.classList.remove('active');
+    }
+}, false);

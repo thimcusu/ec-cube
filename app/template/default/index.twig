@@ -1,6 +1,102 @@
 {% extends 'default_frame.twig' %}
 {# CONTENTS_TOP #}
 {% block main %}
+    {# DUMMY DATA PRODUCTS #}
+    {% set dummyProducts = [] %}
+    {% for i in 1..15 %}
+        {% set src = "https://picsum.photos/id/#{random(500,1000)}/600/600" %}
+        {% set rating = random(1,5) %}
+        {% set dummyProducts = dummyProducts|merge([{
+            src: src,
+            title: '商品名商品名商品名商品名商品名商品名商品名商商品名商品名商品名商品名商品名商品名商品名商',
+            note: '第第戸市',
+            rating: rating,
+            price: 1100
+        }])  %} 
+    {% endfor %}
+
+    {# DUMMY DATA SHOPS #}
+    {% set dummyShops = [] %}
+    {% set dummyShops = dummyShops|merge([
+        {
+            src: "https://picsum.photos/id/#{random(500,1000)}/600/600",
+            brand: 'Joule新宿三丁目店ダミーダミータミータミーダミJoule新宿三丁目店ダミーダミータミータミーダミ',
+        },
+        {
+            src: "https://picsum.photos/id/#{random(500,1000)}/600/600",
+            brand: 'Holyday新宿',
+        },
+        {
+            src: "https://picsum.photos/id/#{random(500,1000)}/600/600",
+            brand: 'STORE LINK',
+        },
+        {
+            src: "https://picsum.photos/id/#{random(500,1000)}/600/600",
+            brand: 'danro',
+        },
+        {
+            src: "https://picsum.photos/id/#{random(500,1000)}/600/600",
+            brand: 'studio h.',
+        }])
+    %} 
+    {% for i in 6..25 %}
+        {% set dummyShops = dummyShops|merge([{
+            src: "https://picsum.photos/id/#{random(500,1000)}/600/600",
+            brand: 'ーダミー',
+        }])  %} 
+    {% endfor %}
+
+    {% set items_product = [] %}
+    {% set items_product = items_product|merge(
+        [
+            {
+                key: 'new_item',
+                title: 'あなたにおすすめの商品',
+                subTitle: '毎時問更新 !',
+                products: dummyProducts
+            },
+            {
+                key: 'product_rec',
+                title: 'あなたにおすすめの商品',
+                products: dummyProducts
+            },
+            {
+                key: 'product_rank',
+                title: '人気商品ランキング',
+                subTitle: '毎時問更新 !',
+                products: dummyProducts
+            },
+            {
+                key: 'product_att',
+                title: 'あなたにおすすめの商品',
+                subTitle: '毎時問更新 !',
+                products: dummyProducts
+            },
+            {
+                key: 'product_rec_bottom',
+                title: 'あなたにおすすめの商品',
+                products: dummyProducts
+            },
+        ]
+    ) %}
+    
+    {% set items_shop = [] %}
+    {% set items_shop = items_shop|merge(
+        [
+            {
+                key: 'shop_recent',
+                title: '人気ショップめの商品',
+                shops: dummyShops
+            },
+            {
+                key: 'shop_rank',
+                title: '人気ショップ',
+                shops: dummyShops,
+                hasButton: true,
+            },
+        ]
+    ) %}
+
     {# SLIDER  #}
     <div class="main-top">
         {{ include('Block/slider.twig')}}
@@ -14,17 +110,24 @@
          {# MAIN_CONTENT #}
         <div class="content__main">
             {{ include('Block/topics.twig')}}
-            {{ include('Block/new_item.twig')}}
-            {{ include('Block/products_rec.twig')}}
-            {{ include('Block/products_rank.twig')}}
-            {{ include('Block/products_attracted.twig')}}
-            {{ include('Block/shops_recent.twig')}}
-            {{ include('Block/products_rec_bottom.twig')}}
+
+            {# PRODUCT #}
+            {% for product in items_product[0:4] %}
+                {{ include('Block/product_list.twig', {item: product})}}
+            {% endfor %}
+
+            {# SHOP #}
+            {% for shop in items_shop %}
+                {{ include('Block/shop_list.twig', { item: shop}) }}
+            {% endfor %}
+
+            {{include('Block/product_list.twig', {item: items_product|last })}}
         </div>
     </div>
-    {# {% block javascripts %}
-        {{ app.request.attributes.get("_controller")|json_encode|raw}}
+    <script>
+        {# {{ app.request.attributes.get("_controller")|json_encode|raw}}
         console.log({{_context|json_encode|raw}});
-        {{Layout.Header[0].file_name}};
-    {%endblock javascripts %}   #}
+        {{Layout.Header[0].file_name}}; #}
+        {# console.log({{}}) #}
+    </script>
 {% endblock %}

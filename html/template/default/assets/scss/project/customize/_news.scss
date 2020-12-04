@@ -7,6 +7,15 @@
   background-color: #eaeaea;
   padding-top: 50px;
   padding-bottom: 50px;
+  a {
+    cursor: pointer;
+    color: black;
+    opacity: 0.75;
+    &:hover {
+      opacity: 1;
+      font-weight: 500;
+    }
+  }
   &__list {
     display: flex;
     width: 100%;

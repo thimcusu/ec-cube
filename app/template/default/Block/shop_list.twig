@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="item-container">
+        <div class="item-container__heading">
+            <div class="item-container__title">
+                <h3 class="item-container__title-big">{{item.title}}</h3>
+            </div>
+            {% if item.hasButton is defined %}
+                <div class="item-container__button topic-button">
+                    <button class="btn btn-secondary">もっとる</button>
+                </div>
+            {% endif %}
+        </div>
+        <div class="item-container__list {{item.key == 'shop_recent'? 'shop-slider': ''}}">
+            {% for shop in item.shops %}
+                <div class="item-container__item shop-rank-item">
+                    {{ include('Block/card-shop.twig',{ shop: shop}) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+<div class="wrapper">
+    <div class="item-container {{item.key}}">
+        <div class="item-container__heading">
+            <div class="item-container__title">
+                <h3 class="item-container__title-big">{{item.title}}</h3>
+                {% if item.subTitle is defined %}
+                    <span class="item-container__title--small">{{ item.subTitle }}</span>
+                {% endif %}
+            </div>
+
+            {% if item.key is defined and item.key == 'new_item' %}
+                <div class="item-container__button">
+                    <button class="btn btn-secondary">もっとる</button>
+                </div>
+            {% endif %}
+
+            {% if item.key is defined and item.key == 'product_rank' %}
+                <div class="item-container__button">
+                    <button class="btn btn-secondary">毎時</button>
+                    <button class="btn">ディリー</button>
+                    <button class="btn">年新</button>
+                </div>
+            {% endif %}
+        </div>
+        {% set hasSlider = item.key == 'product_att' or item.key == 'product_rec_bottom' %}
+        {% set hasLabelRank = item.key == 'product_rank' %}
+        {% set classNames = hasSlider ? 'product-slider': '' ~ hasLabelRank ? 'has-label': ''%}
+        <div class="item-container__list {{ classNames }}">
+            {% for product in item.products %}
+                <div class="item-container__item">
+                    {{ include('Block/card.twig', { product: product }, with_context = false) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{# <script>
+    console.log({{item.products|json_encode|raw}});
+</script> #}

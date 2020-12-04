@@ -1,44 +1,74 @@
 @import "../../mixins/media";
+@import "../../mixins/variables";
 
 .wrapper-slider {
   @include container;
-  margin-top: 20px;
   margin-bottom: 40px;
   @include media_desktop {
-    margin-top: 40px;
     margin-bottom: 70px;
   }
 }
 .slider {
-  position: relative;
-  height: 360px;
-  overflow: hidden;
+  height: 400px;
   width: 100%;
   ul {
     padding: 0;
     list-style: none;
   }
-  .main-visual {
-    position: relative;
-    transition: smooth;
-    transition: all 1.2s ease;
+  div {
     height: 100%;
-    @include flex(row);
-    width: 700%;
-    transform: translateX(calc(-100% / 7));
-    overflow: hidden;
-    .slide {
-      display: block;
-      width: 100%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
+    width: 100%;
   }
-  .slider-button {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slick-dots {
+    bottom: 10px;
+  }
+
+  .slick-dots li {
+    width: 15px;
+    height: 15px;
+  }
+
+  .slick-dots li button {
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+  }
+
+  .slick-dots li button:hover,
+  .slick-dots li button:focus {
+    outline: none;
+  }
+
+  .slick-dots li button:hover:before,
+  .slick-dots li button:focus:before {
+    opacity: 1;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px;
+    opacity: 0.75;
+    color: #fff;
+  }
+
+  .slick-dots li.slick-active button:before {
+    opacity: 0.8;
+    color: $clrRed;
+  }
+  .slick-next {
+    left: calc(100% - 40px);
+  }
+  .slick-prev {
+    left: 20px;
+    z-index: 1;
+  }
+  .slick- .slider-button {
     position: absolute;
     @include flex(row, space-between, center);
     top: 50%;

@@ -11,7 +11,14 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  .footer-content {
+  a {
+    cursor: pointer;
+    opacity: 0.75;
+    color: inherit;
+    &:hover {
+      opacity: 1;
+      font-weight: 500;
+    }
   }
   ul {
     @include flex(row, center, center, wrap);

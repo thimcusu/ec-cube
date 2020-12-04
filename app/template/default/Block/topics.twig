@@ -10,21 +10,11 @@
             </div>
         </div>
         <div class="item-container__list topic-list">
-            <div class="item-container__item topic-item">
-                {{ include('Block/card.twig') }}
-            </div>
-            <div class="item-container__item topic-item">
-                {{ include('Block/card.twig') }}
-            </div>
-            <div class="item-container__item topic-item">
-                {{ include('Block/card.twig') }}
-            </div>
-            <div class="item-container__item topic-item">
-                {{ include('Block/card.twig') }}
-            </div>
-            <div class="item-container__item topic-item">
-                {{ include('Block/card.twig') }}
-            </div>
+            {% for i in 1..5 %}
+                <div class="item-container__item topic-item">
+                    {{ include('Block/card.twig', { product: false}) }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

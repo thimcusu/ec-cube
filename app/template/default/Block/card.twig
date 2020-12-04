@@ -1,15 +1,19 @@
 <div class="card-product">
     <div class="card">
-        <img src="{{ asset('assets/img/top/img_item02_02.jpg') }}"">
+        <img src={{product ? product.src : "https://picsum.photos/id/#{random(500,1000)}/600/600"}}>
     </div>
     <div class="card-product__title">
-        商品名商品名商品名商品名商品名商品名商品名商商品名商品名商品名商品名商品名商品名商品名商
+        {{product ? product.title: '商品名商品名商品名商品'}}
     </div>
-    <div class="card-product__note">第第戸市</div>
+    <div class="card-product__note">{{product ? product.note : '第第戸市' }}</div>
     <div class="card-product__rating">
-        {% for i in 0..4 %}
+        {% set rating = product ? product.rating : 5 %}
+        {% for i in 1..5 %}
         <span>☆</span>
         {% endfor %}
     </div>
-    <div class="card-product__price">¥ 1,100</div>
+    <div class="card-product__price">¥ {{product ? product.price : '1,100'}}</div>
 </div>
+{# <script>
+    console.log({{product|json_encode|raw}});
+</script> #}
