@@ -7,15 +7,13 @@ SP フォーストで記述する。
 Twitter Bootstrap デフォルト準拠
  */
 
-
-
 //@mixin media_tablet(){
 //  @media only screen and (min-width: 768px) {
 //    @content;
 //  }
 //}
 
-@mixin media_desktop(){
+@mixin media_desktop() {
   @media only screen and (min-width: 768px) {
     @content;
   }
@@ -33,21 +31,20 @@ Twitter Bootstrap デフォルト準拠
 //  }
 //}
 
-
-@mixin container(){
-  padding-left:  20px;
+@mixin container() {
+  padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
   width: 100%;
   @media (min-width: $desktop) {
-    padding-left:  125px;
+    padding-left: 125px;
     padding-right: 125px;
   }
 }
-@mixin mypageContainer(){
+@mixin mypageContainer() {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  16px;
+  padding-left: 16px;
   padding-right: 16px;
   box-sizing: border-box;
   @include clearfix;
@@ -55,12 +52,12 @@ Twitter Bootstrap デフォルト準拠
   width: 100%;
   //max-width: 1130px;
   @include media_desktop {
-    padding-left:  26px;
+    padding-left: 26px;
     padding-right: 26px;
   }
 }
 
-@mixin flex($dir, $justify: null, $align: null, $wrap: nowrap){
+@mixin flex($dir, $justify: null, $align: null, $wrap: nowrap) {
   display: flex;
   flex-direction: $dir;
   justify-content: $justify;
@@ -68,7 +65,7 @@ Twitter Bootstrap デフォルト準拠
   flex-wrap: $wrap;
 }
 
-@mixin commonStyle(){
+@mixin commonStyle() {
   font-size: 16px;
   line-height: 1.4;
   color: #525263;
@@ -84,8 +81,8 @@ Twitter Bootstrap デフォルト準拠
   //a:focus,
   //a:active { color: #33A8D0;text-decoration: none; outline: none;}
 
-
-  textarea { /* for chrome fontsize bug */
+  textarea {
+    /* for chrome fontsize bug */
     font-family: sans-serif;
   }
 
@@ -114,9 +111,7 @@ Twitter Bootstrap デフォルト準拠
     box-sizing: inherit;
   }
 
-  img{
+  img {
     width: 100%;
   }
-
-
 }

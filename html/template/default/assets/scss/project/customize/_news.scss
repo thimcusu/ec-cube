@@ -5,8 +5,10 @@
   @include container;
   @include flex(row, space-between, center);
   background-color: #eaeaea;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 30px;
+  @include media_desktop {
+    padding: 30px 50px;
+  }
   a {
     cursor: pointer;
     color: black;
@@ -31,13 +33,19 @@
     width: 100%;
     height: auto;
     padding: 30px;
-    margin-left: 20px;
     background-color: #fff;
     border-radius: 5px;
     position: relative;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
     @include media_desktop {
       flex-wrap: nowrap;
       width: cacl(100%/3);
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      margin-bottom: 0 !important;
     }
     h4 {
       font-size: 16px;
