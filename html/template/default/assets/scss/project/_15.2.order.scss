@@ -14,7 +14,7 @@ include /assets/tmpl/elements/15.2.order.pug
 
 Styleguide 15.2
 */
-.ec-orderRole{
+.ec-orderRole {
   @include container;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ Styleguide 15.2
   .ec-inlineBtn {
     font-weight: normal;
   }
-  & &__detail{
+  & &__detail {
     padding: 0;
     width: 100%;
     @include media_desktop {
@@ -34,7 +34,7 @@ Styleguide 15.2
       width: 66.66666%;
     }
   }
-  & &__summary{
+  & &__summary {
     width: 100%;
     .ec-inlineBtn {
       display: inline-block;
@@ -54,7 +54,6 @@ Styleguide 15.2
       border-top: none;
     }
   }
-
 }
 
 /*
@@ -71,9 +70,9 @@ include /assets/tmpl/elements/15.2.order.pug
 
 Styleguide 15.2.1
 */
-.ec-orderOrder{
+.ec-orderOrder {
   margin-bottom: 30px;
-  & &__items{
+  & &__items {
     @include borderBottom;
     @include borderTop;
   }
@@ -92,13 +91,13 @@ include /assets/tmpl/elements/15.2.order.pug
 
 Styleguide 15.2.2
 */
-.ec-orderAccount{
+.ec-orderAccount {
   margin-bottom: 30px;
   p {
     margin-bottom: 0;
   }
   @include clearfix;
-  & &__change{
+  & &__change {
     display: inline-block;
     margin-left: 10px;
     float: right;
@@ -106,9 +105,7 @@ Styleguide 15.2.2
   & &__account {
     margin-bottom: 16px;
   }
-
 }
-
 
 /*
 注文詳細 配送情報
@@ -123,34 +120,32 @@ include /assets/tmpl/elements/15.2.order.pug
 
 Styleguide 15.2.3
 */
-.ec-orderDelivery{
-  & &__title{
+.ec-orderDelivery {
+  & &__title {
     padding: 16px 0 17px;
     font-weight: bold;
     font-size: 18px;
     position: relative;
   }
-  & &__change{
+  & &__change {
     display: inline-block;
     position: absolute;
     right: 0;
-    top:0;
+    top: 0;
   }
-  & &__items{
+  & &__items {
     @include borderBottom;
     @include borderTop;
   }
-  & &__address{
-    margin: 10px 0 18px ;
-    p{
-      margin:0;
+  & &__address {
+    margin: 10px 0 18px;
+    p {
+      margin: 0;
     }
   }
-  & &__edit{
+  & &__edit {
   }
-
 }
-
 
 /*
 注文履歴詳細 支払情報
@@ -168,10 +163,8 @@ Markup:
 
 Styleguide 15.2.4
 */
-.ec-orderPayment{
-
+.ec-orderPayment {
 }
-
 
 /*
 注文履歴詳細 お問い合わせ
@@ -189,7 +182,7 @@ Markup:
 
 Styleguide 15.2.5
 */
-.ec-orderConfirm{
+.ec-orderConfirm {
   margin-bottom: 20px;
   @include media_desktop {
     margin-bottom: 0;
@@ -199,9 +192,7 @@ Styleguide 15.2.5
       height: 96px;
     }
   }
-
 }
-
 
 /*
 お届け先の複数指定
@@ -217,7 +208,7 @@ include /assets/tmpl/elements/15.2.order.pug
 
 Styleguide 15.2.6
 */
-.ec-AddAddress  {
+.ec-AddAddress {
   padding: 0 10px;
   @include media_desktop {
     margin: 0 10%;
@@ -235,7 +226,7 @@ Styleguide 15.2.6
   }
   & &__item {
     display: table;
-    padding:16px;
+    padding: 16px;
     background: #f4f4f4;
     margin-bottom: 16px;
   }
@@ -251,7 +242,7 @@ Styleguide 15.2.6
     display: table-cell;
     vertical-align: middle;
     padding-left: 16px;
-    font-size:16px;
+    font-size: 16px;
   }
   & &__itemtTitle {
     font-weight: bold;
@@ -261,10 +252,8 @@ Styleguide 15.2.6
     margin-bottom: 10px;
   }
   & &__itemtPrice {
-
   }
   & &__itemtNumber {
-
   }
   & &__select {
     margin-bottom: 5px;

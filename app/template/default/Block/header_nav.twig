@@ -1,0 +1,33 @@
+<div class="header-nav">
+  <div class="header-nav__list">
+      <div class="header-nav__item favorite">
+        <a href="{{ url('mypage_favorite') }}">
+          <img class="icon" src="{{ asset('assets/img/icon_nav1.svg') }}" alt="Favorite">
+          <div class="header-nav__link">お第に入り</div>
+        </a>
+      </div>
+      <div class="header-nav__item transaction">
+        <a href="{{ url('mypage_favorite') }}">
+            <img class="icon" src="{{ asset('assets/img/icon_nav2.svg') }}" alt="Transaction">
+            <div class="header-nav__link">購入履歴</div>
+        </a>
+      </div>
+      <div class="header-nav__item track">
+        <a href="{{ url('mypage_favorite') }}">
+            <img class="icon" src="{{ asset('assets/img/icon_nav3.svg') }}" alt="Track">
+            <div class="header-nav__link">購入履歴</div>
+        </a>
+      </div>
+      <div class="header-nav__item my-page">
+        <a href="{{ url('mypage_favorite') }}">
+            <img class="icon" src="{{ asset('assets/img/icon_nav3.svg') }}" alt="My page">
+            <div class="header-nav__link">購入履歴</div>
+        </a>
+      </div>
+      <div class="header-nav__item cart">
+        <span class="name">齊藤あづさ様</span>
+        {{ include('Block/cart.twig') }}
+      </div>
+  </div>
+  </div>
+</div>
