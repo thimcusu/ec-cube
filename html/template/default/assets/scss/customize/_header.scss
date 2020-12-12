@@ -1,0 +1,174 @@
+@import "../mixins/media";
+@import "../mixins/projects";
+@import "../mixins/variables_customize";
+
+.header {
+  background-color: $clrBgHeader;
+  &-main {
+    @include flex(row, space-between, center, wrap);
+    @include container();
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &__logo {
+      h1 {
+        margin: 0;
+      }
+      img {
+        width: 96px;
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+        margin-right: 30px;
+      }
+      a {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: 0 0;
+      }
+    }
+    @include media_desktop {
+      justify-content: flex-start;
+      padding: 40px 0 20px;
+      &__logo {
+        img {
+          width: 145px;
+        }
+      }
+    }
+  }
+  &-nav {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 0 10%;
+    &__list {
+      @include container;
+      @include flex(row, space-between, center);
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      @include media_desktop {
+        justify-content: flex-start;
+        &__item.my-page {
+          margin-right: 40px;
+        }
+      }
+    }
+    &__item:last-child {
+      margin-left: auto;
+      margin-right: 0;
+    }
+    &__item.my-page {
+      margin-right: 0;
+    }
+    &__item {
+      margin-left: 0;
+      margin-right: 40px;
+      font-size: 28px;
+      opacity: 1;
+      transition: 0.5s ease;
+      a {
+        @include flex(column, center, center);
+        text-decoration: none;
+        color: $clrBlack;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+      @include media_desktop {
+        margin-right: 50px;
+      }
+    }
+    &__link {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      padding-top: 5px;
+      color: inherit;
+    }
+    @include media_desktop {
+      padding: 20px 0;
+    }
+  }
+
+  &-search {
+    padding: 10px 5%;
+    &__input {
+      width: 100%;
+      height: 50px;
+      font-size: 12px;
+      border: 0;
+      background: #fff;
+      padding: 0.5rem 20px 0.5rem 50px;
+      border-radius: 50px;
+      outline: 0;
+    }
+    &__button {
+      position: absolute;
+      left: 20px;
+      width: 24px;
+      height: 24px;
+      outline: 0;
+      border: none;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url(../img/icon_search.svg) no-repeat 0 0;
+      background-size: 24px 24px;
+    }
+    .search-bar {
+      width: 100%;
+      position: relative;
+      @include media_desktop {
+        width: 530px;
+      }
+    }
+    @include media_desktop {
+      padding: 0;
+    }
+  }
+  .pc {
+    display: none;
+  }
+  @include media_desktop {
+    .pc {
+      display: block;
+    }
+    .sp {
+      display: none;
+    }
+  }
+  .cart-nav {
+    @include flex(row, null, center);
+    position: relative;
+    .name {
+      color: $clrBlack;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 15px;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 2px;
+      max-width: 100px;
+    }
+    .badge {
+      position: absolute;
+      right: -9px;
+      top: -10px;
+      min-width: 10px;
+      padding: 4px 6px;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      vertical-align: middle;
+      background-color: $clrRed;
+      border-radius: 50%;
+    }
+    @include media_desktop() {
+    }
+  }
+}

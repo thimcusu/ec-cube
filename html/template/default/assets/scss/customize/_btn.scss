@@ -1,0 +1,38 @@
+@import "../mixins/variables_customize";
+
+.btn {
+  padding: 5px 20px;
+  background-color: #dedede;
+  transition: 0.4s ease;
+  color: #0a0a0a;
+  font-weight: 600;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: $clrRed;
+    background-color: #fff;
+    border: 1px solid $clrRed;
+  }
+}
+.btn-secondary {
+  outline: 0;
+  background-color: $clrRed;
+  transition: 0.4s ease;
+  color: #fff;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: $clrRed;
+    background-color: #fff;
+    border: 1px solid $clrRed;
+  }
+}

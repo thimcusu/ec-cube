@@ -370,7 +370,7 @@ body {
   font-family: Roboto, "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
   color: #525263;
   transition: z-index 0ms 5.28455ms;
-  background: #f6f6f6;
+  background: #fff;
   margin: 0; }
 a {
   text-decoration: none; }
@@ -381,11 +381,6 @@ pre {
 p {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 見出し
 
@@ -482,7 +477,7 @@ Styleguide 1.1.5
 */
 .ec-rectHeading h1, .ec-rectHeading h2, .ec-rectHeading h3,
 .ec-rectHeading h4, .ec-rectHeading h5, .ec-rectHeading h6 {
-  background: #F3F3F3;
+  background: #f3f3f3;
   padding: 8px 12px;
   font-size: 20px;
   font-weight: bold; }
@@ -511,11 +506,6 @@ Styleguide 1.1.6
   .ec-reportHeading h4, .ec-reportHeading h5, .ec-reportHeading h6, .ec-reportHeading p {
     font-weight: bold;
     font-size: 24px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 文字装飾
 
@@ -717,11 +707,6 @@ Styleguide 1.2.10
 */
 .ec-para-normal {
   margin-bottom: 16px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 リスト
 
@@ -1588,11 +1573,6 @@ Styleguide 2.2.2
     position: absolute;
     top: 50%;
     left: 50%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 その他のボタン
 
@@ -1630,11 +1610,6 @@ Styleguide 2.3.1
   line-height: 40px;
   opacity: 0.8;
   background-color: #9da3a9; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 フォーム部品(テキスト)
 
@@ -1869,7 +1844,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #de5d50; }
 .error.ec-input input, .error.ec-halfInput input, .error.ec-numberInput input, .error.ec-zipInput input, .error.ec-telInput input, .error.ec-select input, .error.ec-birth input, .error.ec-input select, .error.ec-halfInput select, .error.ec-numberInput select, .error.ec-zipInput select, .error.ec-telInput select, .error.ec-select select, .error.ec-birth select {
   margin-bottom: 5px;
   border-color: #CF3F34;
@@ -1878,7 +1853,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #de5d50; }
 .error.ec-checkbox input, .error.ec-checkbox label {
   border-color: #CF3F34;
   background: #FDF1F0; }
@@ -2015,11 +1990,6 @@ Styleguide 3.1.5
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 フォーム部品(テキスト)
 
@@ -2254,7 +2224,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #de5d50; }
 .error.ec-input input, .error.ec-halfInput input, .error.ec-numberInput input, .error.ec-zipInput input, .error.ec-telInput input, .error.ec-select input, .error.ec-birth input, .error.ec-input select, .error.ec-halfInput select, .error.ec-numberInput select, .error.ec-zipInput select, .error.ec-telInput select, .error.ec-select select, .error.ec-birth select {
   margin-bottom: 5px;
   border-color: #CF3F34;
@@ -2263,7 +2233,7 @@ Styleguide 3.1.1
   margin-bottom: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #DE5D50; }
+  color: #de5d50; }
 .error.ec-checkbox input, .error.ec-checkbox label {
   border-color: #CF3F34;
   background: #FDF1F0; }
@@ -2605,11 +2575,6 @@ Styleguide 3.2.7
   display: block; }
 .ec-blockCheckbox span {
   font-weight: normal; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 フォームラベル
 
@@ -2696,11 +2661,6 @@ Styleguide 4.1
 .ec-icon img {
   max-width: 80px;
   max-height: 80px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 グリッド
 
@@ -2951,11 +2911,6 @@ Styleguide 5.1.12
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 レイアウト
 
@@ -3003,11 +2958,6 @@ Styleguide 5.2.1
       margin-left: 10px; }
 .ec-imageGrid .ec-imageGrid__content p {
       margin-bottom: 0; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
@@ -3067,7 +3017,7 @@ Styleguide 6.1.1
     margin-top: 5px;
     margin-left: 0; }
 .ec-login .ec-errorMessage {
-    color: #DE5D50;
+    color: #de5d50;
     margin-bottom: 20px; }
 /*
 ゲスト購入
@@ -3109,11 +3059,6 @@ Styleguide 6.1.2
 .ec-guest .ec-guest__icon {
     font-size: 70px;
     text-align: center; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
@@ -3264,11 +3209,6 @@ Styleguide 7.1.3
     display: block;
     width: 100%; }
 /**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
  * ECCUBE 固有のスタイルユーティリティ
  */
 /*
@@ -3376,14 +3316,9 @@ Styleguide 7.2.2
     .ec-pager .ec-pager__item--active a:hover {
       color: inherit; }
 .ec-pager .ec-pager__item--active {
-    background: #F3F3F3; }
+    background: #f3f3f3; }
 .ec-pager .ec-pager__item:hover {
-    background: #F3F3F3; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
+    background: #f3f3f3; }
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -3743,7 +3678,7 @@ Styleguide 7.3.8
 .ec-totalBox .ec-totalBox__spec dd {
       text-align: right; }
 .ec-totalBox .ec-totalBox__spec .ec-totalBox .ec-totalBox__spec__specTotal {
-      color: #DE5D50; }
+      color: #de5d50; }
 .ec-totalBox .ec-totalBox__total {
     border-top: 1px dotted #ccc;
     padding: 8px 0;
@@ -3757,7 +3692,7 @@ Styleguide 7.3.8
     font-weight: bold; }
 .ec-totalBox .ec-totalBox__paymentTotal .ec-totalBox__price,
     .ec-totalBox .ec-totalBox__paymentTotal .ec-totalBox__taxLabel {
-      color: #DE5D50; }
+      color: #de5d50; }
 .ec-totalBox .ec-totalBox__price {
     margin-left: 16px;
     font-size: 16px;
@@ -3796,11 +3731,6 @@ Styleguide 7.3.8
       font-weight: bold; }
 .ec-totalBox .ec-totalBox__btn .ec-blockBtn--cancel {
       margin-top: 8px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 お知らせ
 
@@ -3906,11 +3836,6 @@ Styleguide 8.1.2
     transform: rotateX(180deg); }
 /**
  * ECCUBE 固有のスタイルユーティリティ
- */
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
  */
 /*
 マイページ
@@ -4083,11 +4008,6 @@ Styleguide 9.1.4
 .ec-favoriteRole .ec-favoriteRole__itemPrice {
   font-weight: bold;
   margin-bottom: 0; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 標準セクション
 
@@ -4102,34 +4022,9 @@ include /assets/tmpl/elements/11.1.role.pug
 Styleguide 11.1
 */
 .ec-role {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-role:after {
-    content: " ";
-    display: table; }
-.ec-role:after {
-    clear: both; }
-.ec-role textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-role img {
-    max-width: 100%; }
-.ec-role html {
-    box-sizing: border-box; }
-.ec-role *,
-  .ec-role *::before,
-  .ec-role *::after {
-    box-sizing: inherit; }
-.ec-role img {
-    width: 100%; }
+  min-width: auto; }
 /*
 マイページセクション
 
@@ -4173,773 +4068,334 @@ Styleguide 11.1.2
 .ec-mypageRole img {
     width: 100%; }
 /**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
  * ECCUBE 固有のスタイルユーティリティ
  */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    visibility: hidden; }
-  100% {
-    opacity: 1;
-    visibility: visible; } }
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    visibility: visible; }
-  100% {
-    opacity: 0;
-    visibility: hidden; } }
-.bg-load-overlay {
-  background: rgba(255, 255, 255, 0.4);
-  box-sizing: border-box;
-  position: fixed;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-around;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2147483647;
-  opacity: 1; }
-/*
-ヘッダー
-
-ヘッダー用のプロジェクトコンポーネントを提供します。
-
-ex [トップページ　ヘッダー](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/11.2.header.pug
-include /assets/tmpl/elements/11.3.headerNavi.pug
-include /assets/tmpl/elements/11.4.categoryNavi.pug
-+b.ec-layoutRole
-  +e.header
-    +ec-headerRole
-    +ec-headerNaviRole
-    +ec-categoryNaviRole
-
-Styleguide 11.2
-*/
-.ec-layoutRole {
-  width: 100%;
-  transition: transform 0.3s;
-  background: #fff; }
-.ec-layoutRole .ec-layoutRole__contentTop {
-    padding: 0; }
-.ec-layoutRole .ec-layoutRole__contents {
-    margin-right: auto;
-    margin-left: auto;
+.header {
+  background-color: #f0f0f0; }
+.header-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5%;
     width: 100%;
-    max-width: 1150px;
-    display: flex;
-    flex-wrap: nowrap; }
-.ec-layoutRole .ec-layoutRole__main {
-    width: 100%; }
-.ec-layoutRole .ec-layoutRole__mainWithColumn {
-    width: 100%; }
-.ec-layoutRole .ec-layoutRole__mainBetweenColumn {
-    width: 100%; }
-.ec-layoutRole .ec-layoutRole__left,
-  .ec-layoutRole .ec-layoutRole__right {
-    display: none; }
-.ec-headerRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  padding-top: 15px;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: auto; }
-.ec-headerRole:after {
-    content: " ";
-    display: table; }
-.ec-headerRole:after {
-    clear: both; }
-.ec-headerRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerRole img {
-    max-width: 100%; }
-.ec-headerRole html {
-    box-sizing: border-box; }
-.ec-headerRole *,
-  .ec-headerRole *::before,
-  .ec-headerRole *::after {
-    box-sizing: inherit; }
-.ec-headerRole img {
-    width: 100%; }
-.ec-headerRole:after {
-    display: none; }
-.ec-headerRole::before {
-    display: none; }
-.ec-headerRole .ec-headerRole__title {
-    width: 100%; }
-.ec-headerRole .ec-headerRole__navSP {
-    display: block;
-    position: absolute;
-    top: 15px;
-    width: 27%;
-    right: 0;
-    text-align: right; }
-.ec-headerNaviRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 15px; }
-.ec-headerNaviRole:after {
-    content: " ";
-    display: table; }
-.ec-headerNaviRole:after {
-    clear: both; }
-.ec-headerNaviRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerNaviRole img {
-    max-width: 100%; }
-.ec-headerNaviRole html {
-    box-sizing: border-box; }
-.ec-headerNaviRole *,
-  .ec-headerNaviRole *::before,
-  .ec-headerNaviRole *::after {
-    box-sizing: inherit; }
-.ec-headerNaviRole img {
-    width: 100%; }
-.ec-headerNaviRole .fa-bars {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-.ec-headerNaviRole .ec-headerNaviRole__left {
-    width: calc(100% / 3); }
-.ec-headerNaviRole .ec-headerNaviRole__search {
-    display: none; }
-.ec-headerNaviRole .ec-headerNaviRole__navSP {
-    display: block; }
-.ec-headerNaviRole .ec-headerNaviRole__right {
-    width: calc(100% * 2 / 3);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; }
-.ec-headerNaviRole .ec-headerNaviRole__nav {
-    display: inline-block; }
-.ec-headerNaviRole .ec-headerNaviRole__nav a {
-      color: inherit;
-      text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__nav a:hover {
-      text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__cart {
-    display: inline-block; }
-.ec-headerNaviRole .ec-headerNaviRole__cart a {
-      color: inherit;
-      text-decoration: none; }
-.ec-headerNaviRole .ec-headerNaviRole__cart a:hover {
-      text-decoration: none; }
-.ec-headerNavSP {
-  display: block;
-  cursor: pointer;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  text-align: center;
-  color: black;
-  background: white;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000; }
-.ec-headerNavSP .fas {
-    vertical-align: top; }
-.ec-headerNavSP.is-active {
-  display: none; }
-/*
-ヘッダー：タイトル
-
-ヘッダー内で使用されるタイトルコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.2.header.pug
-+ec-headerTitle
-
-Styleguide 11.2.1
-*/
-.ec-headerTitle {
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%; }
-.ec-headerTitle textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-headerTitle img {
-    max-width: 100%; }
-.ec-headerTitle html {
-    box-sizing: border-box; }
-.ec-headerTitle *,
-  .ec-headerTitle *::before,
-  .ec-headerTitle *::after {
-    box-sizing: inherit; }
-.ec-headerTitle img {
-    width: 100%; }
-.ec-headerTitle .ec-headerTitle__title {
-    text-align: center; }
-.ec-headerTitle .ec-headerTitle__title h1 {
+    min-width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+.header-main__logo h1 {
+      margin: 0; }
+.header-main__logo img {
+      width: 96px;
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+      margin-right: 30px; }
+.header-main__logo a {
       margin: 0;
-      padding: 0; }
-.ec-headerTitle .ec-headerTitle__title a {
-      display: inline-block;
-      margin-bottom: 30px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      color: black; }
-.ec-headerTitle .ec-headerTitle__title a:hover {
-        opacity: .8; }
-.ec-headerTitle .ec-headerTitle__subtitle {
-    font-size: 10px;
-    text-align: center; }
-.ec-headerTitle .ec-headerTitle__subtitle a {
-      display: inline-block;
-      color: #0092C4;
-      text-decoration: none;
-      cursor: pointer; }
-/*
-ヘッダー：ユーザナビゲーション
-
-ヘッダー内でユーザに関与するナビゲーションコンポーネントです。
-<br><br>
-`.ec-headerNaviRole`>`.ec-headerNaviRole__nav`内に記述すると２カラム上の右側に配置することができます。
-
-Markup:
-include /assets/tmpl/elements/11.3.headerNavi.pug
-+ec-headerNav
-
-sg-wrapper:
-<div class="ec-headerNaviRole">
-  <div class="ec-headerNaviRole__nav">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.2.3
-*/
-.ec-headerNav {
-  text-align: right; }
-.ec-headerNav .ec-headerNav__item {
-    margin-left: 0;
-    display: inline-block;
-    font-size: 28px; }
-.ec-headerNav .ec-headerNav__itemIcon {
-    display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 18px;
-    color: black; }
-.ec-headerNav .ec-headerNav__itemLink {
-    display: none;
-    margin-right: 5px;
-    font-size: 14px;
-    vertical-align: middle;
-    color: black; }
-/*
-ヘッダー：検索ボックス
-
-ヘッダー内で使用される商品検索コンポーネントです。
-<br><br>
-`.ec-headerNaviRole`>`.ec-headerNaviRole__search`内に記述すると２カラム上の右側に配置することができます。
-
-Markup:
-include /assets/tmpl/elements/11.3.headerNavi.pug
-+ec-headerSearch
-
-sg-wrapper:
-<div class="ec-headerNaviRole">
-  <div class="ec-headerNaviRole__search">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.2.4
-*/
-.ec-headerSearch:after {
-  content: " ";
-  display: table; }
-.ec-headerSearch:after {
-  clear: both; }
-.ec-headerSearch .ec-headerSearch__category {
-  float: none; }
-.ec-headerSearch .ec-headerSearch__category .ec-select {
-    overflow: hidden;
+      padding: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: 0 0; }
+.header-nav {
     width: 100%;
-    margin: 0;
-    text-align: center; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select {
+    background-color: #f4f4f4;
+    padding: 0 10%; }
+.header-nav__list {
+      padding: 0 5%;
       width: 100%;
-      cursor: pointer;
-      padding: 8px 24px 8px 8px;
-      text-indent: 0.01px;
-      text-overflow: ellipsis;
-      border: none;
-      outline: none;
-      background: transparent;
-      background-image: none;
-      box-shadow: none;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      color: #fff; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select option {
-        color: #000; }
-.ec-headerSearch .ec-headerSearch__category .ec-select select::-ms-expand {
-        display: none; }
-.ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search {
-      position: relative;
-      border: 0;
-      background: #000;
-      color: #fff;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px; }
-.ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search::before {
-        position: absolute;
-        top: 0.8em;
-        right: 0.4em;
-        width: 0;
-        height: 0;
-        padding: 0;
-        content: '';
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid #fff;
-        pointer-events: none; }
-.ec-headerSearch .ec-headerSearch__keyword {
-  position: relative;
-  color: #525263;
-  border: 1px solid #ccc;
-  background-color: #f6f6f6;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; }
-.ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
-    width: 100%;
-    height: 34px;
-    font-size: 16px;
-    border: 0 none;
-    padding: 0.5em 50px 0.5em 1em;
-    box-shadow: none;
-    background: none;
-    box-sizing: border-box;
-    margin-bottom: 0; }
-.ec-headerSearch .ec-headerSearch__keyword .ec-icon {
-    width: 22px;
-    height: 22px; }
-.ec-headerSearch .ec-headerSearch__keywordBtn {
-  border: 0;
-  background: none;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-55%);
-  display: block;
-  white-space: nowrap;
-  z-index: 1; }
-/*
-ヘッダー：カテゴリナビ
-
-ヘッダー内で使用されている商品のカテゴリ一覧として使用します。
-`li`の中に`ul > li`要素を入れることで、階層を深くする事ができます。
-
-Markup:
-include /assets/tmpl/elements/11.4.categoryNavi.pug
-+ec-itemNav
-
-sg-wrapper:
-<div class="ec-categoryNaviRole" style="padding-bottom:150px;">
-  <sg-wrapper-content/>
-</div>
-
-Styleguide 11.2.5
-*/
-.ec-categoryNaviRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
-  max-width: 1130px;
-  display: none; }
-.ec-categoryNaviRole:after {
-    content: " ";
-    display: table; }
-.ec-categoryNaviRole:after {
-    clear: both; }
-.ec-categoryNaviRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-categoryNaviRole img {
-    max-width: 100%; }
-.ec-categoryNaviRole html {
-    box-sizing: border-box; }
-.ec-categoryNaviRole *,
-  .ec-categoryNaviRole *::before,
-  .ec-categoryNaviRole *::after {
-    box-sizing: inherit; }
-.ec-categoryNaviRole img {
-    width: 100%; }
-.ec-itemNav {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center; }
-.ec-itemNav__nav {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: auto;
-  height: auto;
-  list-style-type: none;
-  text-align: center;
-  vertical-align: bottom; }
-.ec-itemNav__nav li {
-  float: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  position: relative; }
-.ec-itemNav__nav li a {
-  display: block;
-  border-bottom: 1px solid #E8E8E8;
-  margin: 0;
-  padding: 16px;
-  height: auto;
-  color: #2e3233;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: left;
-  background: #fff;
-  border-bottom: 1px solid #E8E8E8; }
-.ec-itemNav__nav li ul {
-  display: none;
-  z-index: 0;
-  margin: 0;
-  padding: 0;
-  min-width: 200px;
-  list-style: none;
-  position: static;
-  top: 100%;
-  left: 0; }
-.ec-itemNav__nav li ul li {
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  transition: .3s; }
-.ec-itemNav__nav li ul li a {
-  border-bottom: 1px solid #E8E8E8;
-  padding: 16px 22px 16px 16px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-align: left;
-  background: black; }
-.ec-itemNav__nav > li:hover > a {
-  background: #fafafa; }
-.ec-itemNav__nav > li:hover li:hover > a {
-  background: #333; }
-.ec-itemNav__nav li ul li ul {
-  top: 0;
-  left: 100%;
-  width: auto; }
-.ec-itemNav__nav li ul li ul li a {
-  background: #7D7D7D; }
-.ec-itemNav__nav li:hover ul li ul li a:hover {
-  background: #333; }
-/*
-ヘッダー：SPヘッダー
-
-SP時のみ出現するヘッダーに関係するコンポーネントです。<br>
-ex [トップページ](http://demo3.ec-cube.net/)画面サイズが768px以下に該当。<br>
-<br>
-`.ec-drawerRole`：SPのドロワー内の要素をwrapするコンポーネントです。<br>
-`.ec-headerSearch`、`.ec-headerNav`、`.ec-itemNav`は`.ec-drawerRole`の子要素にある場合、ドロワーに適したスタイルに変化します。<br><br>
-`.ec-overlayRole`：SPのドロワー出現時にz-indexがドロワー以下の要素に半透明の黒背景をかぶせるコンポーネントです。<br>
-
-Styleguide 11.2.6
-*/
-.ec-drawerRole {
-  overflow-y: scroll;
-  background: black;
-  width: 260px;
-  height: 100vh;
-  transform: translateX(-300px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition: z-index 0ms 1ms; }
-.ec-drawerRole .ec-headerSearchArea {
-    padding: 20px 10px;
-    width: 100%;
-    background: #F8F8F8; }
-.ec-drawerRole .ec-headerSearch {
-    padding: 16px 8px 26px;
-    background: #EBEBEB;
-    color: #636378; }
-.ec-drawerRole .ec-headerSearch select {
-      width: 100% !important; }
-.ec-drawerRole .ec-headerCategoryArea .ec-headerCategoryArea__heading {
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-    padding: 1em 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    background: #F8F8F8; }
-.ec-drawerRole .ec-headerCategoryArea p {
-    margin-top: 0;
-    margin-bottom: 0; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li a {
-    border-bottom: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    color: black;
-    font-weight: normal;
-    background: #f8f8f8; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li a {
-    border-bottom: 1px solid #ccc;
-    padding-left: 20px;
-    font-weight: normal;
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav > li:hover > a {
-    background: #f8f8f8; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav > li:hover li:hover > a {
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li ul li a {
-    padding-left: 40px;
-    color: black;
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li:hover ul li ul li a:hover {
-    background: white; }
-.ec-drawerRole .ec-headerCategoryArea .ec-itemNav__nav li ul li ul li ul li a {
-    padding-left: 60px;
-    font-weight: normal; }
-.ec-drawerRole .ec-headerLinkArea {
-    background: black; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__list {
-      border-top: 1px solid #ccc; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__item {
-      display: block;
-      border-bottom: 1px solid #ccc;
-      padding: 15px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      color: white; }
-.ec-drawerRole .ec-headerLinkArea .ec-headerLink__icon {
+      min-width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      width: 100%;
+      height: 100%; }
+.header-nav__item:last-child {
+      margin-left: auto;
+      margin-right: 0; }
+.header-nav__item.my-page {
+      margin-right: 0; }
+.header-nav__item {
+      margin-left: 0;
+      margin-right: 40px;
+      font-size: 28px;
+      opacity: 1;
+      transition: 0.5s ease; }
+.header-nav__item a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #0a0a0a; }
+.header-nav__item:hover {
+        opacity: 0.8; }
+.header-nav__link {
       display: inline-block;
-      width: 28px;
-      font-size: 17px; }
-.ec-drawerRoleClose {
-  display: none;
-  cursor: pointer;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  text-align: center;
-  color: black;
-  background: white;
-  position: fixed;
-  top: 10px;
-  left: 270px;
-  z-index: 1000; }
-.ec-drawerRoleClose .fas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-.ec-drawerRole.is_active {
-  display: block;
-  transform: translateX(0);
-  transition: all .3s;
-  z-index: 100000; }
-.ec-drawerRoleClose.is_active {
-  display: inline-block;
-  transition: all .3s; }
-.ec-overlayRole {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background: transparent;
-  transform: translateX(0);
-  transition: all .3s;
-  visibility: hidden; }
-.have_curtain .ec-overlayRole {
-  display: block;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.5);
-  visibility: visible; }
-/*
-ヘッダー：test
-
-test
-
-Markup:
-span.ec-itemAccordionParent test1
-ul.ec-itemNavAccordion
-  li.ec-itemNavAccordion__item
-    a(href='') test2
-    ul.ec-itemNavAccordion
-      li.ec-itemNavAccordion__item
-        a(href='') test3
-        ul.ec-itemNavAccordion
-          li.ec-itemNavAccordion__item
-            a(href='') test4
-
-Styleguide 11.2.7
-*/
-.ec-itemNavAccordion {
-  display: none; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
+      font-size: 10px;
+      font-weight: 600;
+      padding-top: 5px;
+      color: inherit; }
+.header-search {
+    padding: 10px 5%; }
+.header-search__input {
+      width: 100%;
+      height: 50px;
+      font-size: 12px;
+      border: 0;
+      background: #fff;
+      padding: 0.5rem 20px 0.5rem 50px;
+      border-radius: 50px;
+      outline: 0; }
+.header-search__button {
+      position: absolute;
+      left: 20px;
+      width: 24px;
+      height: 24px;
+      outline: 0;
+      border: none;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url(../img/icon_search.svg) no-repeat 0 0;
+      background-size: 24px 24px; }
+.header-search .search-bar {
+      width: 100%;
+      position: relative; }
+.header .pc {
+    display: none; }
+.header .cart-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; }
+.header .cart-nav .name {
+      color: #0a0a0a;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 15px;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 2px;
+      max-width: 100px; }
+.header .cart-nav .badge {
+      position: absolute;
+      right: -9px;
+      top: -10px;
+      min-width: 10px;
+      padding: 4px 6px;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      vertical-align: middle;
+      background-color: #e8380d;
+      border-radius: 50%; }
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
-/*
-フッター
-
-全ページで使用されるフッターのプロジェクトコンポーネントです。
-
-ex [トップページ　フッター](http://demo3.ec-cube.net/)
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerRole
-
-Styleguide 11.3
-*/
-.ec-footerRole {
-  border-top: 1px solid #7d7d7d;
+.main-content {
   margin-top: 30px;
-  background: black; }
-/*
-フッターナビ
-
-フッタープロジェクトで使用するナビゲーション用のコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerNav
-
-sg-wrapper:
-<div class="ec-footerRole">
-  <div class="ec-footerRole__inner">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.3.1
-*/
-.ec-footerNavi {
-  padding: 0;
-  color: white;
-  list-style: none;
-  text-align: center; }
-.ec-footerNavi .ec-footerNavi__link {
-    display: block; }
-.ec-footerNavi .ec-footerNavi__link a {
-      display: block;
-      border-bottom: 1px solid #7d7d7d;
-      padding: 15px 0;
-      font-size: 14px;
-      color: inherit;
-      text-decoration: none; }
-.ec-footerNavi .ec-footerNavi__link:hover a {
-      opacity: .8;
-      text-decoration: none; }
-/*
-フッタータイトル
-
-フッタープロジェクトで使用するタイトル用のコンポーネントです。
-
-Markup:
-include /assets/tmpl/elements/11.8.footer.pug
-+ec-footerTitle
-
-sg-wrapper:
-<div class="ec-footerRole">
-  <div class="ec-footerRole__inner">
-    <sg-wrapper-content/>
-  </div>
-</div>
-
-Styleguide 11.3.2
-*/
-.ec-footerTitle {
-  padding: 40px 0 60px;
-  text-align: center;
-  color: white; }
-.ec-footerTitle .ec-footerTitle__logo {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold; }
-.ec-footerTitle .ec-footerTitle__logo a {
-      color: inherit;
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__logo a:hover {
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__logo a {
-      font-size: 22px;
-      color: inherit; }
-.ec-footerTitle .ec-footerTitle__logo:hover a {
-      opacity: .8;
-      text-decoration: none; }
-.ec-footerTitle .ec-footerTitle__copyright {
-    font-size: 10px; }
+  margin-bottom: 30px; }
+.review {
+  padding: 0 5%;
+  width: 100%;
+  min-width: auto; }
+.review .review__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; }
+.review .review__title {
+    display: flex;
+    flex-direction: column; }
+.review .review__title h3 {
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 24px;
+      color: #0a0a0a; }
+.review .review__title-small {
+      display: flex;
+      flex-direction: row;
+      justify-content: center; }
+.review .review__title-small > span {
+        text-align: center;
+        align-self: center;
+        font-weight: 600;
+        color: #0a0a0a;
+        opacity: 0.8;
+        word-break: break-word;
+        margin-right: 5px; }
+.review .review__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px 0; }
+.review__item + .review__item {
+    margin-top: 20px; }
+.review-card {
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px #dedede; }
+.review-card .wrapper {
+    padding: 10px 20px; }
+.review-card .heading .customer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dedede; }
+.review-card .heading .customer img {
+      width: 40px;
+      vertical-align: middle;
+      margin-right: 5px; }
+.review-card .heading .customer .name {
+      color: #0a0a0a; }
 /**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
+ * ECCUBE 固有のスタイルユーティリティ
  */
+#footer .footer-content {
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a0a;
+  color: #fff;
+  height: 105px;
+  text-align: center; }
+#footer .footer-content a {
+    cursor: pointer;
+    opacity: 1;
+    color: inherit;
+    transition: 0.3s ease;
+    text-decoration: none; }
+#footer .footer-content a:hover {
+      opacity: 0.8;
+      font-weight: 500; }
+#footer .footer-content .content {
+    padding: 0 5%;
+    width: 100%;
+    min-width: auto; }
+#footer .footer-content ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px; }
+#footer .footer-content ul li {
+      display: inline-block; }
+#footer .footer-content ul li:not(:last-child) {
+      padding-right: 25px;
+      position: relative; }
+#footer .footer-content ul li:not(:last-child):after {
+        content: "";
+        position: absolute;
+        display: block;
+        right: 10px;
+        top: 5px;
+        height: calc(100% - 8px);
+        width: 2px;
+        background-color: #fff;
+        z-index: 2;
+        opacity: 0.5; }
+#footer .footer-content .title {
+    font-size: 14px; }
+#footer .footer-content .title span {
+      font-size: 18px; }
+#footer .footer-news {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 65px 5%; }
+#footer .footer-news a {
+    cursor: pointer;
+    color: black;
+    opacity: 0.7;
+    text-decoration: none;
+    transition: 0.3s ease; }
+#footer .footer-news a:hover {
+      opacity: 1; }
+#footer .footer-news__list {
+    padding: 0 5%;
+    width: 100%;
+    min-width: auto;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; }
+#footer .footer-news__list :last-child {
+      margin-right: 0; }
+#footer .footer-news__item {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative; }
+#footer .footer-news__item:not(:last-child) {
+      margin-bottom: 20px; }
+#footer .footer-news__item h4 {
+      font-size: 16px;
+      color: black;
+      opacity: 0.8;
+      font-weight: 600;
+      margin: 0; }
+#footer .footer-news__item ul {
+      list-style: none;
+      padding: 10px; }
+#footer .footer-news__item ul li {
+        margin: 5px 0; }
+.rating-star {
+  text-align: left; }
+.rating-star span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    font-size: 24px; }
+.rating-star span:not(:last-child):before {
+      content: "\2605";
+      position: absolute;
+      color: darkorange; }
+.btn {
+  padding: 5px 20px;
+  background-color: #dedede;
+  transition: 0.4s ease;
+  color: #0a0a0a;
+  font-weight: 600;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer; }
+.btn:focus {
+    outline: 0; }
+.btn:hover {
+    color: #e8380d;
+    background-color: #fff;
+    border: 1px solid #e8380d; }
+.btn-secondary {
+  outline: 0;
+  background-color: #e8380d;
+  transition: 0.4s ease;
+  color: #fff; }
+.btn-secondary:focus {
+    outline: 0; }
+.btn-secondary:hover {
+    color: #e8380d;
+    background-color: #fff;
+    border: 1px solid #e8380d; }
 /*
 トップページ
 
@@ -4954,68 +4410,18 @@ include /assets/tmpl/elements/12.1.slider.pug
 Styleguide 12.1
 */
 .ec-sliderRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px;
+  min-width: auto;
   margin-bottom: 24px; }
-.ec-sliderRole:after {
-    content: " ";
-    display: table; }
-.ec-sliderRole:after {
-    clear: both; }
-.ec-sliderRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-sliderRole img {
-    max-width: 100%; }
-.ec-sliderRole html {
-    box-sizing: border-box; }
-.ec-sliderRole *,
-  .ec-sliderRole *::before,
-  .ec-sliderRole *::after {
-    box-sizing: inherit; }
-.ec-sliderRole img {
-    width: 100%; }
 .ec-sliderRole ul {
     padding: 0;
     list-style: none; }
 .ec-sliderItemRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px;
+  min-width: auto;
   margin-bottom: 24px; }
-.ec-sliderItemRole:after {
-    content: " ";
-    display: table; }
-.ec-sliderItemRole:after {
-    clear: both; }
-.ec-sliderItemRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-sliderItemRole img {
-    max-width: 100%; }
-.ec-sliderItemRole html {
-    box-sizing: border-box; }
-.ec-sliderItemRole *,
-  .ec-sliderItemRole *::before,
-  .ec-sliderItemRole *::after {
-    box-sizing: inherit; }
-.ec-sliderItemRole img {
-    width: 100%; }
 .ec-sliderItemRole ul {
     padding: 0;
     list-style: none; }
@@ -5032,11 +4438,6 @@ Styleguide 12.1
       opacity: 1; }
 .ec-sliderItemRole .slideThumb img {
       width: 80%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 アイキャッチ
 
@@ -5078,11 +4479,6 @@ Styleguide 12.2
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 2; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 ボタン
 
@@ -5350,11 +4746,6 @@ Styleguide 12.4.2
     font-weight: normal;
     letter-spacing: .15em;
     vertical-align: 2px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 トピック（アイテム2列）
 
@@ -5384,11 +4775,6 @@ Styleguide 12.5.1
     margin-top: .5em;
     font-size: 14px;
     color: black; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 カテゴリ（アイテム4列 スマホの時は2列）
 
@@ -5425,11 +4811,6 @@ Styleguide 12.6.1
     font-weight: bold; }
 .ec-newItemRole .ec-newItemRole__listItemPrice {
     font-size: 12px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 カテゴリ（アイテム3列）
 
@@ -5456,11 +4837,6 @@ Styleguide 12.7.1
     margin-bottom: 20px;
     width: 100%;
     height: auto; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 見出し
 
@@ -5532,11 +4908,6 @@ Styleguide 12.8.1
 .ec-newsRole__newsItem.is_active .ec-newsRole__newsCloseBtn i {
     display: inline-block;
     transform: rotateX(180deg) translateY(2px); }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 検索ラベル
 
@@ -5556,50 +4927,20 @@ Styleguide 13.1
   margin-bottom: 0;
   padding: 0; }
 .ec-searchnavRole .ec-searchnavRole__infos {
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #525263;
-    -webkit-text-size-adjust: 100%;
+    padding: 0 5%;
     width: 100%;
-    max-width: 1130px;
+    min-width: auto;
     display: flex;
     border-top: 0;
     margin-bottom: 16px;
     padding-top: 5px;
     flex-direction: column; }
-.ec-searchnavRole .ec-searchnavRole__infos:after {
-      content: " ";
-      display: table; }
-.ec-searchnavRole .ec-searchnavRole__infos:after {
-      clear: both; }
-.ec-searchnavRole .ec-searchnavRole__infos textarea {
-      /* for chrome fontsize bug */
-      font-family: sans-serif; }
-.ec-searchnavRole .ec-searchnavRole__infos img {
-      max-width: 100%; }
-.ec-searchnavRole .ec-searchnavRole__infos html {
-      box-sizing: border-box; }
-.ec-searchnavRole .ec-searchnavRole__infos *,
-    .ec-searchnavRole .ec-searchnavRole__infos *::before,
-    .ec-searchnavRole .ec-searchnavRole__infos *::after {
-      box-sizing: inherit; }
-.ec-searchnavRole .ec-searchnavRole__infos img {
-      width: 100%; }
 .ec-searchnavRole .ec-searchnavRole__counter {
     margin-bottom: 16px;
     width: 100%; }
 .ec-searchnavRole .ec-searchnavRole__actions {
     text-align: right;
     width: 100%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /**
  * ECCUBE 固有のスタイルユーティリティ
  */
@@ -5619,34 +4960,9 @@ Styleguide 13.2
 
 */
 .ec-shelfRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-shelfRole:after {
-    content: " ";
-    display: table; }
-.ec-shelfRole:after {
-    clear: both; }
-.ec-shelfRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-shelfRole img {
-    max-width: 100%; }
-.ec-shelfRole html {
-    box-sizing: border-box; }
-.ec-shelfRole *,
-  .ec-shelfRole *::before,
-  .ec-shelfRole *::after {
-    box-sizing: inherit; }
-.ec-shelfRole img {
-    width: 100%; }
+  min-width: auto; }
 /*
 商品一覧グリッド
 
@@ -5761,11 +5077,6 @@ include /assets/tmpl/elements/13.3.pager.pug
 Styleguide 13.3
 
 */
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 カート追加モーダル
 
@@ -5820,11 +5131,6 @@ Styleguide 13.4
     text-align: center; }
 .ec-modal .ec-role {
     margin-top: 20px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 商品詳細
 
@@ -5840,34 +5146,9 @@ include /assets/tmpl/elements/14.1.product.pug
 Styleguide 14.1
 */
 .ec-productRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-productRole:after {
-    content: " ";
-    display: table; }
-.ec-productRole:after {
-    clear: both; }
-.ec-productRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-productRole img {
-    max-width: 100%; }
-.ec-productRole html {
-    box-sizing: border-box; }
-.ec-productRole *,
-  .ec-productRole *::before,
-  .ec-productRole *::after {
-    box-sizing: inherit; }
-.ec-productRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-productRole .ec-productRole__img {
     margin-right: 0;
     margin-bottom: 20px; }
@@ -5923,11 +5204,6 @@ Styleguide 14.1
 .ec-productRole .ec-productRole__description {
     margin-bottom: 16px; }
 /**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
  * ECCUBE 固有のスタイルユーティリティ
  */
 /*
@@ -5947,37 +5223,12 @@ Styleguide 15.1
 
 */
 .ec-cartRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px;
+  min-width: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end; }
-.ec-cartRole:after {
-    content: " ";
-    display: table; }
-.ec-cartRole:after {
-    clear: both; }
-.ec-cartRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-cartRole img {
-    max-width: 100%; }
-.ec-cartRole html {
-    box-sizing: border-box; }
-.ec-cartRole *,
-  .ec-cartRole *::before,
-  .ec-cartRole *::after {
-    box-sizing: inherit; }
-.ec-cartRole img {
-    width: 100%; }
 .ec-cartRole::before {
     display: none; }
 .ec-cartRole .ec-cartRole__progress {
@@ -6067,34 +5318,9 @@ Styleguide 15.1.3
     overflow-x: hidden;
     font-weight: bold; }
 .ec-cartCompleteRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-cartCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-cartCompleteRole:after {
-    clear: both; }
-.ec-cartCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-cartCompleteRole img {
-    max-width: 100%; }
-.ec-cartCompleteRole html {
-    box-sizing: border-box; }
-.ec-cartCompleteRole *,
-  .ec-cartCompleteRole *::before,
-  .ec-cartCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-cartCompleteRole img {
-    width: 100%; }
+  min-width: auto; }
 /*
 カート内商品
 
@@ -6296,11 +5522,6 @@ include /assets/tmpl/elements/15.1.cart.pug
 Styleguide 15.1.7
 */
 /**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
  * ECCUBE 固有のスタイルユーティリティ
  */
 /*
@@ -6317,37 +5538,12 @@ include /assets/tmpl/elements/15.2.order.pug
 Styleguide 15.2
 */
 .ec-orderRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px;
+  min-width: auto;
   display: flex;
   flex-direction: column;
   margin-top: 0; }
-.ec-orderRole:after {
-    content: " ";
-    display: table; }
-.ec-orderRole:after {
-    clear: both; }
-.ec-orderRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-orderRole img {
-    max-width: 100%; }
-.ec-orderRole html {
-    box-sizing: border-box; }
-.ec-orderRole *,
-  .ec-orderRole *::before,
-  .ec-orderRole *::after {
-    box-sizing: inherit; }
-.ec-orderRole img {
-    width: 100%; }
 .ec-orderRole .ec-inlineBtn {
     font-weight: normal; }
 .ec-orderRole .ec-orderRole__detail {
@@ -6542,11 +5738,6 @@ Styleguide 15.2.6
 .ec-AddAddress .ec-AddAddress__new {
     margin-bottom: 20px; }
 /**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
-/**
  * ECCUBE 固有のスタイルユーティリティ
  */
 /*
@@ -6634,11 +5825,6 @@ Styleguide 16.1.2
     font-weight: normal; }
 /**
  * ECCUBE 固有のスタイルユーティリティ
- */
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
  */
 /*
 注文履歴詳細
@@ -6763,11 +5949,6 @@ Styleguide 17.1
   text-align: right;
   top: 27px;
   padding-right: 10px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 パスワードリセット
 
@@ -6785,43 +5966,13 @@ Styleguide 18.1
 
 */
 .ec-forgotRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-forgotRole:after {
-    content: " ";
-    display: table; }
-.ec-forgotRole:after {
-    clear: both; }
-.ec-forgotRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-forgotRole img {
-    max-width: 100%; }
-.ec-forgotRole html {
-    box-sizing: border-box; }
-.ec-forgotRole *,
-  .ec-forgotRole *::before,
-  .ec-forgotRole *::after {
-    box-sizing: inherit; }
-.ec-forgotRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-forgotRole .ec-forgotRole__intro {
     font-size: 16px; }
 .ec-forgotRole .ec-forgotRole__form {
     margin-bottom: 16px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 会員登録
 
@@ -6837,34 +5988,9 @@ Styleguide 19.1
 
 */
 .ec-registerRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-registerRole:after {
-    content: " ";
-    display: table; }
-.ec-registerRole:after {
-    clear: both; }
-.ec-registerRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-registerRole img {
-    max-width: 100%; }
-.ec-registerRole html {
-    box-sizing: border-box; }
-.ec-registerRole *,
-  .ec-registerRole *::before,
-  .ec-registerRole *::after {
-    box-sizing: inherit; }
-.ec-registerRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-registerRole .ec-registerRole__actions {
     padding-top: 20px;
     text-align: center; }
@@ -6873,39 +5999,9 @@ Styleguide 19.1
 .ec-registerRole .ec-blockBtn--action {
     margin-bottom: 16px; }
 .ec-registerCompleteRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-registerCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-registerCompleteRole:after {
-    clear: both; }
-.ec-registerCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-registerCompleteRole img {
-    max-width: 100%; }
-.ec-registerCompleteRole html {
-    box-sizing: border-box; }
-.ec-registerCompleteRole *,
-  .ec-registerCompleteRole *::before,
-  .ec-registerCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-registerCompleteRole img {
-    width: 100%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
+  min-width: auto; }
 /*
 お問い合わせ
 
@@ -6921,105 +6017,25 @@ Styleguide 19.2
 
 */
 .ec-contactRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-contactRole:after {
-    content: " ";
-    display: table; }
-.ec-contactRole:after {
-    clear: both; }
-.ec-contactRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactRole img {
-    max-width: 100%; }
-.ec-contactRole html {
-    box-sizing: border-box; }
-.ec-contactRole *,
-  .ec-contactRole *::before,
-  .ec-contactRole *::after {
-    box-sizing: inherit; }
-.ec-contactRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-contactRole .ec-contactRole__actions {
     padding-top: 20px; }
 .ec-contactRole p {
     margin: 16px 0; }
 .ec-contactConfirmRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-contactConfirmRole:after {
-    content: " ";
-    display: table; }
-.ec-contactConfirmRole:after {
-    clear: both; }
-.ec-contactConfirmRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactConfirmRole img {
-    max-width: 100%; }
-.ec-contactConfirmRole html {
-    box-sizing: border-box; }
-.ec-contactConfirmRole *,
-  .ec-contactConfirmRole *::before,
-  .ec-contactConfirmRole *::after {
-    box-sizing: inherit; }
-.ec-contactConfirmRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-contactConfirmRole .ec-contactConfirmRole__actions {
     padding-top: 20px; }
 .ec-contactConfirmRole .ec-blockBtn--action {
     margin-bottom: 16px; }
 .ec-contactCompleteRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-contactCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-contactCompleteRole:after {
-    clear: both; }
-.ec-contactCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactCompleteRole img {
-    max-width: 100%; }
-.ec-contactCompleteRole html {
-    box-sizing: border-box; }
-.ec-contactCompleteRole *,
-  .ec-contactCompleteRole *::before,
-  .ec-contactCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-contactCompleteRole img {
-    width: 100%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
+  min-width: auto; }
 /*
 お客様情報の入力
 
@@ -7036,105 +6052,25 @@ Styleguide 19.3
 
 */
 .ec-customerRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-customerRole:after {
-    content: " ";
-    display: table; }
-.ec-customerRole:after {
-    clear: both; }
-.ec-customerRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-customerRole img {
-    max-width: 100%; }
-.ec-customerRole html {
-    box-sizing: border-box; }
-.ec-customerRole *,
-  .ec-customerRole *::before,
-  .ec-customerRole *::after {
-    box-sizing: inherit; }
-.ec-customerRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-customerRole .ec-customerRole__actions {
     padding-top: 20px; }
 .ec-customerRole .ec-blockBtn--action {
     margin-bottom: 10px; }
 .ec-contactConfirmRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-contactConfirmRole:after {
-    content: " ";
-    display: table; }
-.ec-contactConfirmRole:after {
-    clear: both; }
-.ec-contactConfirmRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactConfirmRole img {
-    max-width: 100%; }
-.ec-contactConfirmRole html {
-    box-sizing: border-box; }
-.ec-contactConfirmRole *,
-  .ec-contactConfirmRole *::before,
-  .ec-contactConfirmRole *::after {
-    box-sizing: inherit; }
-.ec-contactConfirmRole img {
-    width: 100%; }
+  min-width: auto; }
 .ec-contactConfirmRole .ec-contactConfirmRole__actions {
     padding-top: 20px; }
 .ec-contactConfirmRole .ec-blockBtn--action {
     margin-bottom: 16px; }
 .ec-contactCompleteRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px; }
-.ec-contactCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-contactCompleteRole:after {
-    clear: both; }
-.ec-contactCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-contactCompleteRole img {
-    max-width: 100%; }
-.ec-contactCompleteRole html {
-    box-sizing: border-box; }
-.ec-contactCompleteRole *,
-  .ec-contactCompleteRole *::before,
-  .ec-contactCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-contactCompleteRole img {
-    width: 100%; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
+  min-width: auto; }
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -7206,11 +6142,6 @@ Styleguide 20.1
 .ec-404Role .ec-404Role__title {
     font-weight: bold;
     font-size: 25px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 退会手続き
 
@@ -7226,36 +6157,11 @@ Styleguide 21.1
 
 */
 .ec-withdrawRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px;
+  min-width: auto;
   text-align: center;
   padding: 0 16px; }
-.ec-withdrawRole:after {
-    content: " ";
-    display: table; }
-.ec-withdrawRole:after {
-    clear: both; }
-.ec-withdrawRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-withdrawRole img {
-    max-width: 100%; }
-.ec-withdrawRole html {
-    box-sizing: border-box; }
-.ec-withdrawRole *,
-  .ec-withdrawRole *::before,
-  .ec-withdrawRole *::after {
-    box-sizing: inherit; }
-.ec-withdrawRole img {
-    width: 100%; }
 .ec-withdrawRole .ec-withdrawRole__title {
     margin-bottom: 16px;
     font-weight: bold;
@@ -7292,11 +6198,6 @@ Styleguide 21.1.2
 .ec-withdrawConfirmRole .ec-icon img {
   width: 100px;
   height: 100px; }
-/**
-メディアクエリ
-SP フォーストで記述する。
-Twitter Bootstrap デフォルト準拠
- */
 /*
 会員情報編集完了
 
@@ -7312,36 +6213,11 @@ Styleguide 22.1
 
 */
 .ec-userEditCompleteRole {
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #525263;
-  -webkit-text-size-adjust: 100%;
+  padding: 0 5%;
   width: 100%;
-  max-width: 1130px;
+  min-width: auto;
   text-align: center;
   padding: 0 16px; }
-.ec-userEditCompleteRole:after {
-    content: " ";
-    display: table; }
-.ec-userEditCompleteRole:after {
-    clear: both; }
-.ec-userEditCompleteRole textarea {
-    /* for chrome fontsize bug */
-    font-family: sans-serif; }
-.ec-userEditCompleteRole img {
-    max-width: 100%; }
-.ec-userEditCompleteRole html {
-    box-sizing: border-box; }
-.ec-userEditCompleteRole *,
-  .ec-userEditCompleteRole *::before,
-  .ec-userEditCompleteRole *::after {
-    box-sizing: inherit; }
-.ec-userEditCompleteRole img {
-    width: 100%; }
 .ec-userEditCompleteRole .ec-userEditCompleteRole__title {
     margin-bottom: 16px;
     font-weight: bold;
@@ -7367,7 +6243,132 @@ Styleguide 22.1
       .ec-grid6 .ec-grid6__cell2 {
         width: 33.33333%; }
       .ec-grid6 .ec-grid6__cell3 {
-        width: 50%; } }
+        width: 50%; }
+    .ec-role {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+      .header-main {
+        width: 1100px;
+        min-width: 1000px;
+        margin: 0 auto;
+        padding: 0; }
+        .header-nav__list {
+          width: 1100px;
+          min-width: 1000px;
+          margin: 0 auto;
+          padding: 0; }
+    .review {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+      #footer .footer-content .content {
+        width: 1100px;
+        min-width: 1000px;
+        margin: 0 auto;
+        padding: 0; }
+      #footer .footer-news__list {
+        width: 1100px;
+        min-width: 1000px;
+        margin: 0 auto;
+        padding: 0; }
+    .ec-sliderRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-sliderItemRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+      .ec-searchnavRole .ec-searchnavRole__infos {
+        width: 1100px;
+        min-width: 1000px;
+        margin: 0 auto;
+        padding: 0; }
+    .ec-shelfRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-productRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-cartRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-cartCompleteRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-orderRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-forgotRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-registerRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-registerCompleteRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-contactRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-contactConfirmRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-contactCompleteRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-customerRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-contactConfirmRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-contactCompleteRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-withdrawRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; }
+    .ec-userEditCompleteRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; } }
 @media only screen and (min-width: 768px) {
     .ec-pageHeader h1 {
       border-top: none;
@@ -7591,173 +6592,44 @@ Styleguide 22.1
     .ec-mypageRole .ec-pageHeader h1 {
       margin: 10px 0 48px;
       padding: 8px 0 18px; }
-      .ec-layoutRole .ec-layoutRole__mainWithColumn {
-        width: 75%; }
-      .ec-layoutRole .ec-layoutRole__mainBetweenColumn {
-        width: 50%; }
-      .ec-layoutRole .ec-layoutRole__left,
-      .ec-layoutRole .ec-layoutRole__right {
-        display: block;
-        width: 25%; }
-    .ec-headerRole:after {
-      content: " ";
-      display: table; }
-    .ec-headerRole:after {
-      clear: both; }
-    .ec-headerRole {
-      width: 100%; }
-      .ec-headerRole:after {
-        content: " ";
-        display: table; }
-      .ec-headerRole:after {
-        clear: both; }
-      .ec-headerRole .ec-headerRole__navSP {
-        display: none; }
-    .ec-headerNaviRole {
-      padding-bottom: 40px; }
-      .ec-headerNaviRole .ec-headerNaviRole__search {
-        display: inline-block;
-        margin-top: 10px; }
-        .ec-headerNaviRole .ec-headerNaviRole__search a {
-          color: inherit;
-          text-decoration: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__search a:hover {
-          text-decoration: none; }
-      .ec-headerNaviRole .ec-headerNaviRole__navSP {
-        display: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__navSP a {
-          color: inherit;
-          text-decoration: none; }
-        .ec-headerNaviRole .ec-headerNaviRole__navSP a:hover {
-          text-decoration: none; }
-    .ec-headerNavSP {
+      .header-main {
+        justify-content: flex-start;
+        padding: 40px 0 20px; }
+        .header-main__logo img {
+          width: 145px; }
+        .header-nav__list {
+          justify-content: flex-start; }
+          .header-nav__list__item.my-page {
+            margin-right: 40px; }
+        .header-nav__item {
+          margin-right: 50px; }
+      .header-nav {
+        padding: 20px 0; }
+        .header-search .search-bar {
+          width: 530px; }
+      .header-search {
+        padding: 0; }
+    .header .pc {
+      display: block; }
+    .header .sp {
       display: none; }
-        .ec-headerTitle .ec-headerTitle__title a {
-          font-size: 40px; }
-      .ec-headerTitle .ec-headerTitle__subtitle {
-        font-size: 16px;
-        margin-bottom: 10px; }
-      .ec-headerNav .ec-headerNav__itemIcon {
-        margin-right: 0;
-        font-size: 20px; }
-      .ec-headerNav .ec-headerNav__itemLink {
-        display: inline-block; }
-    .ec-headerSearch .ec-headerSearch__category {
-      float: left;
-      width: 43%; }
-        .ec-headerSearch .ec-headerSearch__category .ec-select select {
-          max-width: 165px;
-          height: 36px; }
-        .ec-headerSearch .ec-headerSearch__category .ec-select.ec-select_search {
-          border-top-right-radius: inherit;
-          border-top-left-radius: 50px;
-          border-bottom-left-radius: 50px; }
-    .ec-headerSearch .ec-headerSearch__keyword {
-      float: right;
-      width: 57%;
-      border-bottom-left-radius: inherit;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px; }
-      .ec-headerSearch .ec-headerSearch__keyword input[type="search"] {
-        font-size: 12px; }
-    .ec-categoryNaviRole {
-      display: block;
-      width: 100%; }
-      .ec-categoryNaviRole a {
-        color: inherit;
-        text-decoration: none; }
-      .ec-categoryNaviRole a:hover {
-        text-decoration: none; }
-    .ec-itemNav__nav {
-      display: inline-block; }
-    .ec-itemNav__nav li {
-      float: left;
-      width: auto; }
-    .ec-itemNav__nav li a {
-      text-align: center;
-      border-bottom: none; }
-    .ec-itemNav__nav li ul {
-      display: block;
-      z-index: 100;
-      position: absolute; }
-    .ec-itemNav__nav li ul li {
-      overflow: hidden;
-      height: 0; }
-  .ec-itemNav__nav > li:hover > ul > li {
-    overflow: visible;
-    height: auto; }
-  .ec-itemNav__nav li ul li ul:before {
-    content: "\f054";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 12px;
-    color: white;
-    position: absolute;
-    top: 19px;
-    right: auto;
-    left: -20px; }
-  .ec-itemNav__nav li ul li:hover > ul > li {
-    overflow: visible;
-    height: auto;
-    width: auto; }
-    .ec-drawerRole {
-      display: none; }
-    .ec-drawerRoleClose {
-      display: none; }
-    .ec-drawerRole.is_active {
-      display: none; }
-    .ec-drawerRoleClose.is_active {
-      display: none; }
-    .ec-overlayRole {
-      display: none; }
-    .have_curtain .ec-overlayRole {
-      display: none; }
-    .ec-footerRole {
-      padding-top: 40px;
-      margin-top: 100px; }
-    .ec-footerRole .ec-footerRole__inner {
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-      box-sizing: border-box;
-      font-size: 16px;
-      line-height: 1.4;
-      color: #525263;
-      -webkit-text-size-adjust: 100%;
-      width: 100%;
-      max-width: 1130px; }
-      .ec-footerRole .ec-footerRole__inner:after {
-        content: " ";
-        display: table; }
-      .ec-footerRole .ec-footerRole__inner:after {
-        clear: both; }
-      .ec-footerRole .ec-footerRole__inner textarea {
-        /* for chrome fontsize bug */
-        font-family: sans-serif; }
-      .ec-footerRole .ec-footerRole__inner img {
-        max-width: 100%; }
-      .ec-footerRole .ec-footerRole__inner html {
-        box-sizing: border-box; }
-      .ec-footerRole .ec-footerRole__inner *,
-      .ec-footerRole .ec-footerRole__inner *::before,
-      .ec-footerRole .ec-footerRole__inner *::after {
-        box-sizing: inherit; }
-      .ec-footerRole .ec-footerRole__inner img {
-        width: 100%; }
-      .ec-footerNavi .ec-footerNavi__link {
-        display: inline-block; }
-        .ec-footerNavi .ec-footerNavi__link a {
-          display: inline-block;
-          border-bottom: none;
-          margin: 0 10px;
-          padding: 0;
-          text-decoration: underline; }
-    .ec-footerTitle {
-      padding: 50px 0 80px; }
-        .ec-footerTitle .ec-footerTitle__logo a {
-          font-size: 24px; }
-      .ec-footerTitle .ec-footerTitle__copyright {
-        font-size: 12px; }
+      .review .review__heading {
+        align-items: flex-end; }
+    .review__item + .review__item {
+      margin-top: 30px; }
+      .review-card .wrapper {
+        padding: 35px 30px; }
+    #footer .footer-news {
+      padding-top: 50px;
+      padding-bottom: 50px; }
+      #footer .footer-news__list {
+        flex-wrap: nowrap; }
+      #footer .footer-news__item {
+        flex-wrap: nowrap;
+        width: cacl(100%/3);
+        margin-bottom: 0 !important; }
+        #footer .footer-news__item:not(:last-child) {
+          margin-right: 20px; }
       .ec-sliderItemRole .item_nav {
         display: flex;
         justify-content: flex-start;
@@ -7840,34 +6712,9 @@ Styleguide 22.1
       .ec-newsRole__newsItem.is_active .ec-newsRole__newsDescription {
         margin: 20px 0 0; }
     .ec-searchnavRole {
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-      box-sizing: border-box;
-      font-size: 16px;
-      line-height: 1.4;
-      color: #525263;
-      -webkit-text-size-adjust: 100%;
+      padding: 0 5%;
       width: 100%;
-      max-width: 1130px; }
-      .ec-searchnavRole:after {
-        content: " ";
-        display: table; }
-      .ec-searchnavRole:after {
-        clear: both; }
-      .ec-searchnavRole textarea {
-        /* for chrome fontsize bug */
-        font-family: sans-serif; }
-      .ec-searchnavRole img {
-        max-width: 100%; }
-      .ec-searchnavRole html {
-        box-sizing: border-box; }
-      .ec-searchnavRole *,
-      .ec-searchnavRole *::before,
-      .ec-searchnavRole *::after {
-        box-sizing: inherit; }
-      .ec-searchnavRole img {
-        width: 100%; }
+      min-width: auto; }
       .ec-searchnavRole .ec-searchnavRole__infos {
         padding-left: 0;
         padding-right: 0;
@@ -8013,5 +6860,10 @@ Styleguide 22.1
     .ec-off3Grid .ec-off3Grid__cell {
       width: 50%; }
     .ec-off4Grid .ec-off4Grid__cell {
-      width: 33.33333%; } }
+      width: 33.33333%; }
+    .ec-searchnavRole {
+      width: 1100px;
+      min-width: 1000px;
+      margin: 0 auto;
+      padding: 0; } }
 /*# sourceMappingURL=style.css.map */

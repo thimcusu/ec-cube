@@ -1,7 +1,13 @@
 <header class="header">
     <div class="header-main">
         {{ include('Block/logo.twig')}}
-        {{ include('Block/search.twig')}}
+        {{ include('Block/search_pc.twig')}}
+        <div class="cart-nav sp">
+            <span class="name">齊藤あづさ様</span>
+            <image class="icon" src="{{ asset('assets/img/icon_cart.svg') }}">
+            <span class="badge">0</span>
+        </div>
     </div>
+    {{ include('Block/search_sp.twig')}}
     {{ include('Block/header_nav.twig')}}
 </header>

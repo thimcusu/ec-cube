@@ -1,0 +1,123 @@
+@import "../mixins/media";
+@import "../mixins/projects";
+@import "../mixins/variables_customize";
+
+#footer {
+  .footer-content {
+    padding: 0;
+    margin: 0 auto;
+    @include flex(column, center, center);
+    background-color: $clrBlack;
+    color: #fff;
+    height: 105px;
+    text-align: center;
+    a {
+      cursor: pointer;
+      opacity: 1;
+      color: inherit;
+      transition: 0.3s ease;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+        font-weight: 500;
+      }
+    }
+    .content {
+      @include container;
+    }
+    ul {
+      @include flex(row, center, center, wrap);
+      margin-bottom: 15px;
+      li {
+        display: inline-block;
+      }
+      li:not(:last-child) {
+        padding-right: 25px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          right: 10px;
+          top: 5px;
+          height: calc(100% - 8px);
+          width: 2px;
+          background-color: #fff;
+          z-index: 2;
+          opacity: 0.5;
+        }
+      }
+    }
+    .title {
+      font-size: 14px;
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+  .footer-news {
+    @include flex(row, space-between, center);
+    background-color: #eaeaea;
+    padding: 65px 5%;
+    a {
+      cursor: pointer;
+      color: black;
+      opacity: 0.7;
+      text-decoration: none;
+      transition: 0.3s ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @include media_desktop {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    &__list {
+      @include container;
+      padding: 0;
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      @include media_desktop {
+        flex-wrap: nowrap;
+      }
+      :last-child {
+        margin-right: 0;
+      }
+    }
+    &__item {
+      width: 100%;
+      height: auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 5px;
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      @include media_desktop {
+        flex-wrap: nowrap;
+        width: cacl(100%/3);
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+        margin-bottom: 0 !important;
+      }
+      h4 {
+        font-size: 16px;
+        color: black;
+        opacity: 0.8;
+        font-weight: 600;
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        padding: 10px;
+        li {
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}

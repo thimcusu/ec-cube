@@ -34,24 +34,24 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.6.4",
-    "bootstrap": "^4.3.1",
+    "autoprefixer": "^9.8.6",
+    "bootstrap": "^4.5.3",
     "bootstrap-sass": "^3.4.1",
-    "browser-sync": "^2.26.7",
-    "cross-env": "^7.0.2",
+    "browser-sync": "^2.26.13",
+    "cross-env": "^7.0.3",
     "css-mqpacker": "^7.0.0",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
+    "gulp-sass": "^4.1.0",
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3",
     "normalize.css": "^5.0.0",
     "postcss-import": "^12.0.1",
     "process": "^0.11.10",
-    "sort-css-media-queries": "^1.4.3"
+    "sort-css-media-queries": "^1.5.2"
   }
 }

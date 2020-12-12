@@ -1,0 +1,78 @@
+@import "../mixins/media";
+@import "../mixins/projects";
+@import "../mixins/clearfix";
+@import "../mixins/variables_customize";
+
+.main-content {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.review {
+  @include container;
+  .review__heading {
+    @include flex(row, space-between, flex-start);
+    @include media_desktop {
+      align-items: flex-end;
+    }
+  }
+  .review__title {
+    @include flex(column);
+    h3 {
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 24px;
+      color: $clrBlack;
+    }
+    &-small {
+      @include flex(row, center);
+      & > span {
+        text-align: center;
+        align-self: center;
+        font-weight: 600;
+        color: $clrBlack;
+        opacity: 0.8;
+        word-break: break-word;
+        margin-right: 5px;
+      }
+    }
+  }
+  .review__list {
+    @include flex(column);
+    width: 100%;
+    margin: 30px 0;
+  }
+  &__item + &__item {
+    margin-top: 20px;
+  }
+  @include media_desktop {
+    &__item + &__item {
+      margin-top: 30px;
+    }
+  }
+}
+.review-card {
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px #dedede;
+  .wrapper {
+    padding: 10px 20px;
+    @include media_desktop {
+      padding: 35px 30px;
+    }
+  }
+  .heading {
+    .customer {
+      @include flex(row, flex-start, center);
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dedede;
+      img {
+        width: 40px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      .name {
+        color: $clrBlack;
+      }
+    }
+  }
+}

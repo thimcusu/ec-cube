@@ -1,6 +1,38 @@
 {% extends 'default_frame.twig' %}
 {% block main %}
     <div class="main-content">
-        MAIN
+        <div class="review">
+            <div class="review__heading">
+                <div class="review__title">
+                    <h3 class="review__title-big">この商品のロコミ</h3>
+                    <div class="review__title-small">
+                        <span>総合評価 :</span>
+                        <div class="rating">
+                            {{ include('Block/stars.twig') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="review__button">
+                    <button class="btn btn-secondary">商品ペー</button>
+                </div>
+            </div>
+            <div class="review__list">
+                <div class="review__item">
+                    {{ include('Block/review_card.twig')}}
+                </div>
+                <div class="review__item">
+                    {{ include('Block/review_card.twig')}}
+                </div>
+                <div class="review__item">
+                    {{ include('Block/review_card.twig')}}
+                </div>
+                <div class="review__item">
+                    {{ include('Block/review_card.twig')}}
+                </div>
+                <div class="review__item">
+                    {{ include('Block/review_card.twig')}}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
